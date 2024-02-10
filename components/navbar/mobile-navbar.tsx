@@ -25,7 +25,7 @@ export const MobileNavbar = ({ links }: Props) => {
 
       <ul className='text-center text-lg uppercase space-y-5 mb-40'>
         {links.map(link => (
-          <li>
+          <li key={link.href}>
             <Link href={link.href}>{link.label}</Link>
           </li>
         ))}
