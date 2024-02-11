@@ -20,15 +20,6 @@ export const Nav = () => {
     {
       label:
         language === 'cz'
-          ? 'Pro Tvůrce'
-          : language === 'en'
-          ? 'For Creators'
-          : '',
-      href: '/trips',
-    },
-    {
-      label:
-        language === 'cz'
           ? 'Rezervace'
           : language === 'en'
           ? 'Reservation'
@@ -51,6 +42,15 @@ export const Nav = () => {
     {
       label: language === 'cz' ? 'O Nás' : language === 'en' ? 'About Us' : '',
       href: '/about-us',
+    },
+    {
+      label:
+        language === 'cz'
+          ? 'Pro Influenceri'
+          : language === 'en'
+          ? 'For Influencers'
+          : '',
+      href: '/influencers',
     },
   ]
 
