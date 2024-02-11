@@ -46,7 +46,7 @@ export const Nav = () => {
     {
       label:
         language === 'cz'
-          ? 'Pro Influenceri'
+          ? 'Pro Influencery'
           : language === 'en'
           ? 'For Influencers'
           : '',
