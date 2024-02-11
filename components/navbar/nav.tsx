@@ -20,6 +20,15 @@ export const Nav = () => {
     {
       label:
         language === 'cz'
+          ? 'Pro Tvůrce'
+          : language === 'en'
+          ? 'For Creators'
+          : '',
+      href: '/trips',
+    },
+    {
+      label:
+        language === 'cz'
           ? 'Rezervace'
           : language === 'en'
           ? 'Reservation'
@@ -27,7 +36,8 @@ export const Nav = () => {
       href: '/reservation',
     },
     {
-      label: language === 'cz' ? 'Výlety' : language === 'en' ? 'Trips' : '',
+      label:
+        language === 'cz' ? 'Zážitky' : language === 'en' ? 'Experiences' : '',
       href: '/trips',
     },
     {
@@ -41,10 +51,6 @@ export const Nav = () => {
     {
       label: language === 'cz' ? 'O Nás' : language === 'en' ? 'About Us' : '',
       href: '/about-us',
-    },
-    {
-      label: language === 'cz' ? 'Kontakt' : language === 'en' ? 'Contact' : '',
-      href: '/contact',
     },
   ]
 
@@ -71,7 +77,7 @@ export const Nav = () => {
     >
       <Container>
         <div className='flex items-center justify-between'>
-          <Link href='' className='transition duration-300'>
+          <Link href='/' className='transition duration-300'>
             <img
               src={isTopOfTheScreen ? '/logo/white.webp' : '/logo/black.webp'}
               alt='logo'
