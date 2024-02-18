@@ -26,9 +26,10 @@ const languages = [
 
 interface Props {
   isTopOfTheScreen: boolean
+  home: boolean
 }
 
-const LanguageSelector = ({ isTopOfTheScreen }: Props) => {
+const LanguageSelector = ({ isTopOfTheScreen, home }: Props) => {
   const { language, imgSrc, setLanguage } = useLanguage(state => state)
 
   const [open, setOpen] = useState<boolean>(false)
@@ -43,7 +44,7 @@ const LanguageSelector = ({ isTopOfTheScreen }: Props) => {
           aria-expanded={open}
           className={cn(
             'w-[70px] border-none justify-between bg-transparent gap-2',
-            isTopOfTheScreen
+            home && isTopOfTheScreen
               ? 'text-zinc-100 hover:text-zinc-200'
               : 'text-zinc-900 hover:text-zinc-800'
           )}

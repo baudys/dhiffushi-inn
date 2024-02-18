@@ -28,7 +28,9 @@ export const MobileNavbar = ({ links }: Props) => {
       <ul className='text-center text-lg uppercase space-y-5 mb-40 text-zinc-900'>
         {links.map(link => (
           <li key={link.href}>
-            <Link href={link.href}>{link.label}</Link>
+            <Link href={link.href} onClick={() => closeMenu()}>
+              {link.label}
+            </Link>
           </li>
         ))}
       </ul>

@@ -9,8 +9,11 @@ import { Menu } from 'lucide-react'
 import { useLanguage } from '@/store/use-language'
 import { useMenu } from '@/store/use-menu'
 import { MobileNavbar } from './mobile-navbar'
+import { usePathname } from 'next/navigation'
 
 export const Nav = () => {
+  const pathname = usePathname()
+
   const { language } = useLanguage()
   const { isMenuOpen, openMenu } = useMenu()
 
@@ -54,6 +57,8 @@ export const Nav = () => {
     },
   ]
 
+  const home = pathname === '/'
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
@@ -71,15 +76,20 @@ export const Nav = () => {
       className={cn(
         'z-10 w-full fixed left-0 top-0 py-5 transition duration-300',
         isTopOfTheScreen
-          ? 'bg-transparent text-zinc-50'
-          : 'bg-zinc-50/80 backdrop-blur-xl border-b border-b-black/20 text-zinc-950'
+          ? 'bg-transparent'
+          : 'bg-zinc-50/50 backdrop-blur border-b border-b-black/20 text-zinc-950',
+        home && isTopOfTheScreen && 'text-zinc-50'
       )}
     >
       <Container>
         <div className='flex items-center justify-between'>
           <Link href='/' className='transition duration-300'>
             <img
-              src={isTopOfTheScreen ? '/logo/white.webp' : '/logo/black.webp'}
+              src={
+                home && isTopOfTheScreen
+                  ? '/logo/white.webp'
+                  : '/logo/black.webp'
+              }
               alt='logo'
               className='h-12'
             />
@@ -96,7 +106,7 @@ export const Nav = () => {
 
             <Menu onClick={() => openMenu()} className='lg:hidden' />
 
-            <LanguageSelector isTopOfTheScreen={isTopOfTheScreen} />
+            <LanguageSelector isTopOfTheScreen={isTopOfTheScreen} home={home} />
           </div>
         </div>
       </Container>
