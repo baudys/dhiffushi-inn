@@ -2,7 +2,7 @@ import Hero from '@/components/home/hero'
 
 export default function Page() {
   return (
-    <main>
+    <main className='pb-28'>
       <Hero />
     </main>
   )
