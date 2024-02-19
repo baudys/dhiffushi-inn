@@ -9,6 +9,7 @@ import {
   FormControl,
   FormField,
   FormItem,
+  FormLabel,
   FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
@@ -20,8 +21,12 @@ import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { useState } from 'react'
 import { addReview } from '@/actions/add-review'
 import { Container } from '../container'
+import { useLanguage } from '@/store/use-language'
+import Link from 'next/link'
 
 export const AddReview = () => {
+  const { language } = useLanguage()
+
   const schema = z.object({
     name: z.string().min(1, { message: 'Vyplňte svoje jméno.' }),
     text: z.string(),
@@ -56,7 +61,7 @@ export const AddReview = () => {
   }
 
   return (
-    <Container>
+    <Container className='w-full sm:w-[60%] lg:w-[45%]'>
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -64,20 +69,21 @@ export const AddReview = () => {
         className='h-full'
       >
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-3'>
             <FormField
               name='name'
               render={({ field }) => (
                 <FormItem>
+                  <FormLabel>
+                    {language === 'cz' && 'Jméno'}
+                    {language === 'en' && 'Name'}
+                  </FormLabel>
                   <FormControl>
-                    <>
-                      <Label>Jméno</Label>
-                      <Input
-                        placeholder='Pavel Novák'
-                        {...field}
-                        className='border-zinc-500'
-                      />
-                    </>
+                    <Input
+                      placeholder='Pavel Novák'
+                      {...field}
+                      className='border-zinc-500'
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -87,15 +93,16 @@ export const AddReview = () => {
               name='text'
               render={({ field }) => (
                 <FormItem>
+                  <FormLabel>
+                    {language === 'cz' && 'Hodnocení'}
+                    {language === 'en' && 'Rating'}
+                  </FormLabel>
                   <FormControl>
-                    <>
-                      <Label>Hodnocení</Label>
-                      <Textarea
-                        placeholder='Zde napište slovní hodnocení'
-                        {...field}
-                        className='border-zinc-500'
-                      />
-                    </>
+                    <Textarea
+                      placeholder='Zde napište slovní hodnocení'
+                      {...field}
+                      className='border-zinc-500'
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -127,13 +134,40 @@ export const AddReview = () => {
               )}
             />
 
-            <p className='block mt-4 text-sm text-zinc-700'>
-              Kliknutím na Odeslat souhlasím se zpracováním osobních údajů.
-            </p>
+            <div className='pt-5'>
+              <p className='text-sm text-zinc-600'>
+                {language === 'cz' && (
+                  <>
+                    Kliknutím na Odeslat souhlasím se zpracováním osobních
+                    údajů. Přečtěte si{' '}
+                    <Link
+                      href='/personal-data-protection'
+                      className='underline'
+                    >
+                      GDPR
+                    </Link>{' '}
+                    pro více informací.
+                  </>
+                )}
+                {language === 'en' && (
+                  <>
+                    By clicking on Submit I agree to the processing of personal
+                    data. Read the{' '}
+                    <Link
+                      href='/personal-data-protection'
+                      className='underline'
+                    >
+                      GDPR
+                    </Link>{' '}
+                    for more information.
+                  </>
+                )}
+              </p>
 
-            <Button type='submit' className='mt-1'>
-              Odeslat
-            </Button>
+              <Button type='submit' className='mt-1'>
+                {language === 'cz' ? 'Odeslat' : 'Submit'}
+              </Button>
+            </div>
           </form>
         </Form>
       </motion.div>

@@ -9,7 +9,7 @@ export default async function Page() {
   const reviews = await cachedClient(ReviewsQuery)
 
   return (
-    <main className='py-24'>
+    <main className='py-24 space-y-20 md:space-y-40'>
       <AddReview />
       <ReviewsGrid reviews={reviews} />
     </main>
