@@ -436,7 +436,7 @@ const Contact = () => {
 
                 <Button
                   type='submit'
-                  className='mt-1 w-full sm:w-auto bg-cyan-600 hover:bg-cyan-700'
+                  className='mt-1 w-full sm:w-auto bg-cyan-500 hover:bg-cyan-600'
                 >
                   {language === 'cz' ? 'Odeslat' : 'Submit'}
                 </Button>
