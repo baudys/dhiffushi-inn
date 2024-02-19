@@ -121,9 +121,9 @@ export const AddReview = () => {
                           className='cursor-pointer'
                         >
                           {index < rating ? (
-                            <AiFillStar className='w-6 h-6' />
+                            <AiFillStar className='w-6 h-6 fill-cyan-600' />
                           ) : (
-                            <AiOutlineStar className='w-6 h-6' />
+                            <AiOutlineStar className='w-6 h-6 fill-cyan-600' />
                           )}
                         </span>
                       ))}
@@ -164,7 +164,10 @@ export const AddReview = () => {
                 )}
               </p>
 
-              <Button type='submit' className='mt-1'>
+              <Button
+                type='submit'
+                className='mt-1 bg-cyan-600 w-full sm:w-auto hover:bg-cyan-700'
+              >
                 {language === 'cz' ? 'Odeslat' : 'Submit'}
               </Button>
             </div>

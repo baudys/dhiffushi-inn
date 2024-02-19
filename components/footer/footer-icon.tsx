@@ -10,7 +10,7 @@ interface FooterIconProps {
 export const FooterIcon: FC<FooterIconProps> = ({ icon: Icon, href, name }) => {
   return (
     <Link href={href} target='_blank'>
-      <Icon className='w-6 h-6 fill-zinc-700 hover:fill-zinc-900 transition' />
+      <Icon className='w-6 h-6 fill-cyan-600 hover:fill-cyan-700 transition' />
       <p className='sr-only'>{name}</p>
     </Link>
   )

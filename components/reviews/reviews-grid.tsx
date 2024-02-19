@@ -19,7 +19,7 @@ export const ReviewsGrid = ({ reviews }: Props) => {
           </div>
           <div className='flex mb-2'>
             {Array.from({ length: review.rating }, (_, index) => (
-              <AiFillStar key={index} />
+              <AiFillStar key={index} className='fill-cyan-600' />
             ))}
           </div>
           <p className='text-lg md:text-xl'>{review.text}</p>
