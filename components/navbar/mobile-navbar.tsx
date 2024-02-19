@@ -22,7 +22,7 @@ export const MobileNavbar = ({ links }: Props) => {
     <div className='fixed top-0 left-0 w-screen h-screen bg-white lg:hidden z-[999] grid place-content-center'>
       <X
         onClick={() => closeMenu()}
-        className='absolute top-5 right-5 text-zinc-900'
+        className='absolute top-5 right-5 text-zinc-900 cursor-pointer'
       />
 
       <ul className='text-center text-lg uppercase space-y-5 mb-40 text-zinc-900'>

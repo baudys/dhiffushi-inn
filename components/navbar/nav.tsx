@@ -104,7 +104,10 @@ export const Nav = () => {
               ))}
             </ul>
 
-            <Menu onClick={() => openMenu()} className='lg:hidden' />
+            <Menu
+              onClick={() => openMenu()}
+              className='lg:hidden cursor-pointer'
+            />
 
             <LanguageSelector isTopOfTheScreen={isTopOfTheScreen} home={home} />
           </div>
