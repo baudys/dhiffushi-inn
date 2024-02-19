@@ -77,7 +77,7 @@ export const Nav = () => {
         'z-10 w-full fixed left-0 top-0 py-5 transition duration-300',
         isTopOfTheScreen
           ? 'bg-transparent'
-          : 'bg-zinc-50/50 backdrop-blur border-b border-b-black/20 text-zinc-950',
+          : 'bg-zinc-50/60 backdrop-blur-md border-b border-b-black/20 text-zinc-950',
         home && isTopOfTheScreen && 'text-zinc-50'
       )}
     >
