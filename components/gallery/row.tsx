@@ -1,7 +1,7 @@
 'use client'
 
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
+import Carousel from '../carousel/carousel'
+import CarouselItem from '../carousel/carousel-item'
 
 interface Props {
   images: string[]
@@ -9,30 +9,26 @@ interface Props {
 
 export const Row = ({ images }: Props) => {
   return (
-    <Swiper
-      spaceBetween={10}
-      loop={true}
-      slidesPerView={1.2}
-      centeredSlides={true}
-      breakpoints={{
-        768: {
-          slidesPerView: 1.5,
-        },
-      }}
-      className='!select-none'
-    >
-      {images.map(image => (
-        <SwiperSlide
-          key={image}
-          className='relative aspect-video rounded overflow-hidden'
-        >
-          <img
-            src={image}
-            alt='photo'
-            className='absolute inset-0 rounded object-cover h-full w-full'
-          />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <Carousel>
+      {images.map((image, i) => {
+        return (
+          <CarouselItem index={i} key={i}>
+            <>
+              <div className='relative aspect-video w-[78vw] lg:w-[50vw] rounded'>
+                <img
+                  src={image}
+                  className='absolute inset-0 w-full h-full object-cover roudned'
+                />
+              </div>
+              <h2 className='font-medium'>title</h2>
+              <p className='text-sm text-zinc-600'>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Officiis, perspiciatis?
+              </p>
+            </>
+          </CarouselItem>
+        )
+      })}
+    </Carousel>
   )
 }
