@@ -1,0 +1,15 @@
+cyan-400
+cyan-500
+cyan-600
+
+teal-400
+teal-500
+teal-600
+
+green-700
+green-800
+green-900
+
+yellow-950
+amber-950
+orange-950
