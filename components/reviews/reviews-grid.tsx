@@ -7,22 +7,22 @@ interface Props {
 
 export const ReviewsGrid = ({ reviews }: Props) => {
   return (
-    <Container className='grid sm:grid-cols-2 lg:grid-cols-3 gap-3'>
+    <Container className='flex flex-col gap-8 w-full sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[40%]'>
       {reviews.map((review: any) => (
         <div
           key={review.name + review.date}
-          className='p-4 border rounded-md bg-zinc-100/90 border-zinc-500/50'
+          className='p-4 rounded-md border border-zinc-200 bg-zinc-50'
         >
-          <div className='flex justify-between'>
-            <p className='font-semibold'>{review.name}</p>
-            <p className='text-zinc-500 text-xs'>{review.date}</p>
-          </div>
           <div className='flex mb-2'>
             {Array.from({ length: review.rating }, (_, index) => (
-              <AiFillStar key={index} className='fill-cyan-500' />
+              <AiFillStar key={index} className='fill-cyan-500 w-6 h-6' />
             ))}
           </div>
-          <p className='text-zinc-700 text-sm'>{review.text}</p>
+          <p className='font-semibold mb-6 text-justify'>{review.text}</p>
+          <p className='text-zinc-700 text-sm'>
+            {review.name}
+            <span className='text-zinc-500 text-xs'> / {review.date}</span>
+          </p>
         </div>
       ))}
     </Container>
