@@ -129,9 +129,10 @@ export const AddReview = () => {
                       </FormLabel>
                       <FormControl>
                         <Textarea
+                          rows={10}
                           placeholder='Zde napište slovní hodnocení'
                           {...field}
-                          className='border-zinc-500'
+                          className='border-zinc-500 resize-none'
                         />
                       </FormControl>
                       <FormMessage />
@@ -204,7 +205,7 @@ export const AddReview = () => {
                   </DrawerClose>
                   <DrawerClose className='w-full'>
                     <Button variant='outline' className='w-full'>
-                      Cancel
+                      {language === 'cz' ? 'Zrušit' : 'Cancel'}
                     </Button>
                   </DrawerClose>
                 </DrawerFooter>
