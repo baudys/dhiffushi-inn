@@ -1,4 +1,3 @@
-import { AddReview } from '@/components/reviews/add-review'
 import { ReviewsGrid } from '@/components/reviews/reviews-grid'
 import { cachedClient } from '@/sanity/lib/client'
 import { ReviewsQuery } from '@/sanity/lib/queries'
