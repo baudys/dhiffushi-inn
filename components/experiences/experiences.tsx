@@ -8,9 +8,12 @@ import { cn } from '@/lib/utils'
 
 interface Props {
   diving: any[]
+  relax: any[]
+  water: any[]
+  culture: any[]
 }
 
-export const Experiences = ({ diving }: Props) => {
+export const Experiences = ({ diving, relax, water, culture }: Props) => {
   const { language } = useLanguage()
 
   const [category, setCategory] = useState('diving')
@@ -48,7 +51,10 @@ export const Experiences = ({ diving }: Props) => {
         </button>
       </div>
 
-      {category === 'diving' && <Row data={diving} />}
+      {category === 'diving' && diving.length !== 0 && <Row data={diving} />}
+      {category === 'relax' && relax.length !== 0 && <Row data={relax} />}
+      {category === 'water' && water.length !== 0 && <Row data={water} />}
+      {category === 'culture' && culture.length !== 0 && <Row data={culture} />}
     </Container>
   )
 }

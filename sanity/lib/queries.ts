@@ -5,8 +5,19 @@ export const ReviewsQuery = groq`
         ...,
     } | order(date desc)
 `
-export const DivingQuery = groq`
-    *[_type=='diving'] {
+
+export const ExperiencesQuery = groq`
+    *[_type=='experience'] {
         ...,
     }
+`
+
+export const ExperiencesPathsQuery = groq`*[_type == "hotel" && defined(slug.current)][]{
+    "params": { "slug": slug.current }
+  }
+`
+
+export const ExperienceQuery = groq`*[_type == "hotel" && slug.current == $slug][0]{
+    ...
+  }
 `

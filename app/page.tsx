@@ -4,13 +4,13 @@ import Hero from '@/components/home/hero'
 import { Influencer } from '@/components/home/influencer'
 import { Reviews } from '@/components/home/reviews'
 import { cachedClient } from '@/sanity/lib/client'
-import { DivingQuery, ReviewsQuery } from '@/sanity/lib/queries'
+import { ExperiencesQuery, ReviewsQuery } from '@/sanity/lib/queries'
 
 export const revalidate = 60
 
 export default async function Page() {
   const reviews = await cachedClient(ReviewsQuery)
-  const diving = await cachedClient(DivingQuery)
+  const diving = await cachedClient(ExperiencesQuery)
   let experiences: any = []
 
   experiences = experiences.concat(diving)

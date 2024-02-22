@@ -1,8 +1,8 @@
 import { defineField, defineType } from 'sanity'
 
 export default defineType({
-  name: 'diving',
-  title: 'Potápění a Šnorchlování',
+  name: 'experience',
+  title: 'Zážitky',
   type: 'document',
   fields: [
     defineField({
@@ -22,6 +22,19 @@ export default defineType({
       options: {
         source: 'titleEn',
         maxLength: 96,
+      },
+    }),
+    defineField({
+      name: 'category',
+      title: 'Kategorie',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Potápění a šnorchlování', value: 'diving' },
+          { title: 'Luxusní odpočinek na pláži', value: 'relax' },
+          { title: 'Vodní sporty', value: 'water' },
+          { title: 'Kulturní zážitky', value: 'culture' },
+        ],
       },
     }),
     defineField({
