@@ -5,9 +5,11 @@ import { Title } from './title'
 
 export const Gallery = () => {
   return (
-    <Container>
-      <Title labelCz='Hotel a Okolí' labelEn='Hotel overview' />
+    <div>
+      <Container>
+        <Title labelCz='Hotel a Okolí' labelEn='Hotel overview' />
+      </Container>
       <Row images={hotelandoverview} />
-    </Container>
+    </div>
   )
 }
