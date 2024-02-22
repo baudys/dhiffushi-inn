@@ -1,7 +1,7 @@
 import { Experiences } from '@/components/home/experiences'
 import { Gallery } from '@/components/home/gallery'
 import Hero from '@/components/home/hero'
-import { Review } from '@/components/home/review'
+import { Reviews } from '@/components/home/reviews'
 import { cachedClient } from '@/sanity/lib/client'
 import { ReviewsQuery } from '@/sanity/lib/queries'
 
@@ -15,7 +15,7 @@ export default async function Page() {
       <Hero />
       <Experiences />
       <Gallery />
-      <Review review={reviews[0]} />
+      <Reviews reviews={reviews.slice(0, 2)} />
     </main>
   )
 }
