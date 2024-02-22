@@ -32,7 +32,7 @@ export const Nav = () => {
     {
       label:
         language === 'cz' ? 'Zážitky' : language === 'en' ? 'Experiences' : '',
-      href: '/trips',
+      href: '/experiences',
     },
     {
       label: language === 'cz' ? 'Recenze' : language === 'en' ? 'Reviews' : '',
@@ -58,6 +58,7 @@ export const Nav = () => {
   ]
 
   const home = pathname === '/'
+  const studio = pathname.includes('/studio')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,11 +75,12 @@ export const Nav = () => {
   return (
     <nav
       className={cn(
-        'z-10 w-full fixed left-0 top-0 py-5 transition duration-300',
+        'z-10 w-full py-5 transition duration-300',
         isTopOfTheScreen
           ? 'bg-transparent'
           : 'bg-zinc-50/60 backdrop-blur-md border-b border-b-black/20 text-zinc-950',
-        home && isTopOfTheScreen && 'text-zinc-50'
+        home && isTopOfTheScreen && 'text-zinc-50',
+        studio ? 'block bg-white' : 'fixed top-0'
       )}
     >
       <Container>
