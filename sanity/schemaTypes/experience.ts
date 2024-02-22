@@ -70,6 +70,40 @@ export default defineType({
       title: 'Cena 🇬🇧',
       type: 'string',
     }),
+    defineField({
+      name: 'overviewCz',
+      title: 'Přehled 🇨🇿',
+      type: 'string',
+    }),
+    defineField({
+      name: 'overviewEn',
+      title: 'Přehled 🇬🇧',
+      type: 'string',
+    }),
+    defineField({
+      name: 'requirementsCz',
+      title: 'Požadavky 🇨🇿',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
+      name: 'requirementsEn',
+      title: 'Požadavky 🇬🇧',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
+      name: 'bringCz',
+      title: 'Co s Sebou 🇨🇿',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
+      name: 'bringEn',
+      title: 'Co s Sebou 🇬🇧',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
   ],
   preview: {
     select: {

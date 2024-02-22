@@ -5,6 +5,7 @@ import Carousel from '../carousel/carousel'
 import CarouselItem from '../carousel/carousel-item'
 import { useLanguage } from '@/store/use-language'
 import { Calendar, Timer } from 'lucide-react'
+import Link from 'next/link'
 
 interface Props {
   data: any[]
@@ -18,7 +19,7 @@ export const Row = ({ data }: Props) => {
       {data.map((item, i) => {
         return (
           <CarouselItem index={i} key={i} className='max-w-[400px]'>
-            <>
+            <Link href={`/experiences/${item.slug.current}`}>
               <div className='relative aspect-[3/4] w-[400px] overflow-hidden'>
                 <img
                   src={urlForImage(item.image)}
@@ -42,7 +43,7 @@ export const Row = ({ data }: Props) => {
                 od {language === 'cz' && item.priceCz}
                 {language === 'en' && item.priceEn}
               </p>
-            </>
+            </Link>
           </CarouselItem>
         )
       })}

@@ -10,12 +10,14 @@ export async function generateStaticParams() {
   return experiences
 }
 
-async function HotelPage({ params }: { params: any }) {
+export default async function Page({ params }: { params: any }) {
   const experience = await cachedClient(ExperienceQuery, params, {
     next: { revalidate },
   })
 
-  return <Detail experience={experience} />
+  return (
+    <main className='pt-32 pb-24'>
+      <Detail experience={experience} />
+    </main>
+  )
 }
-
-export default HotelPage

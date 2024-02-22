@@ -12,12 +12,12 @@ export const ExperiencesQuery = groq`
     }
 `
 
-export const ExperiencesPathsQuery = groq`*[_type == "hotel" && defined(slug.current)][]{
+export const ExperiencesPathsQuery = groq`*[_type == "experience" && defined(slug.current)][]{
     "params": { "slug": slug.current }
   }
 `
 
-export const ExperienceQuery = groq`*[_type == "hotel" && slug.current == $slug][0]{
+export const ExperienceQuery = groq`*[_type == "experience" && slug.current == $slug][0]{
     ...
   }
 `
