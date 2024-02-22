@@ -13,7 +13,10 @@ export const Reviews = ({ reviews }: Props) => {
 
       <div className='grid grid-cols-2 gap-6'>
         {reviews.map(review => (
-          <div className='p-4 rounded-md border border-zinc-200 bg-zinc-50 flex flex-col'>
+          <div
+            key={review.rating + review.name + review.date}
+            className='p-4 rounded-md border border-zinc-200 bg-zinc-50 flex flex-col'
+          >
             <div className='flex mb-2'>
               {Array.from({ length: review.rating }, (_, index) => (
                 <AiFillStar key={index} className='fill-cyan-500 w-6 h-6' />
