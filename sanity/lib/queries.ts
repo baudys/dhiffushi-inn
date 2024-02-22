@@ -5,3 +5,8 @@ export const ReviewsQuery = groq`
         ...,
     } | order(date desc)
 `
+export const DivingQuery = groq`
+    *[_type=='diving'] {
+        ...,
+    }
+`
