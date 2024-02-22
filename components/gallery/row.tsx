@@ -14,10 +14,10 @@ export const Row = ({ images }: Props) => {
         return (
           <CarouselItem index={i} key={i}>
             <>
-              <div className='relative aspect-video w-[78vw] lg:w-[50vw] rounded'>
+              <div className='relative aspect-video w-[78vw] lg:w-[50vw] rounded mx-2'>
                 <img
                   src={image}
-                  className='absolute inset-0 w-full h-full object-cover roudned'
+                  className='absolute inset-0 w-full h-full object-cover'
                 />
               </div>
               <h2 className='font-medium'>title</h2>

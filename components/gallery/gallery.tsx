@@ -5,7 +5,7 @@ import { Title } from './title'
 
 export const Gallery = () => {
   return (
-    <Container className='space-y-20 md:space-y-40'>
+    <div className='space-y-20 md:space-y-40'>
       <section>
         <Title labelCz='Hotel a Okolí' labelEn='Hotel overview' />
         <Row images={hotelandoverview} />
@@ -22,6 +22,6 @@ export const Gallery = () => {
         <Title labelCz='Zážitky' labelEn='Experiences' />
         <Row images={hotelandoverview} />
       </section>
-    </Container>
+    </div>
   )
 }
