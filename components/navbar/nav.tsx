@@ -59,6 +59,7 @@ export const Nav = () => {
 
   const home = pathname === '/'
   const studio = pathname.includes('/studio')
+  const influencer = pathname.includes('/influencers')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,7 +80,7 @@ export const Nav = () => {
         isTopOfTheScreen
           ? 'bg-transparent'
           : 'bg-zinc-50/80 backdrop-blur-md border-b border-b-black/20 text-zinc-950',
-        home && isTopOfTheScreen && 'text-zinc-50',
+        (home || influencer) && isTopOfTheScreen && 'text-zinc-50',
         studio ? 'block bg-white' : 'fixed top-0'
       )}
     >
@@ -88,7 +89,7 @@ export const Nav = () => {
           <Link href='/' className='transition duration-300'>
             <img
               src={
-                home && isTopOfTheScreen
+                (home || influencer) && isTopOfTheScreen
                   ? '/logo/white.webp'
                   : '/logo/black.webp'
               }
