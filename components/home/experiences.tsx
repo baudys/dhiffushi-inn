@@ -29,7 +29,7 @@ export const Experiences = ({ experience }: Props) => {
           />
 
           <div className='relative z-10 p-8'>
-            <h2 className='font-medium text-white text-3xl'>
+            <h2 className='font-medium text-white text-3xl mb-2'>
               {language === 'cz' && experience.titleCz}
               {language === 'en' && experience.titleEn}
             </h2>
@@ -42,7 +42,7 @@ export const Experiences = ({ experience }: Props) => {
               {language === 'cz' && experience.daysCz}
               {language === 'en' && experience.daysEn}
             </p>
-            <p className='text-white text-lg'>
+            <p className='text-white text-lg mt-1'>
               od {language === 'cz' && experience.priceCz}
               {language === 'en' && experience.priceEn}
             </p>
