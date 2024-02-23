@@ -20,31 +20,43 @@ export const Experiences = ({ diving, relax, water, culture }: Props) => {
 
   return (
     <Container>
-      <div className='flex justify-between items-center'>
+      <div className='flex flex-col lg:flex-row justify-between items-center text-center mb-6'>
         <button
           onClick={() => setCategory('diving')}
-          className={cn('', category === 'diving' && 'font-bold')}
+          className={cn(
+            'px-2 py-1 rounded-md transition border border-zinc-100',
+            category === 'diving' && 'font-bold bg-zinc-100 border-zinc-200/60'
+          )}
         >
           {language === 'cz' && 'Potápění a šnorchlování'}
           {language === 'en' && 'Diving and Snorkeling'}
         </button>
         <button
           onClick={() => setCategory('relax')}
-          className={cn('', category === 'relax' && 'font-bold')}
+          className={cn(
+            'px-2 py-1 rounded-md transition border border-zinc-100',
+            category === 'relax' && 'font-bold bg-zinc-100 border-zinc-200/60'
+          )}
         >
           {language === 'cz' && 'Luxusní odpočinek na pláži'}
           {language === 'en' && 'Luxury Beach Relaxation'}
         </button>
         <button
           onClick={() => setCategory('water')}
-          className={cn('', category === 'water' && 'font-bold')}
+          className={cn(
+            'px-2 py-1 rounded-md transition border border-zinc-100',
+            category === 'water' && 'font-bold bg-zinc-100 border-zinc-200/60'
+          )}
         >
           {language === 'cz' && 'Vodní sporty'}
           {language === 'en' && 'Water Sports'}
         </button>
         <button
           onClick={() => setCategory('culture')}
-          className={cn('', category === 'culture' && 'font-bold')}
+          className={cn(
+            'px-2 py-1 rounded-md transition border border-zinc-100',
+            category === 'culture' && 'font-bold bg-zinc-100 border-zinc-200/60'
+          )}
         >
           {language === 'cz' && 'Kulturní zážitky'}
           {language === 'en' && 'Cultural Experiences'}

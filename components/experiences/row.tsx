@@ -20,13 +20,13 @@ export const Row = ({ data }: Props) => {
         return (
           <CarouselItem index={i} key={i} className='max-w-[400px]'>
             <Link href={`/experiences/${item.slug.current}`}>
-              <div className='relative aspect-[3/4] w-[400px] overflow-hidden'>
+              <div className='relative aspect-[3/4] w-[350px] sm:w-[400px] overflow-hidden'>
                 <img
                   src={urlForImage(item.image)}
                   className='absolute inset-0 w-full h-full object-cover hover:scale-110 transition duration-300'
                 />
               </div>
-              <h2 className='font-medium'>
+              <h2 className='font-medium text-xl sm:text-2xl my-2'>
                 {language === 'cz' && item.titleCz}
                 {language === 'en' && item.titleEn}
               </h2>
@@ -39,7 +39,7 @@ export const Row = ({ data }: Props) => {
                 {language === 'cz' && item.daysCz}
                 {language === 'en' && item.daysEn}
               </p>
-              <p className=''>
+              <p className='text-lg sm:text-xl mt-1'>
                 od {language === 'cz' && item.priceCz}
                 {language === 'en' && item.priceEn}
               </p>
