@@ -49,10 +49,14 @@ export const Detail = ({ experience }: Props) => {
             <ul className='list-disc list-inside text-sm ml-8 mt-1'>
               {language === 'cz' &&
                 experience.requirementsCz.length !== 0 &&
-                experience.requirementsCz.map((item: any) => <li>{item}</li>)}
+                experience.requirementsCz.map((item: any) => (
+                  <li key={item}>{item}</li>
+                ))}
               {language === 'en' &&
                 experience.requirementsEn.length !== 0 &&
-                experience.requirementsEn.map((item: any) => <li>{item}</li>)}
+                experience.requirementsEn.map((item: any) => (
+                  <li key={item}>{item}</li>
+                ))}
             </ul>
           </div>
 
@@ -65,10 +69,14 @@ export const Detail = ({ experience }: Props) => {
             <ul className='list-disc list-inside text-sm ml-8 mt-1'>
               {language === 'cz' &&
                 experience.bringCz.length !== 0 &&
-                experience.bringCz.map((item: any) => <li>{item}</li>)}
+                experience.bringCz.map((item: any) => (
+                  <li key={item}>{item}</li>
+                ))}
               {language === 'en' &&
                 experience.bringEn.length !== 0 &&
-                experience.bringEn.map((item: any) => <li>{item}</li>)}
+                experience.bringEn.map((item: any) => (
+                  <li key={item}>{item}</li>
+                ))}
             </ul>
           </div>
         </div>
