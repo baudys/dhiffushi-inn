@@ -18,7 +18,12 @@ export const Row = ({ data }: Props) => {
     <Carousel numOfSlides={3} loop={false}>
       {data.map((item, i) => {
         return (
-          <CarouselItem index={i} key={i} className='max-w-[400px]'>
+          <CarouselItem
+            index={i}
+            key={i}
+            className='max-w-[400px] mx-2'
+            fullOpacity
+          >
             <Link href={`/experiences/${item.slug.current}`}>
               <div className='relative aspect-[3/4] w-[350px] sm:w-[400px] overflow-hidden'>
                 <img

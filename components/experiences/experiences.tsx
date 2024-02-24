@@ -20,7 +20,7 @@ export const Experiences = ({ diving, relax, water, culture }: Props) => {
 
   return (
     <Container>
-      <div className='flex flex-col lg:flex-row justify-between items-center text-center mb-6'>
+      <div className='flex flex-col lg:flex-row justify-between items-center text-center'>
         <button
           onClick={() => setCategory('diving')}
           className={cn(
@@ -62,6 +62,8 @@ export const Experiences = ({ diving, relax, water, culture }: Props) => {
           {language === 'en' && 'Cultural Experiences'}
         </button>
       </div>
+
+      <hr className='w-full h-px bg-zinc-500/60 my-10' />
 
       {category === 'diving' && diving.length !== 0 && <Row data={diving} />}
       {category === 'relax' && relax.length !== 0 && <Row data={relax} />}

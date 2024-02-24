@@ -7,9 +7,15 @@ interface Props {
   index: number
   children: JSX.Element
   className?: string
+  fullOpacity?: boolean
 }
 
-const CarouselItem: React.FC<Props> = ({ children, index, className }) => {
+const CarouselItem: React.FC<Props> = ({
+  children,
+  index,
+  className,
+  fullOpacity,
+}) => {
   const { embla: emblaApi, selectedIndex } = useContext(CarouselContext)
   const isActive = selectedIndex === index
 
@@ -22,7 +28,7 @@ const CarouselItem: React.FC<Props> = ({ children, index, className }) => {
     <div
       className={`relative transition-opacity duration-300 ${
         isActive ? '!opacity-100' : 'opacity-40'
-      } ${className}`}
+      } ${fullOpacity && '!opacity-100'} ${className}`}
       onClick={handleClick}
     >
       {children}
