@@ -7,7 +7,7 @@ interface Props {
 
 export const ReviewsGrid = ({ reviews }: Props) => {
   return (
-    <Container className='flex flex-col gap-8 w-full sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[40%]'>
+    <Container className='grid md:grid-cols-2 gap-6 w-full'>
       {reviews.map((review: any) => (
         <div
           key={review.name + review.date}
