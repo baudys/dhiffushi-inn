@@ -3,6 +3,7 @@
 import ClassNames from 'embla-carousel-class-names'
 import useEmblaCarousel from 'embla-carousel-react'
 import React, { ReactNode, useCallback, useEffect, useState } from 'react'
+import { PrevButton, NextButton, usePrevNextButtons } from './arrows'
 
 interface ContextValue {
   embla: any | undefined
@@ -14,6 +15,7 @@ interface CarouselProps {
   children: ReactNode
   numOfSlides?: number
   loop?: boolean
+  arrows?: boolean
 }
 
 export const CarouselContext = React.createContext<ContextValue>({
@@ -26,6 +28,7 @@ const Carousel: React.FC<CarouselProps> = ({
   className,
   numOfSlides,
   loop = true,
+  arrows = false,
 }) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
 
@@ -39,6 +42,13 @@ const Carousel: React.FC<CarouselProps> = ({
     [ClassNames()]
   )
 
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick,
+  } = usePrevNextButtons(emblaApi)
+
   const onSelect = useCallback(() => {
     if (!emblaApi) return
     setSelectedIndex(emblaApi.selectedScrollSnap())
@@ -51,16 +61,33 @@ const Carousel: React.FC<CarouselProps> = ({
   }, [emblaApi, onSelect])
 
   return (
-    <CarouselContext.Provider value={{ embla: emblaApi, selectedIndex }}>
-      <div
-        ref={viewportRef}
-        className={`cursor-grab w-full overflow-hidden ${className}`}
-      >
-        <div className='select-none flex justify-start items-start'>
-          {children}
+    <section className='relative'>
+      <CarouselContext.Provider value={{ embla: emblaApi, selectedIndex }}>
+        <div
+          ref={viewportRef}
+          className={`cursor-grab w-full overflow-hidden ${className}`}
+        >
+          <div className='select-none flex justify-start items-start'>
+            {children}
+          </div>
         </div>
-      </div>
-    </CarouselContext.Provider>
+
+        {arrows && (
+          <>
+            <PrevButton
+              onClick={onPrevButtonClick}
+              disabled={prevBtnDisabled}
+              className='absolute -left-10 top-1/2 -translate-y-20'
+            />
+            <NextButton
+              onClick={onNextButtonClick}
+              disabled={nextBtnDisabled}
+              className='absolute -right-10 top-1/2 -translate-y-20'
+            />
+          </>
+        )}
+      </CarouselContext.Provider>
+    </section>
   )
 }
 
