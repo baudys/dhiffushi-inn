@@ -15,7 +15,7 @@ export const Row = ({ data }: Props) => {
   const { language } = useLanguage()
 
   return (
-    <Carousel numOfSlides={3} loop={false}>
+    <Carousel numOfSlides={3} loop={false} arrows>
       {data.map((item, i) => {
         return (
           <CarouselItem
