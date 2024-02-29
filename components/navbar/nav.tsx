@@ -39,6 +39,10 @@ export const Nav = () => {
       href: '/reviews',
     },
     {
+      label: 'FAQ',
+      href: '/faq',
+    },
+    {
       label: language === 'cz' ? 'Galerie' : language === 'en' ? 'Gallery' : '',
       href: '/gallery',
     },
@@ -58,8 +62,8 @@ export const Nav = () => {
   ]
 
   const home = pathname === '/'
-  const studio = pathname.includes('/studio')
-  const influencer = pathname.includes('/influencers')
+  const studio = pathname?.includes('/studio')
+  const influencer = pathname?.includes('/influencers')
 
   useEffect(() => {
     const handleScroll = () => {
