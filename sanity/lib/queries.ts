@@ -27,3 +27,13 @@ export const OldQuery = groq`
         ...,
     }
 `
+
+export const OldPathsQuery = groq`*[_type == "old" && defined(slug.current)][]{
+    "params": { "slug": slug.current }
+  }
+`
+
+export const OldItemQuery = groq`*[_type == "old" && slug.current == $slug][0]{
+    ...
+  }
+`

@@ -45,6 +45,16 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'guests',
+      title: 'Počet Hostů',
+      type: 'string',
+    }),
+    defineField({
+      name: 'beds',
+      title: 'Počet Postelí',
+      type: 'string',
+    }),
+    defineField({
       name: 'overviewCz',
       title: 'Přehled 🇨🇿',
       type: 'string',
@@ -53,6 +63,23 @@ export default defineType({
       name: 'overviewEn',
       title: 'Přehled 🇬🇧',
       type: 'string',
+    }),
+    defineField({
+      name: 'm2',
+      title: 'm2',
+      type: 'string',
+    }),
+    defineField({
+      name: 'includedCz',
+      title: 'Obsahuje 🇨🇿',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
+      name: 'includedEn',
+      title: 'Obsahuje 🇬🇧',
+      type: 'array',
+      of: [{ type: 'string' }],
     }),
   ],
   preview: {
