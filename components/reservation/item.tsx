@@ -12,7 +12,7 @@ export const Item = ({ room }: Props) => {
   const { language } = useLanguage()
 
   return (
-    <Link href={room.slug.current}>
+    <Link href={`/reservation/old/{room.slug.current}`}>
       <div className='aspect-square relative overflow-hidden rounded-3xl'>
         <img
           src={urlForImage(room.images[0])}
