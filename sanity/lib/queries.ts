@@ -21,3 +21,9 @@ export const ExperienceQuery = groq`*[_type == "experience" && slug.current == $
     ...
   }
 `
+
+export const OldQuery = groq`
+    *[_type=='old'] {
+        ...,
+    }
+`
