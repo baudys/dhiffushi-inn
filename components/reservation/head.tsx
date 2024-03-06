@@ -12,7 +12,8 @@ export const Head = ({ room }: Props) => {
     <div>
       <h2 className='font-semibold text-2xl mb-4'>
         {language === 'cz' && room.titleCz}
-        {language === 'en' && room.titleEn}
+        {language === 'en' && room.titleEn}{' '}
+        <span className='font-normal'>({room.m2}m2)</span>
       </h2>
       <div className='w-full relative overflow-hidden rounded-3xl h-[60vh]'>
         <img

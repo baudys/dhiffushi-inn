@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Quicksand } from 'next/font/google'
 import './globals.css'
 import { Nav } from '@/components/navbar/nav'
 import { Footer } from '@/components/footer/footer'
 import { Toaster } from '@/components/ui/sonner'
 
-const inter = Inter({ subsets: ['latin'] })
+const font = Quicksand({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Dhiffushi Inn',
@@ -19,7 +19,7 @@ export default function Layout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={font.className}>
         <Toaster richColors position='top-center' />
 
         <Nav />
