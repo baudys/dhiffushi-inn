@@ -26,7 +26,7 @@ export const Faq = () => {
           className='grid md:grid-cols-2 xl:grid-cols-3 gap-2 md:gap-10 xl:gap-20'
         >
           {faq.slice(0, 3).map(item => (
-            <AccordionItem value={item.value}>
+            <AccordionItem key={item.value} value={item.value}>
               <AccordionTrigger>
                 {language === 'cz' && item.qCz}
                 {language === 'en' && item.qEn}

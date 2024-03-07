@@ -18,7 +18,7 @@ export default function Page() {
       <Container>
         <Accordion type='multiple' className='lg:max-w-[50%] mx-auto'>
           {faq.map(item => (
-            <AccordionItem value={item.value}>
+            <AccordionItem key={item.value} value={item.value}>
               <AccordionTrigger>
                 {language === 'cz' && item.qCz}
                 {language === 'en' && item.qEn}
