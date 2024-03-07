@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/accordion'
 import { useLanguage } from '@/store/use-language'
 import { Title } from './title'
+import { faq } from '@/database/faq'
 
 export const Faq = () => {
   const { language } = useLanguage()
@@ -24,37 +25,18 @@ export const Faq = () => {
           type='multiple'
           className='grid md:grid-cols-2 xl:grid-cols-3 gap-2 md:gap-10 xl:gap-20'
         >
-          <AccordionItem value='duration'>
-            <AccordionTrigger>
-              {language === 'cz' && 'Jak dlouho trvá let na Maledivy?'}
-              {language === 'en' && ''}
-            </AccordionTrigger>
-            <AccordionContent>
-              {language === 'cz' &&
-                'Let na Maledivy trvá asi 13 hodin i s přestupem v Dubai.'}
-              {language === 'en' && ''}
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value='test'>
-            <AccordionTrigger>
-              {language === 'cz' && 'test'}
-              {language === 'en' && ''}
-            </AccordionTrigger>
-            <AccordionContent>
-              {language === 'cz' && 'test'}
-              {language === 'en' && ''}
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value='test2' className='md:hidden xl:block'>
-            <AccordionTrigger>
-              {language === 'cz' && 'test2'}
-              {language === 'en' && 'test2'}
-            </AccordionTrigger>
-            <AccordionContent>
-              {language === 'cz' && 'test2'}
-              {language === 'en' && 'test2'}
-            </AccordionContent>
-          </AccordionItem>
+          {faq.slice(0, 3).map(item => (
+            <AccordionItem value={item.value}>
+              <AccordionTrigger>
+                {language === 'cz' && item.qCz}
+                {language === 'en' && item.qEn}
+              </AccordionTrigger>
+              <AccordionContent>
+                {language === 'cz' && item.aCz}
+                {language === 'en' && item.aEn}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
         </Accordion>
       </Container>
     </section>

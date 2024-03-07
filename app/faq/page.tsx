@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import { faq } from '@/database/faq'
 import { useLanguage } from '@/store/use-language'
 
 export default function Page() {
@@ -16,27 +17,18 @@ export default function Page() {
     <main className='py-28'>
       <Container>
         <Accordion type='multiple' className='lg:max-w-[50%] mx-auto'>
-          <AccordionItem value='duration'>
-            <AccordionTrigger>
-              {language === 'cz' && 'Jak dlouho trvá let na Maledivy?'}
-              {language === 'en' && ''}
-            </AccordionTrigger>
-            <AccordionContent>
-              {language === 'cz' &&
-                'Let na Maledivy trvá asi 13 hodin i s přestupem v Dubai.'}
-              {language === 'en' && ''}
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value='test'>
-            <AccordionTrigger>
-              {language === 'cz' && 'test'}
-              {language === 'en' && ''}
-            </AccordionTrigger>
-            <AccordionContent>
-              {language === 'cz' && 'test'}
-              {language === 'en' && ''}
-            </AccordionContent>
-          </AccordionItem>
+          {faq.map(item => (
+            <AccordionItem value={item.value}>
+              <AccordionTrigger>
+                {language === 'cz' && item.qCz}
+                {language === 'en' && item.qEn}
+              </AccordionTrigger>
+              <AccordionContent>
+                {language === 'cz' && item.aCz}
+                {language === 'en' && item.aEn}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
         </Accordion>
       </Container>
     </main>

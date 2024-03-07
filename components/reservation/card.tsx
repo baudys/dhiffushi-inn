@@ -1,4 +1,5 @@
 import { useLanguage } from '@/store/use-language'
+import { Calendar } from './calendar'
 
 interface Props {
   room: any
@@ -7,7 +8,12 @@ interface Props {
   //   onChangeDate: (value: Range) => void
 }
 
-export const Card = ({ room }: Props) => {
+export const Card = ({
+  room,
+}: //   dateRange,
+//   disabledDates,
+//   onChangeDate,
+Props) => {
   const { language } = useLanguage()
 
   return (

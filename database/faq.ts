@@ -1,0 +1,58 @@
+export const faq = [
+  {
+    value: 'vizum',
+    qCz: 'Potřebuje se na návštěvu Malediv vízum?',
+    aCz: 'Ano, pokud plánujete zůstat déle než 30 dní. Je však vhodné kontaktovat místní úřady pro další informace ohledně případných omezení podle vaší státní příslušnosti.',
+    qEn: 'Do I need a visa to visit the Maldives?',
+    aEn: "Yes, if you plan to stay longer than 30 days. However, it's advisable to contact local authorities for further information on any restrictions that may apply to your nationality.",
+  },
+  {
+    value: 'cesta',
+    qCz: 'Jak se dostat z letiště na ostrov Dhiffushi?',
+    aCz: 'Můžete si pronajmout motorový člun.',
+    qEn: 'How can I get from the airport to Dhiffushi Island?',
+    aEn: 'You can rent a motorboat.',
+  },
+  {
+    value: 'pocasi',
+    qCz: 'Jaké je počasí na ostrově Dhiffushi?',
+    aCz: 'Očekávejte průměrné denní teploty kolem 30 °C po celý rok.',
+    qEn: 'What is the weather like on Dhiffushi Island?',
+    aEn: 'Expect average daily temperatures around 30°C throughout the year.',
+  },
+  {
+    value: 'klimatizace',
+    qCz: 'Jsou pokoje v penzionu Dhiffushi Inn vybaveny klimatizací?',
+    aCz: 'Ano, všechny naše pokoje mají klimatizaci.',
+    qEn: 'Are the rooms at Dhiffushi Inn air-conditioned?',
+    aEn: 'Yes, all our rooms have air conditioning.',
+  },
+  {
+    value: 'wifi',
+    qCz: 'Je na ostrově dostupný internet?',
+    aCz: 'Ano, máme vlastní WiFi síť pro naše hosty.',
+    qEn: 'Is there internet access on the island?',
+    aEn: 'Yes, we have our own WiFi network for our guests.',
+  },
+  {
+    value: 'komari',
+    qCz: 'Potřebuji nějaké očkování pro pobyt?',
+    aCz: 'Na Malediy není potřeba žádné očkování.',
+    qEn: 'Do I need any vaccinations for my stay?',
+    aEn: 'No vaccinations are required for the Maldives.',
+  },
+  {
+    value: 'mena',
+    qCz: 'Jakou měnu mohu na ostrově použít?',
+    aCz: 'Maledivské rufiyaa, americké dolary a eura.',
+    qEn: 'What currency can I use there?',
+    aEn: 'We accept Maldivian Rufiyaa, US dollars, and euros.',
+  },
+  {
+    value: 'alkohol',
+    qCz: 'Mohu si na ostrově koupit alkohol?',
+    aCz: 'Ne. Prodej alkoholu na Maledivách je zakázán.',
+    qEn: 'Can I buy alcohol on the island?',
+    aEn: 'No, alcohol sale is prohibited in the Maldives.',
+  },
+]
