@@ -81,6 +81,43 @@ export default defineType({
       type: 'array',
       of: [{ type: 'string' }],
     }),
+    defineField({
+      name: 'reservations',
+      title: 'Objednávky',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'name',
+              title: 'Jméno',
+              type: 'string',
+            },
+            {
+              name: 'email',
+              title: 'Email',
+              type: 'string',
+            },
+            {
+              name: 'telephone',
+              title: 'Telefonní Číslo',
+              type: 'string',
+            },
+            {
+              name: 'startDate',
+              title: 'Začáteční Datum',
+              type: 'datetime',
+            },
+            {
+              name: 'endDate',
+              title: 'Konečný Datum',
+              type: 'datetime',
+            },
+          ],
+        },
+      ],
+    }),
   ],
   preview: {
     select: {
