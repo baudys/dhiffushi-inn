@@ -6,22 +6,20 @@ export default function Page() {
     <main className='pt-32 pb-24'>
       <Container className='grid md:grid-cols-2 gap-4 md:gap-10'>
         <Link href='/reservation/old'>
-          <div className='aspect-video rounded-3xl relative overflow-hidden w-full h-full'>
+          <div className='aspect-square rounded-3xl relative overflow-hidden'>
             <img
-              src='/flags/cz.webp'
-              className='absolute inset-0 w-full h-full rounded-3xl hover:scale-110 transition'
+              src='/reservation/old.webp'
+              className='absolute inset-0 w-full h-full rounded-3xl hover:scale-110 transition object-cover'
             />
           </div>
-          <h2>OLD</h2>
         </Link>
         <Link href='/reservation/new'>
-          <div className='aspect-video rounded-3xl relative overflow-hidden w-full h-full'>
+          <div className='aspect-square rounded-3xl relative overflow-hidden'>
             <img
-              src='/flags/en.webp'
-              className='absolute inset-0 w-full h-full rounded-3xl hover:scale-110 transition'
+              src='/reservation/new.webp'
+              className='absolute inset-0 w-full h-full rounded-3xl hover:scale-110 transition object-cover'
             />
           </div>
-          <h2>NEW</h2>
         </Link>
       </Container>
     </main>
