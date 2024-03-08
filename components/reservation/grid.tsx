@@ -9,7 +9,7 @@ export const Grid = ({ rooms }: Props) => {
   return (
     <Container className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
       {rooms.map(room => (
-        <Item key={room.href.current} room={room} />
+        <Item key={room.slug.current} room={room} />
       ))}
     </Container>
   )
