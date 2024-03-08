@@ -9,7 +9,7 @@ export const Influencer = () => {
   const { language } = useLanguage()
 
   return (
-    <div className='relative bg-[url(https://images.pexels.com/photos/4077276/pexels-photo-4077276.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)] bg-cover'>
+    <div className='relative bg-[url(/influencer/hero.webp)] bg-cover'>
       <div className='absolute inset-0 bg-black/65' />
       <Container className='py-72 flex flex-col md:flex-row justify-between items-center relative z-10'>
         <div>

@@ -9,15 +9,11 @@ const Hero = () => {
   return (
     <section>
       <div className='sticky top-0 flex h-[90vh] lg:min-h-screen'>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        <img
+          src='/influencer/hero.webp'
+          alt='hero'
           className='absolute object-cover w-full h-full'
-        >
-          <source src='https://cdn.coverr.co/videos/coverr-man-scrolling-through-his-instagram-feed-4477/1080p.mp4' />
-        </video>
+        />
 
         <div className='absolute top-0 left-0 flex w-full h-full pt-32 bg-black/60 lg:pt-0 lg:items-center lg:justify-center'>
           <Container>
