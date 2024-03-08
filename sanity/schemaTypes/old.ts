@@ -55,6 +55,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'bathrooms',
+      title: 'Počet Koupelen',
+      type: 'string',
+    }),
+    defineField({
       name: 'overviewCz',
       title: 'Přehled 🇨🇿',
       type: 'string',
