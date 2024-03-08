@@ -61,9 +61,7 @@ export const Nav = () => {
     },
   ]
 
-  const home = pathname === '/'
   const studio = pathname?.includes('/studio')
-  const influencer = pathname?.includes('/influencers')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,26 +78,17 @@ export const Nav = () => {
   return (
     <nav
       className={cn(
-        'z-[999] w-full py-5 transition duration-300',
+        'z-[999] w-full py-5 transition duration-300 text-zinc-50',
         isTopOfTheScreen
           ? 'bg-transparent'
-          : 'bg-zinc-50/80 backdrop-blur-md border-b border-b-black/20 text-zinc-950',
-        (home || influencer) && isTopOfTheScreen && 'text-zinc-50',
+          : 'bg-cyan-600/90 backdrop-blur-lg border-b border-b-black/20',
         studio ? 'block bg-white' : 'fixed top-0'
       )}
     >
       <Container>
         <div className='flex items-center justify-between'>
           <Link href='/' className='transition duration-300'>
-            <img
-              src={
-                (home || influencer) && isTopOfTheScreen
-                  ? '/logo/white.webp'
-                  : '/logo/black.webp'
-              }
-              alt='logo'
-              className='h-12'
-            />
+            <img src='/logo/white.webp' alt='logo' className='h-12' />
           </Link>
 
           <div className='flex items-center gap-2 lg:gap-10'>
@@ -116,7 +105,7 @@ export const Nav = () => {
               className='lg:hidden cursor-pointer'
             />
 
-            <LanguageSelector isTopOfTheScreen={isTopOfTheScreen} home={home} />
+            <LanguageSelector />
           </div>
         </div>
       </Container>
