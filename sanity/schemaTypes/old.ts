@@ -120,6 +120,17 @@ export default defineType({
               type: 'datetime',
             },
             {
+              name: 'priceCz',
+              title: 'Cena 🇨🇿',
+              type: 'string',
+            },
+            {
+              name: 'priceEn',
+              title: 'Cena 🇬🇧',
+              type: 'string',
+            },
+
+            {
               name: 'message',
               title: 'Zpráva',
               type: 'string',
