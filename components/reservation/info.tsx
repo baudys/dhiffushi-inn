@@ -17,25 +17,46 @@ export const Info = ({ room }: Props) => {
 
   return (
     <section>
-      <div className='inline-flex gap-x-2 text-zinc-800'>
-        <p>
-          {room.guests} {language === 'cz' && 'hosté'}
-          {language === 'en' && 'guests'}
-        </p>
-        <p>•</p>
-        <p>
-          {room.beds} {room.beds === '1' && language === 'cz' && 'postel'}
-          {room.beds !== '1' && language === 'cz' && 'postele'}
-          {room.beds === '1' && language === 'en' && 'bed'}
-          {room.beds !== '1' && language === 'en' && 'beds'}
-        </p>
-        <p>•</p>
-        <p>
-          {room.bathrooms}{' '}
-          {room.bathrooms === '1' && language === 'cz' && 'koupelna'}
-          {room.bathrooms !== '1' && language === 'cz' && 'koupelny'}
-          {room.bathrooms === '1' && language === 'en' && 'bathroom'}
-          {room.bathrooms !== '1' && language === 'en' && 'bathrooms'}
+      <div className='flex justify-between'>
+        <div className='inline-flex gap-x-2 text-zinc-800'>
+          <p>
+            {room.guests} {language === 'cz' && 'hosté'}
+            {language === 'en' && 'guests'}
+          </p>
+          <p>•</p>
+          <p>
+            {room.beds} {room.beds === '1' && language === 'cz' && 'postel'}
+            {room.beds !== '1' && language === 'cz' && 'postele'}
+            {room.beds === '1' && language === 'en' && 'bed'}
+            {room.beds !== '1' && language === 'en' && 'beds'}
+          </p>
+          <p>•</p>
+          <p>
+            {room.bathrooms}{' '}
+            {room.bathrooms === '1' && language === 'cz' && 'koupelna'}
+            {room.bathrooms !== '1' && language === 'cz' && 'koupelny'}
+            {room.bathrooms === '1' && language === 'en' && 'bathroom'}
+            {room.bathrooms !== '1' && language === 'en' && 'bathrooms'}
+          </p>
+        </div>
+        <p className='text-zinc-950 text-lg font-semibold'>
+          {language === 'cz' && (
+            <>
+              <span className='text-zinc-800 text-sm'>od </span> {room.priceCz}{' '}
+              Kč
+              <span className='text-zinc-600 text-sm font-light'>
+                {' '}
+                / noc
+              </span>{' '}
+            </>
+          )}
+          {language === 'en' && (
+            <>
+              <span className='text-zinc-800 text-sm'>starting at </span> $
+              {room.priceEn}
+              <span className='text-zinc-600 text-sm font-light'> / night</span>
+            </>
+          )}
         </p>
       </div>
 
