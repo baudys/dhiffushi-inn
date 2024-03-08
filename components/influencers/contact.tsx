@@ -27,7 +27,7 @@ const Contact = () => {
   const schema = z.object({
     name: z.string({
       required_error:
-        language === 'cz' ? 'Celé Jméno z je povinné' : 'Full Name is required',
+        language === 'cz' ? 'Celé Jméno je povinné' : 'Full Name is required',
     }),
     email: z
       .string({

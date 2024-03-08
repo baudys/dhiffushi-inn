@@ -7,6 +7,7 @@ import { differenceInDays } from 'date-fns'
 import { MinusCircle, PlusCircle } from 'lucide-react'
 import { Separator } from '../ui/separator'
 import { Button } from '../ui/button'
+import Link from 'next/link'
 
 interface Props {
   room: any
@@ -116,13 +117,15 @@ export const Card = ({ room }: Props) => {
 
           <Separator className='my-5' />
 
-          <Button
-            className='bg-cyan-500 hover:bg-cyan-500 w-full font-bold text-lg'
-            size='lg'
-          >
-            {language === 'cz' && 'Rezervovat'}
-            {language === 'en' && 'Reserve'}
-          </Button>
+          <Link href={`/reservation/contact`}>
+            <Button
+              className='bg-cyan-500 hover:bg-cyan-500 w-full font-bold text-lg'
+              size='lg'
+            >
+              {language === 'cz' && 'Rezervovat'}
+              {language === 'en' && 'Reserve'}
+            </Button>
+          </Link>
         </>
       )}
     </div>

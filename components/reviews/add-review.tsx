@@ -36,8 +36,14 @@ export const AddReview = () => {
   const { language } = useLanguage()
 
   const schema = z.object({
-    name: z.string().min(1, { message: 'Vyplňte svoje jméno.' }),
-    text: z.string(),
+    name: z.string({
+      required_error:
+        language === 'cz' ? 'Celé Jméno je povinné' : 'Full Name is required',
+    }),
+    text: z.string({
+      required_error:
+        language === 'cz' ? 'Hodnocení je povinné' : 'Rating is required',
+    }),
   })
 
   const form = useForm<z.infer<typeof schema>>({

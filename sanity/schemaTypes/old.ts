@@ -119,6 +119,11 @@ export default defineType({
               title: 'Konečný Datum',
               type: 'datetime',
             },
+            {
+              name: 'message',
+              title: 'Zpráva',
+              type: 'string',
+            },
           ],
         },
       ],
