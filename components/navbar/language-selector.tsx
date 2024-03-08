@@ -24,7 +24,12 @@ const languages = [
   },
 ]
 
-const LanguageSelector = () => {
+interface Props {
+  isTopOfTheScreen: boolean
+  home: boolean
+}
+
+const LanguageSelector = ({ isTopOfTheScreen, home }: Props) => {
   const { language, imgSrc, setLanguage } = useLanguage(state => state)
 
   const [open, setOpen] = useState<boolean>(false)
@@ -37,7 +42,12 @@ const LanguageSelector = () => {
           role='combobox'
           name='language selector'
           aria-expanded={open}
-          className='w-[70px] border-none justify-between bg-transparent gap-2 text-zinc-100 hover:text-zinc-200'
+          className={cn(
+            'w-[70px] border-none justify-between bg-transparent gap-2',
+            home && isTopOfTheScreen
+              ? 'text-zinc-100 hover:text-zinc-200'
+              : 'text-zinc-900 hover:text-zinc-800'
+          )}
         >
           <Image src={imgSrc(language)} width={30} height={30} alt={language} />
           <ChevronsUpDown className='w-4 h-4 my-2 opacity-90 shrink-0' />
