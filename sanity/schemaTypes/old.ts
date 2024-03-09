@@ -35,6 +35,16 @@ export default defineType({
       ],
     }),
     defineField({
+      name: 'tagCz',
+      title: 'Štítek 🇨🇿',
+      type: 'string',
+    }),
+    defineField({
+      name: 'tagEn',
+      title: 'Štítek 🇬🇧',
+      type: 'string',
+    }),
+    defineField({
       name: 'priceCz',
       title: 'Cena 🇨🇿',
       type: 'string',
