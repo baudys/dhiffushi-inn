@@ -50,7 +50,7 @@ export const Card = ({ room }: Props) => {
         mode='range'
         selected={range}
         onSelect={setRange}
-        className='rounded-md border mt-4'
+        className='rounded-md border'
       />
       <div className='flex justify-between items-center mt-4'>
         <p>
