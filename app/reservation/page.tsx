@@ -11,7 +11,7 @@ export default function Page() {
       <Container>
         <h1 className='text-3xl md:text-4xl lg:text-5xl font-semibold pb-4'>
           {language === 'cz' && 'Vyberte si penzion'}
-          {language === 'en' && 'Choose your pension'}
+          {language === 'en' && 'Choose your guesthouse'}
         </h1>
         <div className='grid md:grid-cols-2 gap-4 md:gap-10'>
           <Link href='/reservation/old'>

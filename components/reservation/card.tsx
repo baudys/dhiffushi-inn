@@ -33,7 +33,9 @@ export const Card = ({ room }: Props) => {
   const [range, setRange] = useState<any>()
   const [numOfDays, setNumOfDays] = useState(0)
 
-  setRoomId(room._id)
+  useEffect(() => {
+    setRoomId(room._id)
+  }, [])
 
   useEffect(() => {
     const days = differenceInDays(range?.to, range?.from)
