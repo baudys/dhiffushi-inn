@@ -88,7 +88,7 @@ export const Nav = () => {
         'z-[999] w-full py-5 transition duration-300',
         isTopOfTheScreen
           ? 'bg-transparent'
-          : 'bg-cyan-300/80 backdrop-blur-md border-b border-b-black/20 text-zinc-950',
+          : 'bg-cyan-300/80 backdrop-blur-md border-b border-b-zinc-500/20 text-zinc-950 shadow-md',
         (home || influencer) && isTopOfTheScreen && 'text-zinc-50',
         studio ? 'block bg-white' : 'fixed top-0'
       )}
