@@ -24,8 +24,8 @@ export const faq = [
     value: 'plaz',
     qCz: 'Jak vypadá pláž u penzionu?',
     aCz: 'Pláž je udržovaná v čistotě, máme zde vlastní lehátka a je zde malá hloubka.',
-    qEn: '',
-    aEn: '',
+    qEn: 'What does the beach look like at the guesthouse?',
+    aEn: 'The beach is kept clean, we have our own sunbeds and there is little depth.',
   },
   {
     value: 'klimatizace',
@@ -66,7 +66,7 @@ export const faq = [
     value: 'obchod',
     qCz: 'Je na ostrově nějaký obchod?',
     aCz: 'Ano, je tu několik menších kráméčků, kde se dají koupit základní potraviny nebo kosmetika',
-    qEn: '',
-    aEn: '',
+    qEn: 'Is there a shop on the island?',
+    aEn: 'Yes, there are several small shops where you can buy basic food or cosmetics',
   },
 ]
