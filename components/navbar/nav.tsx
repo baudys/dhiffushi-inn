@@ -90,7 +90,7 @@ export const Nav = () => {
           ? 'bg-transparent'
           : 'bg-cyan-300/80 backdrop-blur-md border-b border-b-zinc-500/20 text-zinc-950 shadow-md',
         (home || influencer) && isTopOfTheScreen && 'text-zinc-50',
-        studio ? 'block bg-white' : 'fixed top-0'
+        studio ? 'block bg-cyan-300' : 'fixed top-0'
       )}
     >
       <Container>
