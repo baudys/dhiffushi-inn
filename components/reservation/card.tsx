@@ -88,22 +88,24 @@ export const Card = ({ room }: Props) => {
           />
         </div>
       </div>
-      <div className='flex justify-between items-center select-none'>
-        <p>{language === 'cz' ? 'Děti' : 'Children'}</p>
-        <div className='flex gap-2 items-center'>
-          <MinusCircle
-            onClick={handleDecrementChildren}
-            size={16}
-            className='cursor-pointer'
-          />
-          <span className='select-none'>{children}</span>
-          <PlusCircle
-            onClick={handleIncrementChildren}
-            size={16}
-            className='cursor-pointer'
-          />
+      {room.maxChildren !== '0' && (
+        <div className='flex justify-between items-center select-none'>
+          <p>{language === 'cz' ? 'Děti' : 'Children'}</p>
+          <div className='flex gap-2 items-center'>
+            <MinusCircle
+              onClick={handleDecrementChildren}
+              size={16}
+              className='cursor-pointer'
+            />
+            <span className='select-none'>{children}</span>
+            <PlusCircle
+              onClick={handleIncrementChildren}
+              size={16}
+              className='cursor-pointer'
+            />
+          </div>
         </div>
-      </div>
+      )}
 
       {numOfDays > 0 && (
         <>
