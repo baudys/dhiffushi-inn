@@ -10,8 +10,8 @@ export default function Page() {
     <main className='pt-32 pb-24'>
       <Container>
         <h1 className='text-3xl md:text-4xl lg:text-5xl font-semibold pb-4'>
-          {language === 'cz' && 'Vyberte si hotel'}
-          {language === 'en' && 'Choose your hotel'}
+          {language === 'cz' && 'Vyberte si penzion'}
+          {language === 'en' && 'Choose your pension'}
         </h1>
         <div className='grid md:grid-cols-2 gap-4 md:gap-10'>
           <Link href='/reservation/old'>
