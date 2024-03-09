@@ -1,14 +1,12 @@
-'use client'
-
-import { useLanguage } from '@/store/use-language'
-import { Calendar } from '../ui/calendar'
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import { differenceInDays } from 'date-fns'
 import { MinusCircle, PlusCircle } from 'lucide-react'
 import { Separator } from '../ui/separator'
 import { Button } from '../ui/button'
 import Link from 'next/link'
 import { useReservation } from '@/store/use-reservation'
+import { Calendar } from '../ui/calendar'
+import { useLanguage } from '@/store/use-language'
 
 interface Props {
   room: any
@@ -39,9 +37,7 @@ export const Card = ({ room }: Props) => {
 
   useEffect(() => {
     const days = differenceInDays(range?.to, range?.from)
-
     setNumOfDays(days)
-
     setPriceCz(days * room.priceCz * (adults + children))
     setPriceEn(days * room.priceEn * (adults + children))
   }, [range, adults, children])
@@ -51,6 +47,22 @@ export const Card = ({ room }: Props) => {
     setEndDate(range?.to)
   }, [range?.from, range?.to])
 
+  const handleDecrementAdults = () => {
+    setAdults(Math.max(0, adults - 1))
+  }
+
+  const handleIncrementAdults = () => {
+    setAdults(Math.min(room.maxAdults, adults + 1))
+  }
+
+  const handleDecrementChildren = () => {
+    setChildren(Math.max(0, children - 1))
+  }
+
+  const handleIncrementChildren = () => {
+    setChildren(Math.min(room.maxChildren, children + 1))
+  }
+
   return (
     <div className='sticky top-28 left-0 self-start shadow-lg bg-zinc-100 border border-zinc-400/50 p-4 rounded-xl'>
       <Calendar
@@ -59,72 +71,60 @@ export const Card = ({ room }: Props) => {
         onSelect={setRange}
         className='rounded-md border'
       />
-      <div className='flex justify-between items-center mt-4'>
-        <p>
-          {language === 'cz' && 'Dospělí'}
-          {language === 'en' && 'Adults'}
-        </p>
+
+      <div className='flex justify-between items-center mt-4 select-none'>
+        <p>{language === 'cz' ? 'Dospělí' : 'Adults'}</p>
         <div className='flex gap-2 items-center'>
           <MinusCircle
-            onClick={() => setAdults(adults === 1 ? 1 : adults - 1)}
+            onClick={handleDecrementAdults}
             size={16}
             className='cursor-pointer'
           />
           <span className='select-none'>{adults}</span>
           <PlusCircle
-            onClick={() => setAdults(adults + 1)}
+            onClick={handleIncrementAdults}
             size={16}
             className='cursor-pointer'
           />
         </div>
       </div>
-      <div className='flex justify-between items-center'>
-        <p>
-          {language === 'cz' && 'Děti'}
-          {language === 'en' && 'Children'}
-        </p>
+      <div className='flex justify-between items-center select-none'>
+        <p>{language === 'cz' ? 'Děti' : 'Children'}</p>
         <div className='flex gap-2 items-center'>
           <MinusCircle
-            onClick={() => setChildren(children === 0 ? 0 : children - 1)}
+            onClick={handleDecrementChildren}
             size={16}
             className='cursor-pointer'
           />
           <span className='select-none'>{children}</span>
           <PlusCircle
-            onClick={() => setChildren(children + 1)}
+            onClick={handleIncrementChildren}
             size={16}
             className='cursor-pointer'
           />
         </div>
       </div>
+
       {numOfDays > 0 && (
         <>
           <Separator className='my-4' />
-
           <p className='text-xl'>
-            {language === 'cz' && (
-              <span className='flex items-center justify-between'>
-                <b>celkem</b>
-                <b>{priceCz.toLocaleString('cs')} Kč</b>
-              </span>
-            )}
-            {language === 'en' && (
-              <span className='flex items-center justify-between'>
-                <b>total</b>
-                <b>${priceEn.toLocaleString('en')}</b>
-              </span>
-            )}
+            <span className='flex items-center justify-between'>
+              <b>{language === 'cz' ? 'celkem' : 'total'}</b>
+              <b>
+                {language === 'cz'
+                  ? `${priceCz.toLocaleString('cs')} Kč`
+                  : `$${priceEn.toLocaleString('en')}`}
+              </b>
+            </span>
           </p>
-
           <Separator className='my-4' />
-
-          <Link href={`/reservation/contact`}>
+          <Link href='/reservation/contact'>
             <Button
               className='bg-cyan-500 hover:bg-cyan-500 w-full font-bold text-lg'
               size='lg'
             >
-              {language === 'cz' && 'Rezervovat'}
-              {language === 'en' && 'Reserve'}
+              {language === 'cz' ? 'Rezervovat' : 'Reserve'}
             </Button>
           </Link>
         </>

@@ -16,9 +16,9 @@ interface ReservationStore {
   endDate: any
   setEndDate: (date: any) => void
   adults: number
-  setAdults: (adults: number) => void
+  setAdults: (adults: any) => any
   children: number
-  setChildren: (children: number) => void
+  setChildren: (children: any) => any
   priceCz: number
   setPriceCz: (price: number) => void
   priceEn: number

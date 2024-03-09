@@ -36,7 +36,7 @@ export const Contact = () => {
     email: z
       .string({
         required_error:
-          language === 'cz' ? 'E-mail je povinn ' : 'E-mail is required',
+          language === 'cz' ? 'E-mail je povinný' : 'E-mail is required',
       })
       .email({
         message: language === 'cz' ? 'Neplatný E-mail' : 'Invalid E-mail',
@@ -82,30 +82,32 @@ export const Contact = () => {
 
     addReservation(roomId, reservationData)
 
-    try {
-      const emailResponse = await emailjs.send(
-        process.env.NEXT_PUBLIC_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID_CREATORS!,
-        data,
-        process.env.NEXT_PUBLIC_PUBLIC_API!
-      )
+    form.reset()
 
-      console.log(emailResponse)
+    //     try {
+    //       const emailResponse = await emailjs.send(
+    //         process.env.NEXT_PUBLIC_SERVICE_ID!,
+    //         process.env.NEXT_PUBLIC_TEMPLATE_ID_CREATORS!,
+    //         data,
+    //         process.env.NEXT_PUBLIC_PUBLIC_API!
+    //       )
 
-      toast.success(
-        language === 'cz' ? 'Úspěšně odesláno.' : 'Sent Successfully.'
-      )
-    } catch (error) {
-      console.log('Error sending email:', error)
+    //       console.log(emailResponse)
 
-      toast.error(
-        language === 'cz'
-          ? 'Něco se pokazilo, zkuste to prosím později.'
-          : 'Something went wrong, please try again later.'
-      )
-    } finally {
-      form.reset()
-    }
+    //       toast.success(
+    //         language === 'cz' ? 'Úspěšně odesláno.' : 'Sent Successfully.'
+    //       )
+    //     } catch (error) {
+    //       console.log('Error sending email:', error)
+
+    //       toast.error(
+    //         language === 'cz'
+    //           ? 'Něco se pokazilo, zkuste to prosím později.'
+    //           : 'Something went wrong, please try again later.'
+    //       )
+    //     } finally {
+    //       form.reset()
+    //     }
   }
 
   return (
@@ -145,6 +147,27 @@ export const Contact = () => {
                     <FormControl>
                       <Input
                         placeholder='email@email.com'
+                        {...field}
+                        className='border-zinc-600'
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                name='phone'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>
+                      {language === 'cz'
+                        ? '* Telefonní Číslo'
+                        : '* Phone Number'}
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        type='text'
+                        placeholder='+420 123 456 789'
                         {...field}
                         className='border-zinc-600'
                       />

@@ -60,6 +60,16 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'maxAdults',
+      title: 'Maximální Počet Dospělých',
+      type: 'string',
+    }),
+    defineField({
+      name: 'maxChildren',
+      title: 'Maximální Počet Dětí',
+      type: 'string',
+    }),
+    defineField({
       name: 'beds',
       title: 'Počet Postelí',
       type: 'string',
@@ -115,7 +125,7 @@ export default defineType({
               type: 'string',
             },
             {
-              name: 'telephone',
+              name: 'phone',
               title: 'Telefonní Číslo',
               type: 'string',
             },
@@ -130,13 +140,23 @@ export default defineType({
               type: 'datetime',
             },
             {
+              name: 'adults',
+              title: 'Dospělí',
+              type: 'string',
+            },
+            {
+              name: 'children',
+              title: 'Děti',
+              type: 'string',
+            },
+            {
               name: 'priceCz',
-              title: 'Cena 🇨🇿',
+              title: 'Cena Kč 🇨🇿',
               type: 'string',
             },
             {
               name: 'priceEn',
-              title: 'Cena 🇬🇧',
+              title: 'Cena $ 🇬🇧',
               type: 'string',
             },
 
