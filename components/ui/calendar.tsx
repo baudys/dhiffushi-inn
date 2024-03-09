@@ -24,6 +24,7 @@ function Calendar({
       locale={language === 'cz' ? cs : enUS}
       weekStartsOn={1}
       showOutsideDays={showOutsideDays}
+      disabled={{ before: new Date() }}
       className={cn('p-2', className)}
       classNames={{
         months:
