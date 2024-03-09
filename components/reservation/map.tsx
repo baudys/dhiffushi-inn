@@ -49,8 +49,8 @@ const Map = () => {
       >
         <Popup>
           <h3 className='text-lg font-bold'>
-            {language === 'cz' && 'Starý Hotel'}
-            {language === 'en' && 'Old Hotel'}
+            {language === 'cz' && 'Starý Penzion'}
+            {language === 'en' && 'Old Guesthouse'}
           </h3>
         </Popup>
       </Marker>
@@ -63,8 +63,8 @@ const Map = () => {
       >
         <Popup>
           <h3 className='text-lg font-bold'>
-            {language === 'cz' && 'Nový Hotel'}
-            {language === 'en' && 'New Hotel'}
+            {language === 'cz' && 'Nový Penzion'}
+            {language === 'en' && 'New Guesthouse'}
           </h3>
         </Popup>
       </Marker>
