@@ -36,8 +36,8 @@ export const Footer = () => {
         </div>
 
         <p className='mt-12 text-xs text-center text-light md:text-base sm:mt-4'>
-          &copy;{new Date().getFullYear()} Dhiffushi Inn
-          {language === 'cs' && <> Všechna práva vyhrazena.</>}
+          &copy;{new Date().getFullYear()} Dhiffushi Inn.
+          {language === 'cz' && <> Všechna práva vyhrazena.</>}
           {language === 'en' && <> All rights reserved.</>}
         </p>
       </Container>
