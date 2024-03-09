@@ -4,7 +4,7 @@ import { urlForImage } from '@/sanity/lib/image'
 import { Container } from '../container'
 import { Title } from './title'
 import { useLanguage } from '@/store/use-language'
-import { Calendar, Timer } from 'lucide-react'
+import { Timer } from 'lucide-react'
 import Link from 'next/link'
 
 interface Props {
@@ -37,12 +37,7 @@ export const Experiences = ({ experience }: Props) => {
               <Timer size={18} />
               {experience.duration}
             </p>
-            <p className='text-sm text-zinc-400 flex experiences-center gap-1'>
-              <Calendar size={18} />
-              {language === 'cz' && experience.daysCz}
-              {language === 'en' && experience.daysEn}
-            </p>
-            <p className='text-white text-lg mt-1'>
+            <p className='text-white text-lg'>
               od {language === 'cz' && experience.priceCz}
               {language === 'en' && experience.priceEn}
             </p>
