@@ -13,7 +13,7 @@ export const Detail = ({ experience }: Props) => {
   const { language } = useLanguage()
 
   return (
-    <Container className='space-y-20 lg:space-y-40 xl:space-y-60'>
+    <Container className='space-y-20 lg:space-y-40'>
       <section>
         <div className='relative aspect-video overflow-hidden'>
           <img
@@ -22,6 +22,7 @@ export const Detail = ({ experience }: Props) => {
             className='absolute inset-0'
           />
         </div>
+
         <div>
           <h1 className='text-2xl md:text-3xl lg:text-4xl mb-1 lg:mb-2 mt-4 font-semibold'>
             {language === 'cz' && experience.titleCz}
@@ -32,42 +33,32 @@ export const Detail = ({ experience }: Props) => {
             {language === 'en' && experience.overviewEn}
           </p>
         </div>
-      </section>
 
-      <section className='grid grid-cols-3'>
-        <div>
-          <h2>
-            {language === 'cz' && 'Dostupnost'}
-            {language === 'en' && 'Availability'}
-          </h2>
-          <p className='font-semibold text-xl md:text-2xl'>
-            {language === 'cz' && experience.daysCz}
-            {language === 'en' && experience.daysEn}
-          </p>
-        </div>
-        <div className='place-self-center'>
-          <h2>
-            {language === 'cz' && 'Doba Trvání'}
-            {language === 'en' && 'Duration'}
-          </h2>
-          <p className='font-semibold text-xl md:text-2xl'>
-            {experience.duration}
-          </p>
-        </div>
-        <div className='place-self-end'>
-          <h2>
-            {language === 'cz' && 'Cena'}
-            {language === 'en' && 'Price'}
-          </h2>
-          <p className='font-semibold text-xl md:text-2xl'>
-            {language === 'cz' && experience.priceCz}
-            {language === 'en' && experience.priceEn}
-          </p>
+        <div className='flex flex-col md:flex-row gap-4 md:gap-16 mt-10'>
+          <div>
+            <h2>
+              {language === 'cz' && 'Doba Trvání'}
+              {language === 'en' && 'Duration'}
+            </h2>
+            <p className='font-semibold text-xl md:text-2xl'>
+              {experience.duration}
+            </p>
+          </div>
+          <div>
+            <h2>
+              {language === 'cz' && 'Cena'}
+              {language === 'en' && 'Price'}
+            </h2>
+            <p className='font-semibold text-xl md:text-2xl'>
+              {language === 'cz' && experience.priceCz}
+              {language === 'en' && experience.priceEn}
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className='grid md:grid-cols-[1fr_3fr] gap-2 md:gap-20'>
-        <h2 className='uppercase text-xl md:text-2xl  text-zinc-500'>
+      <section>
+        <h2 className='uppercase text-xl md:text-2xl  text-zinc-500 mb-4'>
           {language === 'cz' && 'Co je nutné vědět'}
           {language === 'en' && 'Things to know'}
         </h2>
