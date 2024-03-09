@@ -133,7 +133,7 @@ const Contact = () => {
 
       toast.error(
         language === 'cz'
-          ? 'Něco se pokazilo, zkuste to prosím později.'
+          ? 'Něco se pokazilo, zkus to prosím později.'
           : 'Something went wrong, please try again later.'
       )
     } finally {

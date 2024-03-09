@@ -1,12 +1,16 @@
 import { create } from 'zustand'
 
 interface ReservationStore {
+  roomId: string
+  setRoomId: (roomId: string) => void
   name: string
   setName: (name: string) => void
   email: string
   setEmail: (name: string) => void
   telephone: string
   setTelephone: (name: string) => void
+  message: string
+  setMessage: (message: string) => void
   startDate: any
   setStartDate: (date: any) => void
   endDate: any
@@ -22,12 +26,16 @@ interface ReservationStore {
 }
 
 export const useReservation = create<ReservationStore>(set => ({
+  roomId: '',
+  setRoomId: roomId => set({ roomId }),
   name: '',
   setName: name => set({ name }),
   email: '',
   setEmail: email => set({ email }),
   telephone: '',
   setTelephone: telephone => set({ telephone }),
+  message: '',
+  setMessage: message => set({ message }),
   startDate: '',
   setStartDate: startDate => set({ startDate }),
   endDate: '',

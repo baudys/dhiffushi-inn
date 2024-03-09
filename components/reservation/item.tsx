@@ -24,6 +24,10 @@ export const Item = ({ room }: Props) => {
         {language === 'cz' && room.titleCz}
         {language === 'en' && room.titleEn}
       </h2>
+      <p className='text-zinc-800'>
+        {language === 'cz' && <>{room.guests} hosté</>}
+        {language === 'en' && <>{room.guests} guests</>}
+      </p>
       <p className='text-zinc-600'>
         {language === 'cz' && <>od {room.priceCz} Kč / noc</>}
         {language === 'en' && <>starting at ${room.priceEn} / night</>}

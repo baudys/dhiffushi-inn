@@ -21,9 +21,12 @@ import Link from 'next/link'
 import { toast } from 'sonner'
 import { Textarea } from '../ui/textarea'
 import { addReservation } from '@/actions/add-reservation'
+import { useReservation } from '@/store/use-reservation'
 
 export const Contact = () => {
   const { language } = useLanguage()
+  const { roomId, adults, children, endDate, startDate, priceCz, priceEn } =
+    useReservation()
 
   const schema = z.object({
     name: z.string({
@@ -52,9 +55,32 @@ export const Contact = () => {
   })
 
   const onSubmit: SubmitHandler<FieldValues> = async (data: any) => {
-    console.log(data)
+    let reservationData
 
-    addReservation('!roomId!', data)
+    if (language === 'cz') {
+      reservationData = {
+        ...data,
+        adults,
+        children,
+        startDate,
+        endDate,
+        priceCz,
+      }
+    }
+    if (language === 'en') {
+      reservationData = {
+        ...data,
+        adults,
+        children,
+        startDate,
+        endDate,
+        priceEn,
+      }
+    }
+
+    console.log(reservationData)
+
+    addReservation(roomId, reservationData)
 
     try {
       const emailResponse = await emailjs.send(

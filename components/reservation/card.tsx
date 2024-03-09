@@ -17,9 +17,7 @@ interface Props {
 export const Card = ({ room }: Props) => {
   const { language } = useLanguage()
   const {
-    setName,
-    setEmail,
-    setTelephone,
+    setRoomId,
     setStartDate,
     setEndDate,
     adults,
@@ -35,6 +33,8 @@ export const Card = ({ room }: Props) => {
   const [range, setRange] = useState<any>()
   const [numOfDays, setNumOfDays] = useState(0)
 
+  setRoomId(room._id)
+
   useEffect(() => {
     const days = differenceInDays(range?.to, range?.from)
 
@@ -43,6 +43,11 @@ export const Card = ({ room }: Props) => {
     setPriceCz(days * room.priceCz * (adults + children))
     setPriceEn(days * room.priceEn * (adults + children))
   }, [range, adults, children])
+
+  useEffect(() => {
+    setStartDate(range?.from)
+    setEndDate(range?.to)
+  }, [range?.from, range?.to])
 
   return (
     <div className='sticky top-28 left-0 self-start shadow-lg bg-zinc-100 border border-zinc-400/50 p-4 rounded-xl'>
