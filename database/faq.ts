@@ -21,6 +21,13 @@ export const faq = [
     aEn: 'Expect average daily temperatures around 30°C throughout the year.',
   },
   {
+    value: 'plaz',
+    qCz: 'Jak vypadá pláž u penzionu?',
+    aCz: 'Pláž je udržovaná v čistotě, máme zde vlastní lehátka a je zde malá hloubka.',
+    qEn: '',
+    aEn: '',
+  },
+  {
     value: 'klimatizace',
     qCz: 'Jsou pokoje v penzionu Dhiffushi Inn vybaveny klimatizací?',
     aCz: 'Ano, všechny naše pokoje mají klimatizaci.',
@@ -54,5 +61,12 @@ export const faq = [
     aCz: 'Ne. Prodej alkoholu na Maledivách je zakázán.',
     qEn: 'Can I buy alcohol on the island?',
     aEn: 'No, alcohol sale is prohibited in the Maldives.',
+  },
+  {
+    value: 'obchod',
+    qCz: 'Je na ostrově nějaký obchod?',
+    aCz: 'Ano, je tu několik menších kráméčků, kde se dají koupit základní potraviny nebo kosmetika',
+    qEn: '',
+    aEn: '',
   },
 ]

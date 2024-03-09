@@ -15,15 +15,29 @@ export default function Page() {
 
   return (
     <main className='py-28'>
-      <Container>
-        <Accordion type='multiple' className='lg:max-w-[50%] mx-auto'>
-          {faq.map(item => (
+      <Container className='grid lg:grid-cols-2 gap-4 lg:gap-32'>
+        <Accordion type='multiple' className='space-y-4'>
+          {faq.slice(0, 5).map(item => (
             <AccordionItem key={item.value} value={item.value}>
-              <AccordionTrigger>
+              <AccordionTrigger className='text-lg'>
                 {language === 'cz' && item.qCz}
                 {language === 'en' && item.qEn}
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className='text-base'>
+                {language === 'cz' && item.aCz}
+                {language === 'en' && item.aEn}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+        <Accordion type='multiple' className='space-y-4'>
+          {faq.slice(5, 10).map(item => (
+            <AccordionItem key={item.value} value={item.value}>
+              <AccordionTrigger className='text-lg'>
+                {language === 'cz' && item.qCz}
+                {language === 'en' && item.qEn}
+              </AccordionTrigger>
+              <AccordionContent className='text-base'>
                 {language === 'cz' && item.aCz}
                 {language === 'en' && item.aEn}
               </AccordionContent>
