@@ -30,10 +30,10 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          { title: 'Potápění a šnorchlování', value: 'diving' },
-          { title: 'Luxusní odpočinek na pláži', value: 'relax' },
-          { title: 'Vodní sporty', value: 'water' },
-          { title: 'Kulturní zážitky', value: 'culture' },
+          { title: 'Šnorchlování', value: 'snorkeling' },
+          { title: 'Ostrovy', value: 'islands' },
+          { title: 'Aktivity na Ostrově', value: 'activities' },
+          { title: 'Vodní Sporty', value: 'sports' },
         ],
       },
     }),
@@ -48,16 +48,6 @@ export default defineType({
     defineField({
       name: 'duration',
       title: 'Doba Trvání',
-      type: 'string',
-    }),
-    defineField({
-      name: 'daysCz',
-      title: 'Dny 🇨🇿',
-      type: 'string',
-    }),
-    defineField({
-      name: 'daysEn',
-      title: 'Dny 🇬🇧',
       type: 'string',
     }),
     defineField({
@@ -101,6 +91,18 @@ export default defineType({
     defineField({
       name: 'bringEn',
       title: 'Co s Sebou 🇬🇧',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
+      name: 'getCz',
+      title: 'Co Dostanete 🇨🇿',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
+      name: 'getEn',
+      title: 'Co Dostanete 🇬🇧',
       type: 'array',
       of: [{ type: 'string' }],
     }),

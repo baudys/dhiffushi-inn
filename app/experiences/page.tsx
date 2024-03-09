@@ -7,18 +7,22 @@ export const revalidate = 60
 export default async function Page() {
   const experiences = await cachedClient(ExperiencesQuery)
 
-  const diving = experiences.filter((item: any) => item.category === 'diving')
-  const relax = experiences.filter((item: any) => item.category === 'relax')
-  const water = experiences.filter((item: any) => item.category === 'water')
-  const culture = experiences.filter((item: any) => item.category === 'culture')
+  const snorkeling = experiences.filter(
+    (item: any) => item.category === 'snorkeling'
+  )
+  const islands = experiences.filter((item: any) => item.category === 'islands')
+  const activities = experiences.filter(
+    (item: any) => item.category === 'activites'
+  )
+  const sports = experiences.filter((item: any) => item.category === 'sports')
 
   return (
     <main className='pt-32 pb-24'>
       <Experiences
-        diving={diving}
-        relax={relax}
-        water={water}
-        culture={culture}
+        snorkeling={snorkeling}
+        islands={islands}
+        activities={activities}
+        sports={sports}
       />
     </main>
   )

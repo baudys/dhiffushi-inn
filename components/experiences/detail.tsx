@@ -109,6 +109,29 @@ export const Detail = ({ experience }: Props) => {
                 </ul>
               </div>
             )}
+
+          {experience.getCz &&
+            experience.getCz.length !== 0 &&
+            experience.getEn &&
+            experience.getEn.length !== 0 && (
+              <div className='pt-5'>
+                <h4 className='flex gap-1 font-semibold items-center text-lg xl:gap-2 xl:text-xl'>
+                  <Backpack size={22} />
+                  {language === 'cz' && 'Co Dostanete'}
+                  {language === 'en' && 'What you Get'}
+                </h4>
+                <ul className='list-disc list-inside text-sm ml-8 mt-1'>
+                  {language === 'cz' &&
+                    experience.bringCz.map((item: any) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  {language === 'en' &&
+                    experience.bringEn.map((item: any) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                </ul>
+              </div>
+            )}
         </div>
       </section>
     </Container>

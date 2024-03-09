@@ -77,12 +77,12 @@ const Carousel: React.FC<CarouselProps> = ({
             <PrevButton
               onClick={onPrevButtonClick}
               disabled={prevBtnDisabled}
-              className='absolute -left-10 top-1/2 -translate-y-20'
+              className='absolute -left-10 top-1/2 -translate-y-20 disabled:opacity-25'
             />
             <NextButton
               onClick={onNextButtonClick}
               disabled={nextBtnDisabled}
-              className='absolute -right-10 top-1/2 -translate-y-20'
+              className='absolute -right-10 top-1/2 -translate-y-20 disabled:opacity-25'
             />
           </>
         )}
