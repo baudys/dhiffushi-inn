@@ -17,7 +17,7 @@ export const Experiences = ({ experience }: Props) => {
   return (
     <Container>
       <Title
-        labelCz='Zažij s námi něco nového'
+        labelCz='Zažijte s námi něco nového'
         labelEn='Experience something new with us'
       />
       <Link href={`/experiences/${experience.slug.current}`}>

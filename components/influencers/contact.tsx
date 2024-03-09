@@ -32,7 +32,7 @@ const Contact = () => {
     email: z
       .string({
         required_error:
-          language === 'cz' ? 'E-mail je povinn ' : 'E-mail is required',
+          language === 'cz' ? 'E-mail je povinný' : 'E-mail is required',
       })
       .email({
         message: language === 'cz' ? 'Neplatný E-mail' : 'Invalid E-mail',
@@ -392,7 +392,7 @@ const Contact = () => {
                         rows={10}
                         placeholder={
                           language === 'cz'
-                            ? 'Proč byste chtěli navštívit Dhiffushi-Inn?'
+                            ? 'Proč chceš navštívit Dhiffushi-Inn?'
                             : 'Why would you like to visit Dhiffushi-Inn?'
                         }
                         {...field}
@@ -409,7 +409,7 @@ const Contact = () => {
                   {language === 'cz' && (
                     <>
                       Kliknutím na Odeslat souhlasím se zpracováním osobních
-                      údajů. Přečtěte si{' '}
+                      údajů. Přečti si{' '}
                       <Link
                         href='/personal-data-protection'
                         className='underline'
