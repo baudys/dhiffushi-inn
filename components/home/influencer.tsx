@@ -30,7 +30,6 @@ export const Influencer = () => {
             </Button>
           </Link>
         </div>
-        <p className='font-bold text-white text-4xl'>!sem ještě něco přijde!</p>
       </Container>
     </div>
   )
