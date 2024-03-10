@@ -48,10 +48,6 @@ export const AddReview = () => {
 
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
-    defaultValues: {
-      name: '',
-      text: '',
-    },
   })
 
   const [rating, setRating] = useState<number>(1)
@@ -171,7 +167,7 @@ export const AddReview = () => {
                   )}
                 />
 
-                <DrawerFooter className='p-0 pb-10 pt-8'>
+                <DrawerFooter className='p-0 pt-8 pb-2'>
                   <p className='text-xs text-zinc-600'>
                     {language === 'cz' && (
                       <>
@@ -201,23 +197,22 @@ export const AddReview = () => {
                     )}
                   </p>
 
-                  <DrawerClose className='w-full'>
-                    <Button
-                      type='submit'
-                      className='bg-cyan-500 w-full hover:bg-cyan-600'
-                    >
-                      {language === 'cz' ? 'Odeslat' : 'Submit'}
-                    </Button>
-                  </DrawerClose>
-                  <DrawerClose className='w-full'>
-                    <Button variant='outline' className='w-full'>
-                      {language === 'cz' ? 'Zrušit' : 'Cancel'}
-                    </Button>
-                  </DrawerClose>
+                  <Button
+                    type='submit'
+                    className='bg-cyan-500 w-full hover:bg-cyan-600'
+                  >
+                    {language === 'cz' ? 'Odeslat' : 'Submit'}
+                  </Button>
                 </DrawerFooter>
               </form>
             </Form>
           </motion.div>
+
+          <DrawerClose className='w-full mb-4'>
+            <Button variant='outline' className='w-full'>
+              {language === 'cz' ? 'Zrušit' : 'Cancel'}
+            </Button>
+          </DrawerClose>
         </Container>
       </DrawerContent>
     </Drawer>
