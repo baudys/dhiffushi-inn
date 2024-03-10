@@ -48,7 +48,7 @@ export const Card = ({ room }: Props) => {
   }, [range?.from, range?.to])
 
   const handleDecrementAdults = () => {
-    setAdults(Math.max(0, adults - 1))
+    setAdults(Math.max(1, adults - 1))
   }
 
   const handleIncrementAdults = () => {
