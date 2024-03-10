@@ -6,6 +6,7 @@ import Link from 'next/link'
 
 export default function Page() {
   const { language } = useLanguage()
+
   return (
     <main className='pt-32 pb-24'>
       <Container>
@@ -14,20 +15,26 @@ export default function Page() {
           {language === 'en' && 'Choose your guesthouse'}
         </h1>
         <div className='grid md:grid-cols-2 gap-4 md:gap-10'>
-          <Link href='/reservation/old'>
+          <Link href='/reservation/classic'>
             <div className='aspect-square rounded-3xl relative overflow-hidden'>
               <img
-                src='/reservation/old.webp'
+                src='/reservation/classic.webp'
                 className='absolute inset-0 w-full h-full rounded-3xl hover:scale-110 transition object-cover'
               />
+              <p className='absolute bottom-3 right-3 text-2xl md:text-4xl lg:text-6xl font-semibold text-white'>
+                classic
+              </p>
             </div>
           </Link>
-          <Link href='/reservation/new'>
+          <Link href='/reservation/deluxe'>
             <div className='aspect-square rounded-3xl relative overflow-hidden'>
               <img
-                src='/reservation/new.webp'
+                src='/reservation/deluxe.webp'
                 className='absolute inset-0 w-full h-full rounded-3xl hover:scale-110 transition object-cover'
               />
+              <p className='absolute bottom-3 right-3 text-2xl md:text-4xl lg:text-6xl font-semibold text-white'>
+                deluxe
+              </p>
             </div>
           </Link>
         </div>

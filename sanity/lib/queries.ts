@@ -22,18 +22,18 @@ export const ExperienceQuery = groq`*[_type == "experience" && slug.current == $
   }
 `
 
-export const OldQuery = groq`
-    *[_type=='old'] {
+export const ClassicQuery = groq`
+    *[_type=='classic'] {
         ...,
     }
 `
 
-export const OldPathsQuery = groq`*[_type == "old" && defined(slug.current)][]{
+export const ClassicPathsQuery = groq`*[_type == "classic" && defined(slug.current)][]{
     "params": { "slug": slug.current }
   }
 `
 
-export const OldItemQuery = groq`*[_type == "old" && slug.current == $slug][0]{
+export const ClassicItemQuery = groq`*[_type == "classic" && slug.current == $slug][0]{
     ...
   }
 `
