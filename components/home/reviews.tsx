@@ -11,7 +11,7 @@ export const Reviews = ({ reviews }: Props) => {
     <Container>
       <Title labelCz='Poslední recenze' labelEn='Latest review' />
 
-      <div className='grid grid-cols-2 gap-6'>
+      <div className='grid md:grid-cols-2 gap-6'>
         {reviews.map(review => (
           <div
             key={review.rating + review.name + review.date}
