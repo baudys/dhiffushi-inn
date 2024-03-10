@@ -3,6 +3,7 @@
 import { urlForImage } from '@/sanity/lib/image'
 import { useLanguage } from '@/store/use-language'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 interface Props {
   room: any
@@ -11,8 +12,16 @@ interface Props {
 export const Item = ({ room }: Props) => {
   const { language } = useLanguage()
 
+  const [currentUrl, setCurrentUrl] = useState('')
+
+  useEffect(() => {
+    setCurrentUrl(window.location.href)
+  }, [])
+
+  console.log(currentUrl)
+
   return (
-    <Link href={`/reservation/classic/${room.slug.current}`}>
+    <Link href={`${currentUrl}/${room.slug.current}`}>
       <div className='aspect-square relative overflow-hidden rounded-3xl'>
         <img
           src={urlForImage(room.images[0])}

@@ -78,36 +78,32 @@ export const Contact = () => {
       }
     }
 
-    console.log(reservationData)
-
     addReservation(roomId, reservationData)
 
-    form.reset()
+    try {
+      const emailResponse = await emailjs.send(
+        process.env.NEXT_PUBLIC_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID_CREATORS!,
+        data,
+        process.env.NEXT_PUBLIC_PUBLIC_API!
+      )
 
-    //     try {
-    //       const emailResponse = await emailjs.send(
-    //         process.env.NEXT_PUBLIC_SERVICE_ID!,
-    //         process.env.NEXT_PUBLIC_TEMPLATE_ID_CREATORS!,
-    //         data,
-    //         process.env.NEXT_PUBLIC_PUBLIC_API!
-    //       )
+      console.log(emailResponse)
 
-    //       console.log(emailResponse)
+      toast.success(
+        language === 'cz' ? 'Úspěšně odesláno.' : 'Sent Successfully.'
+      )
+    } catch (error) {
+      console.log('Error sending email:', error)
 
-    //       toast.success(
-    //         language === 'cz' ? 'Úspěšně odesláno.' : 'Sent Successfully.'
-    //       )
-    //     } catch (error) {
-    //       console.log('Error sending email:', error)
-
-    //       toast.error(
-    //         language === 'cz'
-    //           ? 'Něco se pokazilo, zkuste to prosím později.'
-    //           : 'Something went wrong, please try again later.'
-    //       )
-    //     } finally {
-    //       form.reset()
-    //     }
+      toast.error(
+        language === 'cz'
+          ? 'Něco se pokazilo, zkuste to prosím později.'
+          : 'Something went wrong, please try again later.'
+      )
+    } finally {
+      form.reset()
+    }
   }
 
   return (
