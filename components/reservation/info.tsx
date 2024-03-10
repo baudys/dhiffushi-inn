@@ -1,6 +1,17 @@
 import { useLanguage } from '@/store/use-language'
 import { Separator } from '../ui/separator'
-import { AirVent, Coffee, Eye, LandPlot, Tv, Vault, Wifi } from 'lucide-react'
+import {
+  AirVent,
+  Coffee,
+  Eye,
+  LandPlot,
+  Rows3,
+  Trash,
+  Tv,
+  Vault,
+  Wifi,
+  Wind,
+} from 'lucide-react'
 import { TbHanger } from 'react-icons/tb'
 import { MdBalcony } from 'react-icons/md'
 import dynamic from 'next/dynamic'
@@ -80,14 +91,20 @@ export const Info = ({ room }: Props) => {
           room.includedCz.map((item: any) => (
             <li key={item} className='flex items-center gap-2'>
               {item === 'výhled na oceán' && <Eye size={18} />}
+              {item === 'výhled na ostrov' && <Eye size={18} />}
+              {item === 'soukromá pláž (50 metrů)' && <LandPlot size={18} />}
+              {item === 'úklidové služby' && <Trash size={18} />}
               {item === 'klimatizace' && <AirVent size={18} />}
               {item === 'kávový set' && <Coffee size={18} />}
               {item === 'tv' && <Tv size={18} />}
               {item === 'ramínka' && <TbHanger size={18} />}
               {item === 'wifi' && <Wifi size={18} />}
+              {item === 'wifi na pláži' && <Wifi size={18} />}
               {item === 'trezor' && <Vault size={18} />}
               {item === 'balkón' && <MdBalcony size={18} />}
-              {item === 'soukromá pláž' && <LandPlot size={18} />}
+              {item === 'fén' && <Wind size={18} />}
+              {item === 'ručníky' && <Rows3 size={18} />}
+
               {item}
             </li>
           ))}
@@ -96,14 +113,20 @@ export const Info = ({ room }: Props) => {
           room.includedEn.map((item: any) => (
             <li key={item} className='flex items-center gap-2'>
               {item === 'ocean view' && <Eye size={18} />}
+              {item === 'island view' && <Eye size={18} />}
+              {item === 'private beach (50 meters)' && <LandPlot size={18} />}
+              {item === 'cleaning service' && <Trash size={18} />}
               {item === 'ac' && <AirVent size={18} />}
               {item === 'coffee set' && <Coffee size={18} />}
               {item === 'tv' && <Tv size={18} />}
               {item === 'hangers' && <TbHanger size={18} />}
               {item === 'wifi' && <Wifi size={18} />}
+              {item === 'beach wifi' && <Wifi size={18} />}
               {item === 'safe' && <Vault size={18} />}
               {item === 'balcony' && <MdBalcony size={18} />}
-              {item === 'private beach' && <LandPlot size={18} />}
+              {item === 'hairdryer' && <Wind size={18} />}
+              {item === 'towels' && <Rows3 size={18} />}
+
               {item}
             </li>
           ))}
