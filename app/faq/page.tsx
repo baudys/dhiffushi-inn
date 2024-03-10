@@ -1,6 +1,7 @@
 'use client'
 
 import { Container } from '@/components/container'
+import { Title } from '@/components/home/title'
 import {
   Accordion,
   AccordionContent,
@@ -16,6 +17,11 @@ export default function Page() {
   return (
     <main className='py-28'>
       <Container className='grid lg:grid-cols-2 gap-4 lg:gap-32'>
+        <Title
+          labelCz='Nejčastěji kladené otázky'
+          labelEn='Frequently asked questions'
+        />
+
         <Accordion type='multiple' className='space-y-4'>
           {faq.slice(0, 5).map(item => (
             <AccordionItem key={item.value} value={item.value}>

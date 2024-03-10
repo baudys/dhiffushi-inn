@@ -13,19 +13,12 @@ export const Row = ({ images }: Props) => {
       {images.map((image, i) => {
         return (
           <CarouselItem index={i} key={i} className='px-2'>
-            <>
-              <div className='relative aspect-video w-[78vw] lg:w-[50vw]'>
-                <img
-                  src={image}
-                  className='absolute inset-0 w-full h-full object-cover'
-                />
-              </div>
-              <h2 className='font-medium'>title</h2>
-              <p className='text-sm text-zinc-600'>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Officiis, perspiciatis?
-              </p>
-            </>
+            <div className='relative aspect-video w-[78vw] lg:w-[50vw]'>
+              <img
+                src={image}
+                className='absolute inset-0 w-full h-full object-cover'
+              />
+            </div>
           </CarouselItem>
         )
       })}
