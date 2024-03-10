@@ -17,7 +17,7 @@ export default async function Page() {
   experiences = experiences.concat(diving)
 
   return (
-    <main className='pb-24 space-y-40'>
+    <main className='space-y-40'>
       <Hero />
       <Gallery />
       <Experiences
