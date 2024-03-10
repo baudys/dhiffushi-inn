@@ -49,8 +49,8 @@ const Map = () => {
       >
         <Popup>
           <h3 className='text-lg font-bold'>
-            {language === 'cz' && 'Starý Penzion'}
-            {language === 'en' && 'Old Guesthouse'}
+            {language === 'cz' && 'Classic Penzion'}
+            {language === 'en' && 'Classic Guesthouse'}
           </h3>
         </Popup>
       </Marker>
@@ -63,8 +63,8 @@ const Map = () => {
       >
         <Popup>
           <h3 className='text-lg font-bold'>
-            {language === 'cz' && 'Nový Penzion'}
-            {language === 'en' && 'New Guesthouse'}
+            {language === 'cz' && 'Deluxe Penzion'}
+            {language === 'en' && 'Deluxe Guesthouse'}
           </h3>
         </Popup>
       </Marker>
@@ -77,8 +77,8 @@ const Map = () => {
       >
         <Popup>
           <h3 className='text-lg font-bold'>
-            {language === 'cz' && 'Soukromá Pláž'}
-            {language === 'en' && 'Private Beach'}
+            {language === 'cz' && 'Soukromá Pláž (50 metrů)'}
+            {language === 'en' && 'Private Beach (50 metrů)'}
           </h3>
         </Popup>
       </Marker>
