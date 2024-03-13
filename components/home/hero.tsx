@@ -16,7 +16,7 @@ const Hero = () => {
           playsInline
           className='absolute object-cover w-full h-full'
         >
-          <source src='https://cdn.coverr.co/videos/coverr-friends-having-fun-at-the-beach-3211/1080p.mp4' />
+          <source src='https://i.imgur.com/8oowDBL.mp4' />
         </video>
 
         <div className='absolute top-0 left-0 flex w-full h-full pt-32 bg-black/60 lg:pt-0 lg:items-center lg:justify-center'>
