@@ -36,7 +36,7 @@ export const Contact = () => {
   return (
     <Container>
       <div className='grid gap-4 xl:gap-20 xl:grid-cols-[1fr_1.4fr]'>
-        <div className=''>
+        <div>
           <motion.div initial={{ y: -50 }} animate={{ y: 0 }}>
             <h4 className='text-lg font-medium text-black'>Dhiffushi Inn</h4>
 

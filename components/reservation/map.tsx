@@ -51,6 +51,7 @@ const Map = () => {
           <h3 className='text-lg font-bold'>
             {language === 'cz' && 'Classic Penzion'}
             {language === 'en' && 'Classic Guesthouse'}
+            {language === 'ru' && 'Классический гостевой дом'}
           </h3>
         </Popup>
       </Marker>
@@ -65,6 +66,7 @@ const Map = () => {
           <h3 className='text-lg font-bold'>
             {language === 'cz' && 'Deluxe Penzion'}
             {language === 'en' && 'Deluxe Guesthouse'}
+            {language === 'ru' && 'Гостевой дом Делюкс'}
           </h3>
         </Popup>
       </Marker>
@@ -79,6 +81,7 @@ const Map = () => {
           <h3 className='text-lg font-bold'>
             {language === 'cz' && 'Soukromá Pláž (50 metrů)'}
             {language === 'en' && 'Private Beach (50 metrů)'}
+            {language === 'ru' && 'Частный пляж (50 метров)'}
           </h3>
         </Popup>
       </Marker>

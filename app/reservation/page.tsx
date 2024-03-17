@@ -22,7 +22,9 @@ export default function Page() {
                 className='absolute inset-0 w-full h-full rounded-3xl hover:scale-110 transition object-cover'
               />
               <p className='absolute bottom-3 right-3 text-2xl md:text-4xl lg:text-6xl font-semibold text-white'>
-                classic
+                {language === 'cz' && 'classic'}
+                {language === 'en' && 'classic'}
+                {language === 'ru' && 'классика'}
               </p>
             </div>
           </Link>
@@ -33,7 +35,9 @@ export default function Page() {
                 className='absolute inset-0 w-full h-full rounded-3xl hover:scale-110 transition object-cover'
               />
               <p className='absolute bottom-3 right-3 text-2xl md:text-4xl lg:text-6xl font-semibold text-white'>
-                deluxe
+                {language === 'cz' && 'deluxe'}
+                {language === 'en' && 'deluxe'}
+                {language === 'ru' && 'люкс'}
               </p>
             </div>
           </Link>

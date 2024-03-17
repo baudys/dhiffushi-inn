@@ -20,6 +20,7 @@ export default function Page() {
         <Title
           labelCz='Nejčastěji kladené otázky'
           labelEn='Frequently asked questions'
+          labelRu='Часто задаваемые вопросы'
         />
 
         <Accordion type='multiple' className='space-y-4'>
@@ -28,10 +29,12 @@ export default function Page() {
               <AccordionTrigger className='text-lg'>
                 {language === 'cz' && item.qCz}
                 {language === 'en' && item.qEn}
+                {language === 'ru' && item.qRu}
               </AccordionTrigger>
               <AccordionContent className='text-base'>
                 {language === 'cz' && item.aCz}
                 {language === 'en' && item.aEn}
+                {language === 'ru' && item.aRu}
               </AccordionContent>
             </AccordionItem>
           ))}
@@ -42,10 +45,12 @@ export default function Page() {
               <AccordionTrigger className='text-lg'>
                 {language === 'cz' && item.qCz}
                 {language === 'en' && item.qEn}
+                {language === 'ru' && item.qRu}
               </AccordionTrigger>
               <AccordionContent className='text-base'>
                 {language === 'cz' && item.aCz}
                 {language === 'en' && item.aEn}
+                {language === 'ru' && item.aRu}
               </AccordionContent>
             </AccordionItem>
           ))}

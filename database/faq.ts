@@ -5,6 +5,8 @@ export const faq = [
     aCz: 'Ano, pokud plánujete zůstat déle než 30 dní. Je však vhodné kontaktovat místní úřady pro další informace ohledně případných omezení podle vaší státní příslušnosti.',
     qEn: 'Do I need a visa to visit the Maldives?',
     aEn: "Yes, if you plan to stay longer than 30 days. However, it's advisable to contact local authorities for further information on any restrictions that may apply to your nationality.",
+    qRu: 'Нужна ли виза для посещения Мальдив?',
+    aRu: 'Да, если вы планируете пребывать дольше 30 дней. Однако рекомендуется связаться с местными властями для получения дополнительной информации о возможных ограничениях, которые могут быть применимы к вашему гражданству.',
   },
   {
     value: 'cesta',
@@ -12,6 +14,8 @@ export const faq = [
     aCz: 'Můžete si pronajmout motorový člun.',
     qEn: 'How can I get from the airport to Dhiffushi Island?',
     aEn: 'You can rent a motorboat.',
+    qRu: 'Как добраться с аэропорта на остров Диффуши?',
+    aRu: 'Вы можете арендовать моторную лодку.',
   },
   {
     value: 'pocasi',
@@ -19,6 +23,8 @@ export const faq = [
     aCz: 'Očekávejte průměrné denní teploty kolem 30 °C po celý rok.',
     qEn: 'What is the weather like on Dhiffushi Island?',
     aEn: 'Expect average daily temperatures around 30°C throughout the year.',
+    qRu: 'Какая погода на острове Диффуши?',
+    aRu: 'Ожидайте среднедневных температур около 30°C в течение всего года.',
   },
   {
     value: 'plaz',
@@ -26,6 +32,8 @@ export const faq = [
     aCz: 'Pláž je udržovaná v čistotě, máme zde vlastní lehátka a je zde malá hloubka.',
     qEn: 'What does the beach look like at the guesthouse?',
     aEn: 'The beach is kept clean, we have our own sunbeds and there is little depth.',
+    qRu: 'Как выглядит пляж у гостевого дома?',
+    aRu: 'Пляж чистый, у нас есть собственные шезлонги и небольшая глубина.',
   },
   {
     value: 'klimatizace',
@@ -33,6 +41,8 @@ export const faq = [
     aCz: 'Ano, všechny naše pokoje mají klimatizaci.',
     qEn: 'Are the rooms at Dhiffushi Inn air-conditioned?',
     aEn: 'Yes, all our rooms have air conditioning.',
+    qRu: 'Есть ли кондиционеры в номерах гостиницы Dhiffushi Inn?',
+    aRu: 'Да, все наши номера оснащены кондиционерами.',
   },
   {
     value: 'wifi',
@@ -40,6 +50,8 @@ export const faq = [
     aCz: 'Ano, máme vlastní WiFi síť pro naše hosty.',
     qEn: 'Is there internet access on the island?',
     aEn: 'Yes, we have our own WiFi network for our guests.',
+    qRu: 'Есть ли доступ в интернет на острове?',
+    aRu: 'Да, у нас есть собственная сеть WiFi для наших гостей.',
   },
   {
     value: 'komari',
@@ -47,6 +59,8 @@ export const faq = [
     aCz: 'Na Malediy není potřeba žádné očkování.',
     qEn: 'Do I need any vaccinations for my stay?',
     aEn: 'No vaccinations are required for the Maldives.',
+    qRu: 'Нужны ли мне прививки для пребывания?',
+    aRu: 'Для Мальдив не требуется никаких прививок.',
   },
   {
     value: 'mena',
@@ -54,6 +68,8 @@ export const faq = [
     aCz: 'Maledivské rufiyaa, americké dolary a eura.',
     qEn: 'What currency can I use there?',
     aEn: 'We accept Maldivian Rufiyaa, US dollars, and euros.',
+    qRu: 'Какую валюту я могу использовать там?',
+    aRu: 'Мы принимаем мальдивские руфии, доллары США и евро.',
   },
   {
     value: 'alkohol',
@@ -61,6 +77,8 @@ export const faq = [
     aCz: 'Ne. Prodej alkoholu na Maledivách je zakázán.',
     qEn: 'Can I buy alcohol on the island?',
     aEn: 'No, alcohol sale is prohibited in the Maldives.',
+    qRu: 'Могу ли я купить алкоголь на острове?',
+    aRu: 'Нет, продажа алкоголя на Мальдивах запрещена.',
   },
   {
     value: 'obchod',
@@ -68,5 +86,7 @@ export const faq = [
     aCz: 'Ano, je tu několik menších kráméčků, kde se dají koupit základní potraviny nebo kosmetika',
     qEn: 'Is there a shop on the island?',
     aEn: 'Yes, there are several small shops where you can buy basic food or cosmetics',
+    qRu: 'Есть ли на острове магазин?',
+    aRu: 'Да, здесь есть несколько небольших магазинов, где можно купить основные продукты или косметику.',
   },
 ]

@@ -73,7 +73,11 @@ export const Card = ({ room }: Props) => {
       />
 
       <div className='flex justify-between items-center mt-4 select-none'>
-        <p>{language === 'cz' ? 'Dospělí' : 'Adults'}</p>
+        <p>
+          {language === 'cz' && 'Dospělí'}
+          {language === 'en' && 'Adults'}
+          {language === 'ru' && 'Взрослые'}
+        </p>
         <div className='flex gap-2 items-center'>
           <MinusCircle
             onClick={handleDecrementAdults}
@@ -90,7 +94,11 @@ export const Card = ({ room }: Props) => {
       </div>
       {room.maxChildren !== '0' && (
         <div className='flex justify-between items-center select-none'>
-          <p>{language === 'cz' ? 'Děti' : 'Children'}</p>
+          <p>
+            {language === 'cz' && 'Děti'}
+            {language === 'en' && 'Children'}
+            {language === 'ru' && 'Дети'}
+          </p>
           <div className='flex gap-2 items-center'>
             <MinusCircle
               onClick={handleDecrementChildren}
@@ -112,11 +120,15 @@ export const Card = ({ room }: Props) => {
           <Separator className='my-4' />
           <p className='text-xl'>
             <span className='flex items-center justify-between'>
-              <b>{language === 'cz' ? 'celkem' : 'total'}</b>
               <b>
-                {language === 'cz'
-                  ? `${priceCz.toLocaleString('cs')} Kč`
-                  : `$${priceEn.toLocaleString('en')}`}
+                {language === 'cz' && 'celkem'}
+                {language === 'en' && 'total'}
+                {language === 'ru' && 'всего'}
+              </b>
+              <b>
+                {language === 'cz' && `${priceCz.toLocaleString('cs')} Kč`}
+                {language === 'en' && `$${priceEn.toLocaleString('en')}`}
+                {language === 'ru' && `$${priceEn.toLocaleString('en')}`}
               </b>
             </span>
           </p>
@@ -126,7 +138,9 @@ export const Card = ({ room }: Props) => {
               className='bg-cyan-500 hover:bg-cyan-500 w-full font-bold text-lg'
               size='lg'
             >
-              {language === 'cz' ? 'Rezervovat' : 'Reserve'}
+              {language === 'cz' && 'Rezervovat'}
+              {language === 'en' && 'Reserve'}
+              {language === 'ru' && 'Резерв'}
             </Button>
           </Link>
         </>

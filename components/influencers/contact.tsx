@@ -27,84 +27,126 @@ const Contact = () => {
   const schema = z.object({
     name: z.string({
       required_error:
-        language === 'cz' ? 'Celé Jméno je povinné' : 'Full Name is required',
+        language === 'cz'
+          ? 'Celé Jméno je povinné'
+          : language === 'en'
+          ? 'Full Name is required'
+          : 'Полное имя обязательно',
     }),
     email: z
       .string({
         required_error:
-          language === 'cz' ? 'E-mail je povinný' : 'E-mail is required',
+          language === 'cz'
+            ? 'E-mail je povinný'
+            : language === 'en'
+            ? 'E-mail is required'
+            : 'Электронная почта обязательна',
       })
       .email({
-        message: language === 'cz' ? 'Neplatný E-mail' : 'Invalid E-mail',
+        message:
+          language === 'cz'
+            ? 'Neplatný E-mail'
+            : language === 'en'
+            ? 'Invalid E-mail'
+            : 'Неверный e-mail',
       }),
     instagram: z.string({
       required_error:
         language === 'cz'
           ? 'Uživatelské jméno z Instagramu je povinné'
-          : 'Instagram username is required',
+          : language === 'en'
+          ? 'Instagram username is required'
+          : 'Имя пользователя Instagram обязательно',
     }),
     instagram_followers: z.string({
       required_error:
         language === 'cz'
           ? 'Počet Sledujících je povinný'
-          : 'Number of Followers is required',
+          : language === 'en'
+          ? 'Number of Followers is required'
+          : 'Количество подписчиков обязательно',
     }),
     tiktok: z.string({
       required_error:
         language === 'cz'
           ? 'Uživatelské jméno z TikToku je povinné'
-          : 'TikTok username is required',
+          : language === 'en'
+          ? 'TikTok username is required'
+          : 'Имя пользователя TikTok обязательно',
     }),
     tiktok_followers: z.string({
       required_error:
         language === 'cz'
           ? 'Počet Sledujících je povinný'
-          : 'Number of Followers is required',
+          : language === 'en'
+          ? 'Number of Followers is required'
+          : 'Количество подписчиков обязательно',
     }),
     facebook: z.string({
       required_error:
         language === 'cz'
           ? 'Uživatelské jméno z Facebooku je povinné'
-          : 'Facebook username is required',
+          : language === 'en'
+          ? 'Facebook username is required'
+          : 'Имя пользователя Facebook обязательно',
     }),
     facebook_followers: z.string({
       required_error:
         language === 'cz'
           ? 'Počet Sledujících je povinný'
-          : 'Number of Followers is required',
+          : language === 'en'
+          ? 'Number of Followers is required'
+          : 'Количество подписчиков обязательно',
     }),
     youtube: z.string({
       required_error:
         language === 'cz'
           ? 'Uživatelské jméno z YouTube je povinné'
-          : 'YouTube username is required',
+          : language === 'en'
+          ? 'YouTube username is required'
+          : 'Имя пользователя YouTube обязательно',
     }),
     youtube_followers: z.string({
       required_error:
         language === 'cz'
           ? 'Počet Sledujících je povinný'
-          : 'Number of Followers is required',
+          : language === 'en'
+          ? 'Number of Followers is required'
+          : 'Количество подписчиков обязательно',
     }),
     web: z
       .string({
         required_error:
           language === 'cz'
             ? 'Odkaz na web je povinný'
-            : 'Web link is required',
+            : language === 'en'
+            ? 'Web link is required'
+            : 'Необходима веб-ссылка',
       })
       .url({
-        message: language === 'cz' ? 'Neplatný odkaz' : 'Invalid link',
+        message:
+          language === 'cz'
+            ? 'Neplatný odkaz'
+            : language === 'en'
+            ? 'Invalid link'
+            : 'Недопустимая ссылка',
       }),
     message: z
       .string({
         required_error:
-          language === 'cz' ? 'Zpráva je povinná' : 'Message is required',
+          language === 'cz'
+            ? 'Zpráva je povinná'
+            : language === 'en'
+            ? 'Message is required'
+            : 'Сообщение обязательно',
       })
       .min(60, {
         message:
           language === 'cz'
             ? 'Zpráva musí mít alespoň 60 znaků'
-            : 'The message must be at least 60 characters long',
+            : language === 'en'
+            ? 'The message must be at least 60 characters long'
+            : 'Сообщение должно содержать не менее 60 символов',
       }),
   })
 
@@ -126,7 +168,11 @@ const Contact = () => {
       console.log(emailResponse)
 
       toast.success(
-        language === 'cz' ? 'Úspěšně odesláno.' : 'Sent Successfully.'
+        language === 'cz'
+          ? 'Úspěšně odesláno.'
+          : language === 'en'
+          ? 'Sent Successfully.'
+          : 'Отправлено успешно.'
       )
     } catch (error) {
       console.log('Error sending email:', error)
@@ -134,7 +180,9 @@ const Contact = () => {
       toast.error(
         language === 'cz'
           ? 'Něco se pokazilo, zkus to prosím později.'
-          : 'Something went wrong, please try again later.'
+          : language === 'en'
+          ? 'Something went wrong, please try again later.'
+          : 'Что-то пошло не так, пожалуйста, повторите попытку позже.'
       )
     } finally {
       form.reset()
@@ -157,7 +205,11 @@ const Contact = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      {language === 'cz' ? '* Celé Jméno' : '* Full Name'}
+                      {language === 'cz'
+                        ? '* Celé Jméno'
+                        : language === 'en'
+                        ? '* Full Name'
+                        : '* Полное имя'}
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -194,7 +246,9 @@ const Contact = () => {
                       <FormLabel>
                         {language === 'cz'
                           ? '* Instagram Účet'
-                          : '* Instagram Account'}
+                          : language === 'en'
+                          ? '* Instagram Account'
+                          : '* Аккаунт в Instagram'}
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -214,7 +268,9 @@ const Contact = () => {
                       <FormLabel>
                         {language === 'cz'
                           ? '* Počet Sledujících'
-                          : '* Followers'}
+                          : language === 'en'
+                          ? '* Followers'
+                          : '* Последователи'}
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -237,7 +293,9 @@ const Contact = () => {
                       <FormLabel>
                         {language === 'cz'
                           ? '* TikTok Účet'
-                          : '* TikTok Account'}
+                          : language === 'en'
+                          ? '* TikTok Account'
+                          : '* Аккаунт TikTok'}
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -257,7 +315,9 @@ const Contact = () => {
                       <FormLabel>
                         {language === 'cz'
                           ? '* Počet Sledujících'
-                          : '* Followers'}
+                          : language === 'en'
+                          ? '* Followers'
+                          : '* Последователи'}
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -280,7 +340,9 @@ const Contact = () => {
                       <FormLabel>
                         {language === 'cz'
                           ? '* Facebook Účet'
-                          : '* Facebook Account'}
+                          : language === 'en'
+                          ? '* Facebook Account'
+                          : '* Учетная запись Facebook'}
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -300,7 +362,9 @@ const Contact = () => {
                       <FormLabel>
                         {language === 'cz'
                           ? '* Počet Sledujících'
-                          : '* Followers'}
+                          : language === 'en'
+                          ? '* Followers'
+                          : '* Последователи'}
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -323,7 +387,9 @@ const Contact = () => {
                       <FormLabel>
                         {language === 'cz'
                           ? '* YouTube Účet'
-                          : '* YouTube Account'}
+                          : language === 'en'
+                          ? '* YouTube Account'
+                          : '* Аккаунт YouTube'}
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -343,7 +409,9 @@ const Contact = () => {
                       <FormLabel>
                         {language === 'cz'
                           ? '* Počet Sledujících'
-                          : '* Followers'}
+                          : language === 'en'
+                          ? '* Followers'
+                          : '* Последователи'}
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -365,7 +433,9 @@ const Contact = () => {
                     <FormLabel>
                       {language === 'cz'
                         ? '* Odkaz na Webovou stránku'
-                        : '* Website Link'}
+                        : language === 'en'
+                        ? '* Website Link'
+                        : '* Ссылка на сайт'}
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -385,7 +455,9 @@ const Contact = () => {
                     <FormLabel>
                       {language === 'cz'
                         ? '* Důvod Návštěvy'
-                        : '* Reason for Visiting'}
+                        : language === 'en'
+                        ? '* Reason for Visiting'
+                        : '* Причина визита'}
                     </FormLabel>
                     <FormControl>
                       <Textarea
@@ -393,7 +465,9 @@ const Contact = () => {
                         placeholder={
                           language === 'cz'
                             ? 'Proč chceš navštívit Dhiffushi-Inn?'
-                            : 'Why would you like to visit Dhiffushi-Inn?'
+                            : language === 'en'
+                            ? 'Why would you like to visit Dhiffushi-Inn?'
+                            : 'Почему вы хотите посетить Dhiffushi-Inn?'
                         }
                         {...field}
                         className='border-zinc-600'
@@ -432,13 +506,28 @@ const Contact = () => {
                       for more information.
                     </>
                   )}
+                  {language === 'ru' && (
+                    <>
+                      Нажимая на кнопку "Отправить", я даю согласие на обработку
+                      персональных данных. Прочитать{' '}
+                      <Link
+                        href='/personal-data-protection'
+                        className='underline'
+                      >
+                        GDPR
+                      </Link>{' '}
+                      для получения дополнительной информации.
+                    </>
+                  )}
                 </p>
 
                 <Button
                   type='submit'
                   className='mt-1 w-full sm:w-auto bg-cyan-500 hover:bg-cyan-600'
                 >
-                  {language === 'cz' ? 'Odeslat' : 'Submit'}
+                  {language === 'cz' && 'Odeslat'}
+                  {language === 'en' && 'Submit'}
+                  {language === 'ru' && 'Отправить'}
                 </Button>
               </div>
             </form>

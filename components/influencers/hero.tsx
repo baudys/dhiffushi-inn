@@ -21,10 +21,12 @@ const Hero = () => {
               <h1 className='text-white text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black uppercase text-center'>
                 {language === 'cz' && 'Jsi influencer?'}
                 {language === 'en' && 'Are you an influencer?'}
+                {language === 'ru' && 'Вы влиятельный человек?'}
               </h1>
               <p className='text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-zinc-200'>
                 {language === 'cz' && 'Pojďme spolupracovat'}
                 {language === 'en' && "Let's work together"}
+                {language === 'ru' && 'Давайте работать вместе'}
               </p>
             </div>
           </Container>

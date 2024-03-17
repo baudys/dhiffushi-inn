@@ -20,6 +20,7 @@ export const Faq = () => {
         <Title
           labelCz='Nejčastěji kladené otázky'
           labelEn='Frequently asked questions'
+          labelRu='Часто задаваемые вопросы'
         />
         <Accordion
           type='multiple'
@@ -30,10 +31,12 @@ export const Faq = () => {
               <AccordionTrigger>
                 {language === 'cz' && item.qCz}
                 {language === 'en' && item.qEn}
+                {language === 'ru' && item.qRu}
               </AccordionTrigger>
               <AccordionContent>
                 {language === 'cz' && item.aCz}
                 {language === 'en' && item.aEn}
+                {language === 'ru' && item.aRu}
               </AccordionContent>
             </AccordionItem>
           ))}

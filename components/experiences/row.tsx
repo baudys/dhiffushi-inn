@@ -12,16 +12,17 @@ interface Props {
   data: any[]
   labelCz: string
   labelEn: string
+  labelRu: string
 }
 
-export const Row = ({ data, labelCz, labelEn }: Props) => {
+export const Row = ({ data, labelCz, labelEn, labelRu }: Props) => {
   const { language } = useLanguage()
 
   console.log(data)
 
   return (
     <section>
-      <Title labelCz={labelCz} labelEn={labelEn} />
+      <Title labelCz={labelCz} labelEn={labelEn} labelRu={labelRu} />
       <Carousel numOfSlides={3} loop={false} arrows>
         {data.map((item, i) => {
           return (
@@ -41,14 +42,16 @@ export const Row = ({ data, labelCz, labelEn }: Props) => {
                 <h2 className='font-medium text-xl sm:text-2xl my-2'>
                   {language === 'cz' && item.titleCz}
                   {language === 'en' && item.titleEn}
+                  {language === 'ru' && item.titleRu}
                 </h2>
                 <p className='text-sm text-zinc-600 flex items-center gap-1'>
                   <Timer size={18} />
                   {item.duration}
                 </p>
                 <p className='text-lg sm:text-xl'>
-                  od {language === 'cz' && item.priceCz}
+                  {language === 'cz' && item.priceCz}
                   {language === 'en' && item.priceEn}
+                  {language === 'en' && item.priceRu}
                 </p>
               </Link>
             </CarouselItem>

@@ -39,6 +39,7 @@ export const Footer = () => {
           &copy;{new Date().getFullYear()} Dhiffushi Inn.
           {language === 'cz' && <> Všechna práva vyhrazena.</>}
           {language === 'en' && <> All rights reserved.</>}
+          {language === 'ru' && <> Все права защищены.</>}
         </p>
       </Container>
     </footer>

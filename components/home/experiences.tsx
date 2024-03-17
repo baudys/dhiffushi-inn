@@ -19,6 +19,7 @@ export const Experiences = ({ experience }: Props) => {
       <Title
         labelCz='Zažijte s námi něco nového'
         labelEn='Experience something new with us'
+        labelRu='Испытайте что-то новое вместе с нами'
       />
       <Link href={`/experiences/${experience.slug.current}`}>
         <div className='relative aspect-video overflow-hidden grid items-end'>
@@ -32,14 +33,16 @@ export const Experiences = ({ experience }: Props) => {
             <h2 className='font-medium text-white text-3xl mb-2'>
               {language === 'cz' && experience.titleCz}
               {language === 'en' && experience.titleEn}
+              {language === 'ru' && experience.titleRu}
             </h2>
             <p className='text-sm text-zinc-400 flex experiences-center gap-1'>
               <Timer size={18} />
               {experience.duration}
             </p>
             <p className='text-white text-lg'>
-              od {language === 'cz' && experience.priceCz}
+              {language === 'cz' && experience.priceCz}
               {language === 'en' && experience.priceEn}
+              {language === 'ru' && experience.priceRu}
             </p>
           </div>
         </div>

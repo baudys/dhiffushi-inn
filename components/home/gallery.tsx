@@ -7,7 +7,11 @@ export const Gallery = () => {
   return (
     <div>
       <Container>
-        <Title labelCz='Hotel a Okolí' labelEn='Hotel overview' />
+        <Title
+          labelCz='Hotel a Okolí'
+          labelEn='Hotel overview'
+          labelRu='Отель и окрестности'
+        />
       </Container>
       <Row images={hotelandoverview} />
     </div>

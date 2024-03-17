@@ -22,6 +22,10 @@ const languages = [
     value: 'en',
     src: '/flags/en.webp',
   },
+  {
+    value: 'ru',
+    src: '/flags/ru.webp',
+  },
 ]
 
 interface Props {

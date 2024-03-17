@@ -16,17 +16,21 @@ export const Influencer = () => {
           <h2 className='text-white font-bold text-2xl sm:text-3xl lg:text-4xl'>
             {language === 'cz' && 'Jsi influencer?'}
             {language === 'en' && 'Are you an influencer?'}
+            {language === 'ru' && 'Вы влиятельный человек?'}
           </h2>
           <p className='text-zinc-200'>
             {language === 'cz' &&
               'Máme pro tebe skvělou možnost spolupracovat a podívat se k nám na Maledivy.'}
             {language === 'en' &&
               'We have a great opportunity for you to work with us and visit us in the Maldives.'}
+            {language === 'ru' &&
+              'У нас есть прекрасная возможность для вас поработать с нами и посетить Мальдивы.'}
           </p>
           <Link href='/influencers'>
             <Button className='bg-cyan-500 hover:bg-cyan-600 mt-6' size='lg'>
               {language === 'cz' && 'Vyplňte žádost!'}
               {language === 'en' && 'Fill out the application!'}
+              {language === 'ru' && 'Заполните форму заявки!'}
             </Button>
           </Link>
         </div>

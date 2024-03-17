@@ -15,6 +15,7 @@ export default async function Page() {
         <Title
           labelCz='Přečtěte si, co o nás říkají naši hosté'
           labelEn='Read what our guests have to say about us'
+          labelRu='Прочитайте, что говорят о нас наши гости'
         />
       </Container>
       <ReviewsGrid reviews={reviews} />

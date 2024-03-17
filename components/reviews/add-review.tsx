@@ -38,11 +38,19 @@ export const AddReview = () => {
   const schema = z.object({
     name: z.string({
       required_error:
-        language === 'cz' ? 'Celé Jméno je povinné' : 'Full Name is required',
+        language === 'cz'
+          ? 'Celé Jméno je povinné'
+          : language === 'en'
+          ? 'Full Name is required'
+          : 'Полное имя обязательно',
     }),
     text: z.string({
       required_error:
-        language === 'cz' ? 'Hodnocení je povinné' : 'Rating is required',
+        language === 'cz'
+          ? 'Hodnocení je povinné'
+          : language === 'en'
+          ? 'Rating is required'
+          : 'Требуется рейтинг',
     }),
   })
 
@@ -63,13 +71,19 @@ export const AddReview = () => {
 
     try {
       toast.success(
-        language === 'cz' ? 'Úspěšně odesláno.' : 'Sent successfully.'
+        language === 'cz'
+          ? 'Úspěšně odesláno.'
+          : language === 'en'
+          ? 'Sent successfully.'
+          : 'Отправлено успешно.'
       )
     } catch (error) {
       toast.error(
         language === 'cz'
           ? 'Něco se pokazilo, zkuste to prosím později.'
-          : 'Something went wrong, please try again later.'
+          : language === 'en'
+          ? 'Something went wrong, please try again later.'
+          : 'Что-то пошло не так, пожалуйста, повторите попытку позже.'
       )
     } finally {
       form.reset()
@@ -81,6 +95,7 @@ export const AddReview = () => {
       <DrawerTrigger className='fixed bottom-5 max-lg:left-1/2 max-lg:-translate-x-1/2 lg:right-5 bg-cyan-500 hover:bg-cyan-600 p-4 rounded-md text-white font-bold  md:text-xl transition max-lg:w-[93vw]'>
         {language === 'cz' && 'Napište nám recenzi'}
         {language === 'en' && 'Write a review'}
+        {language === 'ru' && 'Написать отзыв'}
       </DrawerTrigger>
       <DrawerContent>
         <Container className='w-full sm:w-[60%] lg:w-[45%]'>
@@ -88,6 +103,7 @@ export const AddReview = () => {
             <DrawerTitle>
               {language === 'cz' && 'Napište recenzi'}
               {language === 'en' && 'Write a review'}
+              {language === 'ru' && 'Написать отзыв'}
             </DrawerTitle>
           </DrawerHeader>
 
@@ -109,6 +125,7 @@ export const AddReview = () => {
                       <FormLabel>
                         {language === 'cz' && 'Jméno'}
                         {language === 'en' && 'Name'}
+                        {language === 'en' && 'Имя'}
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -128,11 +145,18 @@ export const AddReview = () => {
                       <FormLabel>
                         {language === 'cz' && 'Hodnocení'}
                         {language === 'en' && 'Rating'}
+                        {language === 'ru' && 'Рейтинг'}
                       </FormLabel>
                       <FormControl>
                         <Textarea
                           rows={10}
-                          placeholder='Zde napište slovní hodnocení'
+                          placeholder={
+                            language === 'cz'
+                              ? 'Zde napište slovní hodnocení'
+                              : language === 'en'
+                              ? 'Write a verbal rating here'
+                              : 'Напишите здесь словесную оценку'
+                          }
                           {...field}
                           className='border-zinc-500 resize-none'
                         />
@@ -195,13 +219,28 @@ export const AddReview = () => {
                         for more information.
                       </>
                     )}
+                    {language === 'ru' && (
+                      <>
+                        Нажимая на кнопку "Отправить", я даю согласие на
+                        обработку персональных данных. Прочитать{' '}
+                        <Link
+                          href='/personal-data-protection'
+                          className='underline'
+                        >
+                          GDPR
+                        </Link>{' '}
+                        для получения дополнительной информации.
+                      </>
+                    )}
                   </p>
 
                   <Button
                     type='submit'
                     className='bg-cyan-500 w-full hover:bg-cyan-600'
                   >
-                    {language === 'cz' ? 'Odeslat' : 'Submit'}
+                    {language === 'cz' && 'Odeslat'}
+                    {language === 'en' && 'Submit'}
+                    {language === 'ru' && 'Отправить'}
                   </Button>
                 </DrawerFooter>
               </form>
@@ -210,7 +249,9 @@ export const AddReview = () => {
 
           <DrawerClose className='w-full mb-4'>
             <Button variant='outline' className='w-full'>
-              {language === 'cz' ? 'Zrušit' : 'Cancel'}
+              {language === 'cz' && 'Zrušit'}
+              {language === 'en' && 'Cancel'}
+              {language === 'ru' && 'Отмена'}
             </Button>
           </DrawerClose>
         </Container>

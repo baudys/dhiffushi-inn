@@ -31,21 +31,36 @@ export const Contact = () => {
   const schema = z.object({
     name: z.string({
       required_error:
-        language === 'cz' ? 'Celé Jméno je povinné' : 'Full Name is required',
+        language === 'cz'
+          ? 'Celé Jméno je povinné'
+          : language === 'en'
+          ? 'Full Name is required'
+          : 'Полное имя обязательно',
     }),
     email: z
       .string({
         required_error:
-          language === 'cz' ? 'E-mail je povinný' : 'E-mail is required',
+          language === 'cz'
+            ? 'E-mail je povinný'
+            : language === 'en'
+            ? 'E-mail is required'
+            : 'Электронная почта обязательна',
       })
       .email({
-        message: language === 'cz' ? 'Neplatný E-mail' : 'Invalid E-mail',
+        message:
+          language === 'cz'
+            ? 'Neplatný E-mail'
+            : language === 'en'
+            ? 'Invalid E-mail'
+            : 'Неверный e-mail',
       }),
     phone: z.string({
       required_error:
         language === 'cz'
           ? 'Telefonní číslo je povinné'
-          : 'Phone number is required',
+          : language === 'en'
+          ? 'Phone number is required'
+          : 'Номер телефона обязателен',
     }),
     message: z.optional(z.string()),
   })
@@ -77,6 +92,16 @@ export const Contact = () => {
         priceEn,
       }
     }
+    if (language === 'ru') {
+      reservationData = {
+        ...data,
+        adults,
+        children,
+        startDate,
+        endDate,
+        priceEn,
+      }
+    }
 
     addReservation(roomId, reservationData)
 
@@ -91,7 +116,11 @@ export const Contact = () => {
       console.log(emailResponse)
 
       toast.success(
-        language === 'cz' ? 'Úspěšně odesláno.' : 'Sent Successfully.'
+        language === 'cz'
+          ? 'Úspěšně odesláno.'
+          : language === 'en'
+          ? 'Sent Successfully.'
+          : 'Отправлено успешно.'
       )
     } catch (error) {
       console.log('Error sending email:', error)
@@ -99,7 +128,9 @@ export const Contact = () => {
       toast.error(
         language === 'cz'
           ? 'Něco se pokazilo, zkuste to prosím později.'
-          : 'Something went wrong, please try again later.'
+          : language === 'en'
+          ? 'Something went wrong, please try again later.'
+          : 'Что-то пошло не так, пожалуйста, повторите попытку позже.'
       )
     } finally {
       form.reset()
@@ -122,7 +153,9 @@ export const Contact = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      {language === 'cz' ? '* Celé Jméno' : '* Full Name'}
+                      {language === 'cz' && '* Celé Jméno'}
+                      {language === 'en' && '* Full Name'}
+                      {language === 'ru' && '* Полное имя'}
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -156,9 +189,9 @@ export const Contact = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      {language === 'cz'
-                        ? '* Telefonní Číslo'
-                        : '* Phone Number'}
+                      {language === 'cz' && '* Telefonní Číslo'}
+                      {language === 'en' && '* Phone Number'}
+                      {language === 'ru' && '* Номер телефона'}
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -177,7 +210,9 @@ export const Contact = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      {language === 'cz' ? 'Zpráva' : 'Message'}
+                      {language === 'cz' && 'Zpráva'}
+                      {language === 'en' && 'Message'}
+                      {language === 'ru' && 'Отчет'}
                     </FormLabel>
                     <FormControl>
                       <Textarea
@@ -185,7 +220,9 @@ export const Contact = () => {
                         placeholder={
                           language === 'cz'
                             ? 'Napadá Vás něco?'
-                            : 'Do you have something on your mind?'
+                            : language === 'en'
+                            ? 'Do you have something on your mind?'
+                            : 'У вас есть что-то на уме?'
                         }
                         {...field}
                         className='border-zinc-600 resize-none'
@@ -224,13 +261,28 @@ export const Contact = () => {
                       for more information.
                     </>
                   )}
+                  {language === 'ru' && (
+                    <>
+                      Нажимая на кнопку "Отправить", я даю согласие на обработку
+                      персональных данных. Прочитать{' '}
+                      <Link
+                        href='/personal-data-protection'
+                        className='underline'
+                      >
+                        GDPR
+                      </Link>{' '}
+                      для получения дополнительной информации.
+                    </>
+                  )}
                 </p>
 
                 <Button
                   type='submit'
                   className='mt-1 w-full sm:w-auto bg-cyan-500 hover:bg-cyan-600'
                 >
-                  {language === 'cz' ? 'Odeslat' : 'Submit'}
+                  {language === 'cz' && 'Odeslat'}
+                  {language === 'en' && 'Submit'}
+                  {language === 'ru' && 'Отправить'}
                 </Button>
               </div>
             </form>

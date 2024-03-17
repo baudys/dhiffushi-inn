@@ -9,7 +9,11 @@ interface Props {
 export const Reviews = ({ reviews }: Props) => {
   return (
     <Container>
-      <Title labelCz='Poslední recenze' labelEn='Latest review' />
+      <Title
+        labelCz='Poslední recenze'
+        labelEn='Latest review'
+        labelRu='Последние отзывы'
+      />
 
       <div className='grid md:grid-cols-2 gap-6'>
         {reviews.map(review => (

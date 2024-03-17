@@ -26,16 +26,25 @@ export const Nav = () => {
           ? 'Rezervace'
           : language === 'en'
           ? 'Reservation'
-          : '',
+          : 'Бронирование',
       href: '/reservation',
     },
     {
       label:
-        language === 'cz' ? 'Zážitky' : language === 'en' ? 'Experiences' : '',
+        language === 'cz'
+          ? 'Zážitky'
+          : language === 'en'
+          ? 'Experiences'
+          : 'Опыты',
       href: '/experiences',
     },
     {
-      label: language === 'cz' ? 'Recenze' : language === 'en' ? 'Reviews' : '',
+      label:
+        language === 'cz'
+          ? 'Recenze'
+          : language === 'en'
+          ? 'Reviews'
+          : 'Отзывы',
       href: '/reviews',
     },
     {
@@ -43,11 +52,17 @@ export const Nav = () => {
       href: '/faq',
     },
     {
-      label: language === 'cz' ? 'Galerie' : language === 'en' ? 'Gallery' : '',
+      label:
+        language === 'cz'
+          ? 'Galerie'
+          : language === 'en'
+          ? 'Gallery'
+          : 'Галерея',
       href: '/gallery',
     },
     {
-      label: language === 'cz' ? 'O Nás' : language === 'en' ? 'About Us' : '',
+      label:
+        language === 'cz' ? 'O Nás' : language === 'en' ? 'About Us' : 'О нас',
       href: '/about-us',
     },
     {
@@ -56,7 +71,7 @@ export const Nav = () => {
           ? 'Pro Influencery'
           : language === 'en'
           ? 'For Influencers'
-          : '',
+          : 'Для инфлюенсеров',
       href: '/influencers',
     },
   ]
