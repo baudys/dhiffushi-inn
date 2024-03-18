@@ -16,6 +16,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'titleRu',
+      title: 'Název 🇷🇺',
+      type: 'string',
+    }),
+    defineField({
       name: 'slug',
       title: 'Odkaz',
       type: 'slug',
@@ -71,6 +76,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'overviewRu',
+      title: 'Přehled 🇷🇺',
+      type: 'string',
+    }),
+    defineField({
       name: 'requirementsCz',
       title: 'Požadavky 🇨🇿',
       type: 'array',
@@ -79,6 +89,12 @@ export default defineType({
     defineField({
       name: 'requirementsEn',
       title: 'Požadavky 🇬🇧',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
+      name: 'requirementsRu',
+      title: 'Požadavky 🇷🇺',
       type: 'array',
       of: [{ type: 'string' }],
     }),
@@ -95,6 +111,12 @@ export default defineType({
       of: [{ type: 'string' }],
     }),
     defineField({
+      name: 'bringRu',
+      title: 'Co s Sebou 🇷🇺',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
       name: 'getCz',
       title: 'Co Dostanete 🇨🇿',
       type: 'array',
@@ -103,6 +125,12 @@ export default defineType({
     defineField({
       name: 'getEn',
       title: 'Co Dostanete 🇬🇧',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
+      name: 'getRu',
+      title: 'Co Dostanete 🇷🇺',
       type: 'array',
       of: [{ type: 'string' }],
     }),

@@ -16,6 +16,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'titleRu',
+      title: 'Název 🇷🇺',
+      type: 'string',
+    }),
+    defineField({
       name: 'slug',
       title: 'Odkaz',
       type: 'slug',
@@ -42,6 +47,11 @@ export default defineType({
     defineField({
       name: 'tagEn',
       title: 'Štítek 🇬🇧',
+      type: 'string',
+    }),
+    defineField({
+      name: 'tagRu',
+      title: 'Štítek 🇷🇺',
       type: 'string',
     }),
     defineField({
@@ -90,6 +100,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'overviewRu',
+      title: 'Přehled 🇷🇺',
+      type: 'string',
+    }),
+    defineField({
       name: 'm2',
       title: 'm2',
       type: 'string',
@@ -103,6 +118,12 @@ export default defineType({
     defineField({
       name: 'includedEn',
       title: 'Obsahuje 🇬🇧',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
+      name: 'includedRu',
+      title: 'Obsahuje 🇷🇺',
       type: 'array',
       of: [{ type: 'string' }],
     }),
