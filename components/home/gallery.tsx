@@ -1,7 +1,7 @@
-import { hotelandoverview } from '@/database/gallery'
 import { Row } from '../gallery/row'
 import { Container } from '../container'
 import { Title } from './title'
+import { hotel } from '@/database/gallery'
 
 export const Gallery = () => {
   return (
@@ -13,7 +13,7 @@ export const Gallery = () => {
           labelRu='Отель и окрестности'
         />
       </Container>
-      <Row images={hotelandoverview} />
+      <Row images={hotel} />
     </div>
   )
 }

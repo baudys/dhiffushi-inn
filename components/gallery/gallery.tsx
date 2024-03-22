@@ -1,5 +1,5 @@
+import { accomodations, dining, experiences, hotel } from '@/database/gallery'
 import { Row } from './row'
-import { hotelandoverview } from '@/database/gallery'
 import { Title } from './title'
 
 export const Gallery = () => {
@@ -11,7 +11,7 @@ export const Gallery = () => {
           labelEn='Hotel overview'
           labelRu='Отель и окрестности'
         />
-        <Row images={hotelandoverview} />
+        <Row images={hotel} />
       </section>
       <section>
         <Title
@@ -19,15 +19,15 @@ export const Gallery = () => {
           labelEn='Accomodations'
           labelRu='Размещение'
         />
-        <Row images={hotelandoverview} />
+        <Row images={accomodations} />
       </section>
       <section>
         <Title labelCz='Stravování' labelEn='Dining' labelRu='Кейтеринг' />
-        <Row images={hotelandoverview} />
+        <Row images={dining} />
       </section>
       <section>
         <Title labelCz='Zážitky' labelEn='Experiences' labelRu='Опыты' />
-        <Row images={hotelandoverview} />
+        <Row images={experiences} />
       </section>
     </div>
   )

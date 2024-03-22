@@ -1,6 +1,44 @@
-export const hotelandoverview = [
-  'https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  'https://images.pexels.com/photos/2724079/pexels-photo-2724079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  'https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  'https://images.pexels.com/photos/1287441/pexels-photo-1287441.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+export const hotel = [
+  '/gallery/hotel/1.webp',
+  '/gallery/hotel/2.webp',
+  '/gallery/hotel/3.webp',
+  '/gallery/hotel/4.webp',
+  '/gallery/hotel/5.webp',
+]
+
+export const accomodations = [
+  '/gallery/accomodations/1.webp',
+  '/gallery/accomodations/2.webp',
+  '/gallery/accomodations/3.webp',
+  '/gallery/accomodations/4.webp',
+  '/gallery/accomodations/5.webp',
+  '/gallery/accomodations/6.webp',
+  '/gallery/accomodations/7.webp',
+  '/gallery/accomodations/8.webp',
+]
+
+export const dining = [
+  '/gallery/dining/1.webp',
+  '/gallery/dining/2.webp',
+  '/gallery/dining/3.webp',
+  '/gallery/dining/4.webp',
+  '/gallery/dining/5.webp',
+  '/gallery/dining/6.webp',
+  '/gallery/dining/7.webp',
+  '/gallery/dining/8.webp',
+  '/gallery/dining/9.webp',
+  '/gallery/dining/10.webp',
+  '/gallery/dining/11.webp',
+]
+
+export const experiences = [
+  '/gallery/experiences/1.webp',
+  '/gallery/experiences/2.webp',
+  '/gallery/experiences/3.webp',
+  '/gallery/experiences/4.webp',
+  '/gallery/experiences/5.webp',
+  '/gallery/experiences/6.webp',
+  '/gallery/experiences/7.webp',
+  '/gallery/experiences/8.webp',
+  '/gallery/experiences/9.webp',
 ]
