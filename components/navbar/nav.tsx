@@ -78,11 +78,6 @@ export const Nav = () => {
 
   const studio = pathname?.includes('/studio')
   const home = pathname === '/'
-  const reservation = pathname?.includes('/reservation')
-  const experiences = pathname?.includes('/experiences')
-  const faq = pathname?.includes('/faq')
-  const gallery = pathname?.includes('/gallery')
-  const about = pathname?.includes('/about')
   const influencer = pathname?.includes('/influencer')
 
   useEffect(() => {
@@ -100,7 +95,7 @@ export const Nav = () => {
   return (
     <nav
       className={cn(
-        'z-[999] w-full py-5 transition duration-300',
+        'z-[1001] w-full py-5 transition duration-300',
         isTopOfTheScreen
           ? 'bg-transparent'
           : 'bg-cyan-300/80 backdrop-blur-md border-b border-b-zinc-500/20 text-zinc-950 shadow-md',
