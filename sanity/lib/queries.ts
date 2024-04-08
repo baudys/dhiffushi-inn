@@ -37,3 +37,19 @@ export const ClassicItemQuery = groq`*[_type == "classic" && slug.current == $sl
     ...
   }
 `
+
+export const DeluxeQuery = groq`
+    *[_type=='deluxe'] {
+        ...,
+    }
+`
+
+export const DeluxePathsQuery = groq`*[_type == "deluxe" && defined(slug.current)][]{
+    "params": { "slug": slug.current }
+  }
+`
+
+export const DeluxeItemQuery = groq`*[_type == "deluxe" && slug.current == $slug][0]{
+    ...
+  }
+`

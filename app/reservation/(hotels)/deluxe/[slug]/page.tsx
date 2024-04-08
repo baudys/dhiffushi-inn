@@ -1,6 +1,6 @@
 import { Detail } from '@/components/reservation/detail'
 import { cachedClient } from '@/sanity/lib/client'
-import { ClassicItemQuery, ClassicPathsQuery } from '@/sanity/lib/queries'
+import { ClassicPathsQuery, DeluxeItemQuery } from '@/sanity/lib/queries'
 
 export const revalidate = 60
 
@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }: { params: any }) {
-  const room = await cachedClient(ClassicItemQuery, params)
+  const room = await cachedClient(DeluxeItemQuery, params)
 
   return (
     <main className='pt-32 pb-24'>
