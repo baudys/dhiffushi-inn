@@ -17,10 +17,10 @@ interface ReservationStore {
   setEndDate: (date: any) => void
   guests: number
   setGuests: (adults: any) => any
-  priceCz: number
-  setPriceCz: (price: number) => void
-  priceEn: number
-  setPriceEn: (price: number) => void
+  dining: string
+  setDining: (dining: any) => void
+  price: number
+  setPrice: (price: number) => void
 }
 
 export const useReservation = create<ReservationStore>(set => ({
@@ -40,8 +40,8 @@ export const useReservation = create<ReservationStore>(set => ({
   setEndDate: endDate => set({ endDate }),
   guests: 1,
   setGuests: guests => set({ guests }),
-  priceCz: 0,
-  setPriceCz: priceCz => set({ priceCz }),
-  priceEn: 0,
-  setPriceEn: priceEn => set({ priceEn }),
+  price: 0,
+  setPrice: price => set({ price }),
+  dining: '',
+  setDining: dining => set({ dining }),
 }))

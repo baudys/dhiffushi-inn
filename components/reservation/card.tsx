@@ -7,6 +7,13 @@ import Link from 'next/link'
 import { useReservation } from '@/store/use-reservation'
 import { Calendar } from '../ui/calendar'
 import { useLanguage } from '@/store/use-language'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 
 interface Props {
   room: any
@@ -20,11 +27,13 @@ export const Card = ({ room }: Props) => {
     setEndDate,
     guests,
     setGuests,
-    priceCz,
-    setPriceCz,
-    priceEn,
-    setPriceEn,
+    price,
+    setPrice,
+    dining,
+    setDining,
   } = useReservation()
+
+  console.log('dining: ', dining)
 
   const [range, setRange] = useState<any>()
   const [numOfDays, setNumOfDays] = useState(0)
@@ -36,9 +45,12 @@ export const Card = ({ room }: Props) => {
   useEffect(() => {
     const days = differenceInDays(range?.to, range?.from)
     setNumOfDays(days)
-    setPriceCz(days * room.priceCz * guests)
-    setPriceEn(days * room.priceEn * guests)
-  }, [range, guests])
+
+    if (dining === 'Bez stravy') setPrice(days * room.priceNoFood * guests)
+    if (dining === 'Snídaně') setPrice(days * room.priceBreakfast * guests)
+    if (dining === 'Polopenze') setPrice(days * room.priceHalf * guests)
+    if (dining === 'Plná Penze') setPrice(days * room.priceFull * guests)
+  }, [range, guests, dining])
 
   useEffect(() => {
     setStartDate(range?.from)
@@ -83,6 +95,53 @@ export const Card = ({ room }: Props) => {
         </div>
       </div>
 
+      <div className='flex justify-between items-center mt-4 select-none'>
+        <p>
+          {language === 'cz' && 'Stravování'}
+          {language === 'en' && 'Dining'}
+          {language === 'ru' && 'Кейтеринг'}
+        </p>
+        <div className='flex gap-2 items-center'>
+          <Select onValueChange={e => setDining(e)}>
+            <SelectTrigger>
+              <SelectValue
+                placeholder={
+                  language === 'cz'
+                    ? 'Vyberte Stravování'
+                    : language === 'en'
+                    ? 'Select Dining'
+                    : language === 'ru'
+                    ? 'Выберите питание'
+                    : ''
+                }
+              />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value='Bez Stravy'>
+                {language === 'cz' && 'Bez Stravy'}
+                {language === 'en' && 'No Food'}
+                {language === 'ru' && 'Без еды'}
+              </SelectItem>
+              <SelectItem value='Snídaně'>
+                {language === 'cz' && 'Snídaně'}
+                {language === 'en' && 'Breakfast'}
+                {language === 'ru' && 'Завтрак'}
+              </SelectItem>
+              <SelectItem value='Polopenze'>
+                {language === 'cz' && 'Polopenze'}
+                {language === 'en' && 'Half Board'}
+                {language === 'ru' && 'Полупансион'}
+              </SelectItem>
+              <SelectItem value='Plná Penze'>
+                {language === 'cz' && 'Plná Penze'}
+                {language === 'en' && 'Full Board'}
+                {language === 'ru' && 'Полная пенсия'}
+              </SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+
       {numOfDays > 0 && (
         <>
           <Separator className='my-4' />
@@ -93,11 +152,7 @@ export const Card = ({ room }: Props) => {
                 {language === 'en' && 'total'}
                 {language === 'ru' && 'всего'}
               </b>
-              <b>
-                {language === 'cz' && `$${priceCz.toLocaleString('cs')}`}
-                {language === 'en' && `$${priceEn.toLocaleString('en')}`}
-                {language === 'ru' && `$${priceEn.toLocaleString('en')}`}
-              </b>
+              <b>${price}</b>
             </span>
           </p>
           <Separator className='my-4' />
