@@ -80,16 +80,6 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'maxAdults',
-      title: 'Maximální Počet Dospělých',
-      type: 'string',
-    }),
-    defineField({
-      name: 'maxChildren',
-      title: 'Maximální Počet Dětí',
-      type: 'string',
-    }),
-    defineField({
       name: 'beds',
       title: 'Počet Postelí',
       type: 'string',

@@ -4,12 +4,9 @@ classic - 14 (14 vyhled na ostrov)
     - family room - 1x (40m2)
 
 deluxe - 23 (8 vyhled na ocean) (15 vyhled na ostrov)
-    - family room - 3x (35m2)
     - double - 13x (25m2)
     - double - 3x (30m2)
-    - tri - 2x (30m2)
+    - triple - 2x (30m2)
     - family room - 4x (30m2)
-    - apartment - 3x (45m2) (2x ocean view / 1x island view) (4 dospeli)
-
-
-vlastni plaz - bar, wifi, 50m, sprcha
+    - family room - 3x (35m2)
+    - apartment - 3x (45m2) (3x ocean view) (4 dospeli)

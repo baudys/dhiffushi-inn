@@ -18,10 +18,8 @@ export const Card = ({ room }: Props) => {
     setRoomId,
     setStartDate,
     setEndDate,
-    adults,
-    setAdults,
-    children,
-    setChildren,
+    guests,
+    setGuests,
     priceCz,
     setPriceCz,
     priceEn,
@@ -38,29 +36,21 @@ export const Card = ({ room }: Props) => {
   useEffect(() => {
     const days = differenceInDays(range?.to, range?.from)
     setNumOfDays(days)
-    setPriceCz(days * room.priceCz * (adults + children))
-    setPriceEn(days * room.priceEn * (adults + children))
-  }, [range, adults, children])
+    setPriceCz(days * room.priceCz * guests)
+    setPriceEn(days * room.priceEn * guests)
+  }, [range, guests])
 
   useEffect(() => {
     setStartDate(range?.from)
     setEndDate(range?.to)
   }, [range?.from, range?.to])
 
-  const handleDecrementAdults = () => {
-    setAdults(Math.max(1, adults - 1))
+  const handleDecrementGuests = () => {
+    setGuests(Math.max(1, guests - 1))
   }
 
-  const handleIncrementAdults = () => {
-    setAdults(Math.min(room.maxAdults, adults + 1))
-  }
-
-  const handleDecrementChildren = () => {
-    setChildren(Math.max(0, children - 1))
-  }
-
-  const handleIncrementChildren = () => {
-    setChildren(Math.min(room.maxChildren, children + 1))
+  const handleIncrementGuests = () => {
+    setGuests(Math.min(room.guests, guests + 1))
   }
 
   return (
@@ -74,46 +64,24 @@ export const Card = ({ room }: Props) => {
 
       <div className='flex justify-between items-center mt-4 select-none'>
         <p>
-          {language === 'cz' && 'Dospělí'}
-          {language === 'en' && 'Adults'}
-          {language === 'ru' && 'Взрослые'}
+          {language === 'cz' && 'Hosté'}
+          {language === 'en' && 'Guests'}
+          {language === 'ru' && 'Гости'}
         </p>
         <div className='flex gap-2 items-center'>
           <MinusCircle
-            onClick={handleDecrementAdults}
+            onClick={handleDecrementGuests}
             size={16}
             className='cursor-pointer'
           />
-          <span className='select-none'>{adults}</span>
+          <span className='select-none'>{guests}</span>
           <PlusCircle
-            onClick={handleIncrementAdults}
+            onClick={handleIncrementGuests}
             size={16}
             className='cursor-pointer'
           />
         </div>
       </div>
-      {room.maxChildren !== '0' && (
-        <div className='flex justify-between items-center select-none'>
-          <p>
-            {language === 'cz' && 'Děti'}
-            {language === 'en' && 'Children'}
-            {language === 'ru' && 'Дети'}
-          </p>
-          <div className='flex gap-2 items-center'>
-            <MinusCircle
-              onClick={handleDecrementChildren}
-              size={16}
-              className='cursor-pointer'
-            />
-            <span className='select-none'>{children}</span>
-            <PlusCircle
-              onClick={handleIncrementChildren}
-              size={16}
-              className='cursor-pointer'
-            />
-          </div>
-        </div>
-      )}
 
       {numOfDays > 0 && (
         <>
@@ -126,7 +94,7 @@ export const Card = ({ room }: Props) => {
                 {language === 'ru' && 'всего'}
               </b>
               <b>
-                {language === 'cz' && `${priceCz.toLocaleString('cs')} Kč`}
+                {language === 'cz' && `$${priceCz.toLocaleString('cs')}`}
                 {language === 'en' && `$${priceEn.toLocaleString('en')}`}
                 {language === 'ru' && `$${priceEn.toLocaleString('en')}`}
               </b>
