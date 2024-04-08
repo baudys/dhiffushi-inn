@@ -55,13 +55,23 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'priceCz',
-      title: 'Cena 🇨🇿',
+      name: 'priceNoFood',
+      title: 'Cena Bez stravy',
       type: 'string',
     }),
     defineField({
-      name: 'priceEn',
-      title: 'Cena 🇬🇧',
+      name: 'priceBreakfast',
+      title: 'Cena se Snídaní',
+      type: 'string',
+    }),
+    defineField({
+      name: 'priceHalf',
+      title: 'Cena s Polopenzí',
+      type: 'string',
+    }),
+    defineField({
+      name: 'priceFull',
+      title: 'Cena s Plnou Penzí',
       type: 'string',
     }),
     defineField({
@@ -90,42 +100,9 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'overviewCz',
-      title: 'Přehled 🇨🇿',
-      type: 'string',
-    }),
-    defineField({
-      name: 'overviewEn',
-      title: 'Přehled 🇬🇧',
-      type: 'string',
-    }),
-    defineField({
-      name: 'overviewRu',
-      title: 'Přehled 🇷🇺',
-      type: 'string',
-    }),
-    defineField({
       name: 'm2',
       title: 'm2',
       type: 'string',
-    }),
-    defineField({
-      name: 'includedCz',
-      title: 'Obsahuje 🇨🇿',
-      type: 'array',
-      of: [{ type: 'string' }],
-    }),
-    defineField({
-      name: 'includedEn',
-      title: 'Obsahuje 🇬🇧',
-      type: 'array',
-      of: [{ type: 'string' }],
-    }),
-    defineField({
-      name: 'includedRu',
-      title: 'Obsahuje 🇷🇺',
-      type: 'array',
-      of: [{ type: 'string' }],
     }),
     defineField({
       name: 'reservations',

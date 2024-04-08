@@ -58,37 +58,35 @@ export const Info = ({ room }: Props) => {
         <p className='text-zinc-950 text-lg font-semibold'>
           {language === 'cz' && (
             <>
-              <span className='text-zinc-800 text-sm'>od </span> {room.priceCz}{' '}
-              Kč
-              <span className='text-zinc-600 text-sm font-light'>
-                {' '}
-                / noc
-              </span>{' '}
+              <span className='text-zinc-800 text-sm'>od </span> $
+              {room.priceNoFood}
+              <span className='text-zinc-600 text-sm font-light'> / noc</span>
             </>
           )}
           {language === 'en' && (
             <>
               <span className='text-zinc-800 text-sm'>starting at </span> $
-              {room.priceEn}
+              {room.priceNoFood}
               <span className='text-zinc-600 text-sm font-light'> / night</span>
             </>
           )}
           {language === 'ru' && (
             <>
-              <span className='text-zinc-800 text-sm'>от</span> ${room.priceEn}
-              <span className='text-zinc-600 text-sm font-light'>/ ночь</span>
+              <span className='text-zinc-800 text-sm'>от</span> $
+              {room.priceNoFood}
+              <span className='text-zinc-600 text-sm font-light'> / ночь</span>
             </>
           )}
         </p>
       </div>
 
-      <Separator className='my-6' />
+      {/* <Separator className='my-6' />
 
       <p className='text-zinc-700'>
         {language === 'cz' && room.overviewCz}
         {language === 'en' && room.overviewEn}
         {language === 'ru' && room.overviewRu}
-      </p>
+      </p> */}
 
       <Separator className='my-6' />
 
@@ -99,72 +97,162 @@ export const Info = ({ room }: Props) => {
       </h3>
 
       <ul className='grid grid-cols-2 gap-y-2'>
-        {language === 'cz' &&
-          room.includedCz.length > 0 &&
-          room.includedCz.map((item: any) => (
-            <li key={item} className='flex items-center gap-2'>
-              {item === 'výhled na oceán' && <Eye size={18} />}
-              {item === 'výhled na ostrov' && <Eye size={18} />}
-              {item === 'soukromá pláž (50 metrů)' && <LandPlot size={18} />}
-              {item === 'úklidové služby' && <Trash size={18} />}
-              {item === 'klimatizace' && <AirVent size={18} />}
-              {item === 'kávový set' && <Coffee size={18} />}
-              {item === 'tv' && <Tv size={18} />}
-              {item === 'ramínka' && <TbHanger size={18} />}
-              {item === 'wifi' && <Wifi size={18} />}
-              {item === 'wifi na pláži' && <Wifi size={18} />}
-              {item === 'trezor' && <Vault size={18} />}
-              {item === 'balkón' && <MdBalcony size={18} />}
-              {item === 'fén' && <Wind size={18} />}
-              {item === 'ručníky' && <Rows3 size={18} />}
-
-              {item}
+        {language === 'cz' && (
+          <>
+            <li className='flex items-center gap-2'>
+              <LandPlot size={18} />
+              soukromá pláž (50 metrů)
             </li>
-          ))}
-        {language === 'en' &&
-          room.includedEn.length > 0 &&
-          room.includedEn.map((item: any) => (
-            <li key={item} className='flex items-center gap-2'>
-              {item === 'ocean view' && <Eye size={18} />}
-              {item === 'island view' && <Eye size={18} />}
-              {item === 'private beach (50 meters)' && <LandPlot size={18} />}
-              {item === 'cleaning service' && <Trash size={18} />}
-              {item === 'ac' && <AirVent size={18} />}
-              {item === 'coffee set' && <Coffee size={18} />}
-              {item === 'tv' && <Tv size={18} />}
-              {item === 'hangers' && <TbHanger size={18} />}
-              {item === 'wifi' && <Wifi size={18} />}
-              {item === 'beach wifi' && <Wifi size={18} />}
-              {item === 'safe' && <Vault size={18} />}
-              {item === 'balcony' && <MdBalcony size={18} />}
-              {item === 'hairdryer' && <Wind size={18} />}
-              {item === 'towels' && <Rows3 size={18} />}
-
-              {item}
+            <li className='flex items-center gap-2'>
+              <Trash size={18} />
+              úklidové služby
             </li>
-          ))}
-        {language === 'ru' &&
-          room.includedRu.length > 0 &&
-          room.includedRu.map((item: any) => (
-            <li key={item} className='flex items-center gap-2'>
-              {item === 'вид на океан' && <Eye size={18} />}
-              {item === 'вид на остров' && <Eye size={18} />}
-              {item === 'частный пляж (50 метров)' && <LandPlot size={18} />}
-              {item === 'клининговые услуги' && <Trash size={18} />}
-              {item === 'кондиционирование воздуха' && <AirVent size={18} />}
-              {item === 'кофейный набор' && <Coffee size={18} />}
-              {item === 'ТЕЛЕВИЗОР' && <Tv size={18} />}
-              {item === 'hangers' && <TbHanger size={18} />}
-              {item === 'wifi' && <Wifi size={18} />}
-              {item === 'пляжный wifi' && <Wifi size={18} />}
-              {item === 'хранилище' && <Vault size={18} />}
-              {item === 'балкон' && <MdBalcony size={18} />}
-              {item === 'Фен' && <Wind size={18} />}
-              {item === 'полотенца' && <Rows3 size={18} />}
-
-              {item}
+            <li className='flex items-center gap-2'>
+              <AirVent size={18} />
+              klimatizace
             </li>
-          ))}
+            <li className='flex items-center gap-2'>
+              <Coffee size={18} />
+              kávový set
+            </li>
+            <li className='flex items-center gap-2'>
+              <Tv size={18} />
+              tv
+            </li>
+            <li className='flex items-center gap-2'>
+              <TbHanger size={18} />
+              ramínka
+            </li>
+            <li className='flex items-center gap-2'>
+              <Wifi size={18} />
+              wifi{' '}
+            </li>
+            <li className='flex items-center gap-2'>
+              <Wifi size={18} />
+              wifi na pláži{' '}
+            </li>
+            <li className='flex items-center gap-2'>
+              <Vault size={18} />
+              trezor{' '}
+            </li>
+            <li className='flex items-center gap-2'>
+              <MdBalcony size={18} />
+              balkón{' '}
+            </li>
+            <li className='flex items-center gap-2'>
+              <Wind size={18} />
+              fén
+            </li>
+            <li className='flex items-center gap-2'>
+              <Rows3 size={18} />
+              ručníky
+            </li>
+          </>
+        )}
+        {language === 'en' && (
+          <>
+            <li className='flex items-center gap-2'>
+              <LandPlot size={18} />
+              private beach (50 meters)
+            </li>
+            <li className='flex items-center gap-2'>
+              <Trash size={18} />
+              cleaning service
+            </li>
+            <li className='flex items-center gap-2'>
+              <AirVent size={18} />
+              ac
+            </li>
+            <li className='flex items-center gap-2'>
+              <Coffee size={18} />
+              coffee set
+            </li>
+            <li className='flex items-center gap-2'>
+              <Tv size={18} />
+              tv
+            </li>
+            <li className='flex items-center gap-2'>
+              <TbHanger size={18} />
+              hangers
+            </li>
+            <li className='flex items-center gap-2'>
+              <Wifi size={18} />
+              wifi
+            </li>
+            <li className='flex items-center gap-2'>
+              <Wifi size={18} />
+              beach wifi
+            </li>
+            <li className='flex items-center gap-2'>
+              <Vault size={18} />
+              safe
+            </li>
+            <li className='flex items-center gap-2'>
+              <MdBalcony size={18} />
+              balcony
+            </li>
+            <li className='flex items-center gap-2'>
+              <Wind size={18} />
+              hairdryer
+            </li>
+            <li className='flex items-center gap-2'>
+              <Rows3 size={18} />
+              towels
+            </li>
+          </>
+        )}
+        {language === 'ru' && (
+          <>
+            <li className='flex items-center gap-2'>
+              <LandPlot size={18} />
+              частный пляж (50 метров)
+            </li>
+            <li className='flex items-center gap-2'>
+              <Trash size={18} />
+              клининговые услуги
+            </li>
+            <li className='flex items-center gap-2'>
+              <AirVent size={18} />
+              кондиционирование воздуха
+            </li>
+            <li className='flex items-center gap-2'>
+              <Coffee size={18} />
+              кофейный набор
+            </li>
+            <li className='flex items-center gap-2'>
+              <Tv size={18} />
+              ТЕЛЕВИЗОР
+            </li>
+            <li className='flex items-center gap-2'>
+              <TbHanger size={18} />
+              hangers
+            </li>
+            <li className='flex items-center gap-2'>
+              <Wifi size={18} />
+              wifi
+            </li>
+            <li className='flex items-center gap-2'>
+              <Wifi size={18} />
+              пляжный wifi
+            </li>
+            <li className='flex items-center gap-2'>
+              <Vault size={18} />
+              хранилище
+            </li>
+            <li className='flex items-center gap-2'>
+              <MdBalcony size={18} />
+              балкон
+            </li>
+            <li className='flex items-center gap-2'>
+              <Wind size={18} />
+              Фен
+            </li>
+            <li className='flex items-center gap-2'>
+              <Rows3 size={18} />
+              полотенца
+            </li>
+          </>
+        )}
       </ul>
 
       <Separator className='my-6' />

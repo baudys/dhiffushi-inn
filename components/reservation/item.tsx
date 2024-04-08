@@ -18,8 +18,6 @@ export const Item = ({ room }: Props) => {
     setCurrentUrl(window.location.href)
   }, [])
 
-  console.log(currentUrl)
-
   return (
     <Link href={`${currentUrl}/${room.slug.current}`}>
       <div className='aspect-square relative overflow-hidden rounded-3xl'>
@@ -37,7 +35,7 @@ export const Item = ({ room }: Props) => {
       <h2 className='font-semibold mt-1'>
         {language === 'cz' && room.titleCz}
         {language === 'en' && room.titleEn}
-        {language === 'en' && room.titleRu}
+        {language === 'en' && room.titleRu} ({room.m2}m2)
       </h2>
       <p className='text-zinc-500 text-sm'>
         {language === 'cz' && <>{room.guests} hosté</>}
@@ -45,9 +43,9 @@ export const Item = ({ room }: Props) => {
         {language === 'en' && <>{room.guests} гости</>}
       </p>
       <p className='text-zinc-800'>
-        {language === 'cz' && <>od {room.priceCz} Kč / noc</>}
-        {language === 'en' && <>starting at ${room.priceEn} / night</>}
-        {language === 'en' && <>от ${room.priceEn} / ночь</>}
+        {language === 'cz' && <>od ${room.priceNoFood} / noc</>}
+        {language === 'en' && <>starting at ${room.priceNoFood} / night</>}
+        {language === 'en' && <>от ${room.priceNoFood} / ночь</>}
       </p>
     </Link>
   )
