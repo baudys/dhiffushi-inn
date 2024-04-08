@@ -33,8 +33,6 @@ export const Card = ({ room }: Props) => {
     setDining,
   } = useReservation()
 
-  console.log('dining: ', dining)
-
   const [range, setRange] = useState<any>()
   const [numOfDays, setNumOfDays] = useState(0)
 
@@ -142,7 +140,7 @@ export const Card = ({ room }: Props) => {
         </div>
       </div>
 
-      {numOfDays > 0 && (
+      {numOfDays > 0 && dining !== '' && (
         <>
           <Separator className='my-4' />
           <p className='text-xl'>
