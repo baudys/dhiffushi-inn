@@ -128,26 +128,20 @@ export default defineType({
               type: 'datetime',
             },
             {
-              name: 'adults',
-              title: 'Dospělí',
+              name: 'guests',
+              title: 'Hosté',
               type: 'string',
             },
             {
-              name: 'children',
-              title: 'Děti',
+              name: 'dining',
+              title: 'Strava',
               type: 'string',
             },
             {
-              name: 'priceCz',
-              title: 'Cena Kč 🇨🇿',
+              name: 'price',
+              title: 'Cena',
               type: 'string',
             },
-            {
-              name: 'priceEn',
-              title: 'Cena $ 🇬🇧',
-              type: 'string',
-            },
-
             {
               name: 'message',
               title: 'Zpráva',
