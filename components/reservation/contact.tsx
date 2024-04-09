@@ -25,8 +25,7 @@ import { useReservation } from '@/store/use-reservation'
 
 export const Contact = () => {
   const { language } = useLanguage()
-  const { roomId, adults, children, endDate, startDate, priceCz, priceEn } =
-    useReservation()
+  const { roomId, guests, endDate, startDate, price, dining } = useReservation()
 
   const schema = z.object({
     name: z.string({
@@ -72,35 +71,13 @@ export const Contact = () => {
   const onSubmit: SubmitHandler<FieldValues> = async (data: any) => {
     let reservationData
 
-    if (language === 'cz') {
-      reservationData = {
-        ...data,
-        adults,
-        children,
-        startDate,
-        endDate,
-        priceCz,
-      }
-    }
-    if (language === 'en') {
-      reservationData = {
-        ...data,
-        adults,
-        children,
-        startDate,
-        endDate,
-        priceEn,
-      }
-    }
-    if (language === 'ru') {
-      reservationData = {
-        ...data,
-        adults,
-        children,
-        startDate,
-        endDate,
-        priceEn,
-      }
+    reservationData = {
+      ...data,
+      guests,
+      dining,
+      startDate,
+      endDate,
+      price,
     }
 
     addReservation(roomId, reservationData)
