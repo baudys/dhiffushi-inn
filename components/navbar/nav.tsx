@@ -95,7 +95,7 @@ export const Nav = () => {
   return (
     <nav
       className={cn(
-        'z-[1001] w-full py-5 transition duration-300',
+        'z-[1002] w-full py-5 transition duration-300',
         isTopOfTheScreen
           ? 'bg-transparent'
           : 'bg-cyan-300/80 backdrop-blur-md border-b border-b-zinc-500/20 text-zinc-950 shadow-md',

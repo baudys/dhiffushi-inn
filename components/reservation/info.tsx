@@ -8,6 +8,7 @@ import {
   Rows3,
   Trash,
   Tv,
+  User,
   Vault,
   Wifi,
   Wind,
@@ -59,21 +60,27 @@ export const Info = ({ room }: Props) => {
           {language === 'cz' && (
             <>
               <span className='text-zinc-800 text-sm'>od </span> $
-              {room.priceNoFood}
+              {room.priceNoFood !== 'x'
+                ? room.priceNoFood
+                : room.priceBreakfast}
               <span className='text-zinc-600 text-sm font-light'> / noc</span>
             </>
           )}
           {language === 'en' && (
             <>
               <span className='text-zinc-800 text-sm'>starting at </span> $
-              {room.priceNoFood}
+              {room.priceNoFood !== 'x'
+                ? room.priceNoFood
+                : room.priceBreakfast}
               <span className='text-zinc-600 text-sm font-light'> / night</span>
             </>
           )}
           {language === 'ru' && (
             <>
               <span className='text-zinc-800 text-sm'>от</span> $
-              {room.priceNoFood}
+              {room.priceNoFood !== 'x'
+                ? room.priceNoFood
+                : room.priceBreakfast}
               <span className='text-zinc-600 text-sm font-light'> / ночь</span>
             </>
           )}
@@ -99,6 +106,10 @@ export const Info = ({ room }: Props) => {
       <ul className='grid grid-cols-2 gap-y-2'>
         {language === 'cz' && (
           <>
+            <li className='flex items-center gap-2'>
+              <User size={18} />
+              český personál
+            </li>
             <li className='flex items-center gap-2'>
               <LandPlot size={18} />
               soukromá pláž (50 metrů)

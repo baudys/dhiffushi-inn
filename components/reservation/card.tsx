@@ -44,10 +44,10 @@ export const Card = ({ room }: Props) => {
     const days = differenceInDays(range?.to, range?.from)
     setNumOfDays(days)
 
-    if (dining === 'Bez stravy') setPrice(days * room.priceNoFood * guests)
-    if (dining === 'Snídaně') setPrice(days * room.priceBreakfast * guests)
-    if (dining === 'Polopenze') setPrice(days * room.priceHalf * guests)
-    if (dining === 'Plná Penze') setPrice(days * room.priceFull * guests)
+    if (dining === 'Bez stravy') setPrice(days * room.priceNoFood)
+    if (dining === 'Snídaně') setPrice(days * room.priceBreakfast)
+    if (dining === 'Polopenze') setPrice(days * room.priceHalf)
+    if (dining === 'Plná Penze') setPrice(days * room.priceFull)
   }, [range, guests, dining])
 
   useEffect(() => {
@@ -115,11 +115,13 @@ export const Card = ({ room }: Props) => {
               />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value='Bez Stravy'>
-                {language === 'cz' && 'Bez Stravy'}
-                {language === 'en' && 'No Food'}
-                {language === 'ru' && 'Без еды'}
-              </SelectItem>
+              {room.priceNoFood !== 'x' && (
+                <SelectItem value='Bez Stravy'>
+                  {language === 'cz' && 'Bez Stravy'}
+                  {language === 'en' && 'No Food'}
+                  {language === 'ru' && 'Без еды'}
+                </SelectItem>
+              )}
               <SelectItem value='Snídaně'>
                 {language === 'cz' && 'Snídaně'}
                 {language === 'en' && 'Breakfast'}

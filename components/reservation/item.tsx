@@ -43,9 +43,27 @@ export const Item = ({ room }: Props) => {
         {language === 'en' && <>{room.guests} гости</>}
       </p>
       <p className='text-zinc-800'>
-        {language === 'cz' && <>od ${room.priceNoFood} / noc</>}
-        {language === 'en' && <>starting at ${room.priceNoFood} / night</>}
-        {language === 'en' && <>от ${room.priceNoFood} / ночь</>}
+        {language === 'cz' && (
+          <>
+            od $
+            {room.priceNoFood !== 'x' ? room.priceNoFood : room.priceBreakfast}/
+            noc
+          </>
+        )}
+        {language === 'en' && (
+          <>
+            starting at $
+            {room.priceNoFood !== 'x' ? room.priceNoFood : room.priceBreakfast}/
+            night
+          </>
+        )}
+        {language === 'en' && (
+          <>
+            от $
+            {room.priceNoFood !== 'x' ? room.priceNoFood : room.priceBreakfast}/
+            ночь
+          </>
+        )}
       </p>
     </Link>
   )
