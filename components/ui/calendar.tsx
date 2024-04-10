@@ -25,7 +25,7 @@ function Calendar({
       weekStartsOn={1}
       showOutsideDays={showOutsideDays}
       disabled={{ before: new Date() }}
-      className={cn('p-2', className)}
+      className={cn('p-2 flex items-center justify-center', className)}
       classNames={{
         months:
           'flex flex-col sm:flex-row justify-center space-y-4 sm:space-x-4 sm:space-y-0',
