@@ -44,7 +44,7 @@ export const Detail = ({ experience }: Props) => {
               {language === 'ru' && 'Продолжительность'}
             </h2>
             <p className='font-semibold text-xl md:text-2xl'>
-              {experience.duration}
+              {experience.duration} min
             </p>
           </div>
           <div>
@@ -54,20 +54,28 @@ export const Detail = ({ experience }: Props) => {
               {language === 'ru' && 'Цена'}
             </h2>
             <p className='font-semibold text-xl md:text-2xl'>
-              {language === 'cz' && experience.priceCz}
-              {language === 'en' && experience.priceEn}
-              {language === 'ru' && experience.priceRu}
+              ${experience.priceEn}
             </p>
           </div>
         </div>
       </section>
 
       <section>
-        <h2 className='uppercase text-xl md:text-2xl  text-zinc-500 mb-4'>
-          {language === 'cz' && 'Co je nutné vědět'}
-          {language === 'en' && 'Things to know'}
-          {language === 'ru' && 'Что вам нужно знать'}
-        </h2>
+        {experience.requirementsCz ||
+          experience.requirementsEn ||
+          experience.requirementsRu ||
+          experience.bringCz ||
+          experience.bringEn ||
+          experience.bringRu ||
+          experience.getCz ||
+          experience.getEn ||
+          (experience.getRu && (
+            <h2 className='uppercase text-xl md:text-2xl  text-zinc-500 mb-4'>
+              {language === 'cz' && 'Co je nutné vědět'}
+              {language === 'en' && 'Things to know'}
+              {language === 'ru' && 'Что вам нужно знать'}
+            </h2>
+          ))}
 
         <div className='divide-y divide-zinc-500/50 space-y-5'>
           {experience.requirementsCz &&
@@ -85,15 +93,15 @@ export const Detail = ({ experience }: Props) => {
                 </h4>
                 <ul className='list-disc list-inside text-sm ml-8 mt-1'>
                   {language === 'cz' &&
-                    experience.requirementsCz.map((item: any) => (
+                    experience?.requirementsCz?.map((item: any) => (
                       <li key={item}>{item}</li>
                     ))}
                   {language === 'en' &&
-                    experience.requirementsEn.map((item: any) => (
+                    experience?.requirementsEn?.map((item: any) => (
                       <li key={item}>{item}</li>
                     ))}
                   {language === 'ru' &&
-                    experience.requirementsRu.map((item: any) => (
+                    experience?.requirementsRu?.map((item: any) => (
                       <li key={item}>{item}</li>
                     ))}
                 </ul>
@@ -111,18 +119,19 @@ export const Detail = ({ experience }: Props) => {
                   <Backpack size={22} />
                   {language === 'cz' && 'Co s Sebou'}
                   {language === 'en' && 'What to Bring'}
+                  {language === 'ru' && 'Что взять с собой'}
                 </h4>
                 <ul className='list-disc list-inside text-sm ml-8 mt-1'>
                   {language === 'cz' &&
-                    experience.bringCz.map((item: any) => (
+                    experience?.bringCz?.map((item: any) => (
                       <li key={item}>{item}</li>
                     ))}
                   {language === 'en' &&
-                    experience.bringEn.map((item: any) => (
+                    experience?.bringEn?.map((item: any) => (
                       <li key={item}>{item}</li>
                     ))}
                   {language === 'ru' &&
-                    experience.bringRu.map((item: any) => (
+                    experience?.bringRu?.map((item: any) => (
                       <li key={item}>{item}</li>
                     ))}
                 </ul>
@@ -140,19 +149,19 @@ export const Detail = ({ experience }: Props) => {
                   <Backpack size={22} />
                   {language === 'cz' && 'Co Dostanete'}
                   {language === 'en' && 'What you Get'}
-                  {language === 'en' && 'Что вы получите'}
+                  {language === 'ru' && 'Что вы получите'}
                 </h4>
                 <ul className='list-disc list-inside text-sm ml-8 mt-1'>
                   {language === 'cz' &&
-                    experience.bringCz.map((item: any) => (
+                    experience?.getCz?.map((item: any) => (
                       <li key={item}>{item}</li>
                     ))}
                   {language === 'en' &&
-                    experience.bringEn.map((item: any) => (
+                    experience?.getEn?.map((item: any) => (
                       <li key={item}>{item}</li>
                     ))}
                   {language === 'ru' &&
-                    experience.bringRu.map((item: any) => (
+                    experience?.getRu?.map((item: any) => (
                       <li key={item}>{item}</li>
                     ))}
                 </ul>

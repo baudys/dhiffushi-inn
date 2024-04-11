@@ -46,13 +46,9 @@ export const Row = ({ data, labelCz, labelEn, labelRu }: Props) => {
                 </h2>
                 <p className='text-sm text-zinc-600 flex items-center gap-1'>
                   <Timer size={18} />
-                  {item.duration}
+                  {item.duration} min
                 </p>
-                <p className='text-lg sm:text-xl'>
-                  {language === 'cz' && item.priceCz}
-                  {language === 'en' && item.priceEn}
-                  {language === 'en' && item.priceRu}
-                </p>
+                <p className='text-lg sm:text-xl'>${item.priceEn}</p>
               </Link>
             </CarouselItem>
           )

@@ -17,7 +17,7 @@ export const Experiences = ({
   sports,
 }: Props) => {
   return (
-    <Container>
+    <Container className='space-y-40'>
       {snorkeling.length !== 0 && (
         <Row
           data={snorkeling}
