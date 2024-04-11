@@ -37,13 +37,9 @@ export const Experiences = ({ experience }: Props) => {
             </h2>
             <p className='text-sm text-zinc-400 flex experiences-center gap-1'>
               <Timer size={18} />
-              {experience.duration}
+              {experience.duration} min
             </p>
-            <p className='text-white text-lg'>
-              {language === 'cz' && experience.priceCz}
-              {language === 'en' && experience.priceEn}
-              {language === 'ru' && experience.priceRu}
-            </p>
+            <p className='text-white text-lg'>${experience.priceEn}</p>
           </div>
         </div>
       </Link>
