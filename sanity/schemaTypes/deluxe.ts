@@ -130,7 +130,7 @@ export default defineType({
             {
               name: 'guests',
               title: 'Hosté',
-              type: 'string',
+              type: 'number',
             },
             {
               name: 'dining',
@@ -140,7 +140,7 @@ export default defineType({
             {
               name: 'price',
               title: 'Cena',
-              type: 'string',
+              type: 'number',
             },
             {
               name: 'message',
