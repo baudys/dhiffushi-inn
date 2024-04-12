@@ -133,6 +133,16 @@ export default defineType({
               type: 'number',
             },
             {
+              name: 'view',
+              title: 'Výhled',
+              type: 'string',
+            },
+            {
+              name: 'roomName',
+              title: 'Název Pokoje',
+              type: 'string',
+            },
+            {
               name: 'dining',
               title: 'Strava',
               type: 'string',
