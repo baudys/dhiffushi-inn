@@ -160,7 +160,7 @@ const Contact = () => {
     try {
       const emailResponse = await emailjs.send(
         process.env.NEXT_PUBLIC_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID_CREATORS!,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID_INFLUENCERS!,
         data,
         process.env.NEXT_PUBLIC_PUBLIC_API!
       )
