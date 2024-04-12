@@ -31,6 +31,8 @@ export const Card = ({ room }: Props) => {
     setPrice,
     dining,
     setDining,
+    setView,
+    setRoomName,
   } = useReservation()
 
   const [range, setRange] = useState<any>()
@@ -38,6 +40,8 @@ export const Card = ({ room }: Props) => {
 
   useEffect(() => {
     setRoomId(room._id)
+    setView(room.tagCz)
+    setRoomName(room.titleCz)
   }, [])
 
   useEffect(() => {

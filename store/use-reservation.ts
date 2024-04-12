@@ -21,6 +21,10 @@ interface ReservationStore {
   setDining: (dining: any) => void
   price: number
   setPrice: (price: number) => void
+  view: string
+  setView: (view: string) => void
+  roomName: string
+  setRoomName: (roomName: string) => void
 }
 
 export const useReservation = create<ReservationStore>(set => ({
@@ -44,4 +48,8 @@ export const useReservation = create<ReservationStore>(set => ({
   setPrice: price => set({ price }),
   dining: '',
   setDining: dining => set({ dining }),
+  view: '',
+  setView: view => set({ view }),
+  roomName: '',
+  setRoomName: roomName => set({ roomName }),
 }))

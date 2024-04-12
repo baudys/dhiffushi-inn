@@ -25,7 +25,8 @@ import { useReservation } from '@/store/use-reservation'
 
 export const Contact = () => {
   const { language } = useLanguage()
-  const { roomId, guests, endDate, startDate, price, dining } = useReservation()
+  const { roomId, guests, endDate, startDate, price, dining, view, roomName } =
+    useReservation()
 
   const schema = z.object({
     name: z.string({
@@ -75,6 +76,8 @@ export const Contact = () => {
       ...data,
       guests,
       dining,
+      view,
+      roomName,
       startDate,
       endDate,
       price,
@@ -85,8 +88,8 @@ export const Contact = () => {
     try {
       const emailResponse = await emailjs.send(
         process.env.NEXT_PUBLIC_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID_CREATORS!,
-        data,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID_RESERVATION!,
+        reservationData,
         process.env.NEXT_PUBLIC_PUBLIC_API!
       )
 
