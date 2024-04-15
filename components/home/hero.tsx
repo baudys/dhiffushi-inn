@@ -2,6 +2,7 @@
 
 import { Container } from '../container'
 import { useLanguage } from '@/store/use-language'
+import { Button } from '../ui/button'
 
 const Hero = () => {
   const { language } = useLanguage()
@@ -22,11 +23,14 @@ const Hero = () => {
         <div className='absolute top-0 left-0 flex w-full h-full pt-32 bg-black/60 lg:pt-0 lg:items-center lg:justify-center'>
           <Container>
             <div className='flex flex-col items-center justify-center p-1'>
-              <h1
-                className={`text-white text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-3 font-black uppercase text-center pt-1`}
-              >
-                DHIFFUSHI INN
+              <h1 className='text-white text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-3 font-black uppercase text-center pt-1'>
+                {language === 'cz' && 'Objevte s námi Maledivy'}
+                {language === 'en' && 'Discover the maldives with us'}
+                {language === 'ru' && 'Откройте для себя Мальдивы с нами'}
               </h1>
+              <Button className='bg-cyan-600 hover:bg-cyan-500 transition mt-8'>
+                Rezervovat penzion
+              </Button>
             </div>
           </Container>
         </div>
