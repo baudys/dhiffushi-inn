@@ -38,10 +38,10 @@ export const Head = ({ room }: Props) => {
       </div>
 
       {showAllImages && (
-        <div className='absolute w-full h-full inset-0 z-[1001] pt-32'>
-          <Container className='flex flex-col gap-2 relative bg-white'>
+        <div className='fixed w-screen h-screen inset-0 z-[1001] pt-32 bg-white overflow-auto'>
+          <Container className='flex flex-col gap-2 relative bg-white overflow-auto'>
             {room.images.map((image: any) => (
-              <img src={urlForImage(image)} />
+              <img key={image._key} src={urlForImage(image)} />
             ))}
             <button
               onClick={() => setShowAllImages(false)}
