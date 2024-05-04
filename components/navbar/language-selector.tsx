@@ -57,7 +57,7 @@ const LanguageSelector = ({ isTopOfTheScreen, home }: Props) => {
           <ChevronsUpDown className='w-4 h-4 my-2 opacity-90 shrink-0' />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className='w-[100px] p-2 z-[1001] bg-zinc-100 backdrop-blur-lg border-zinc-500/40'>
+      <PopoverContent className='w-[100px] p-2 z-[1002] bg-zinc-100 backdrop-blur-lg border-zinc-500/40'>
         <Command className='!bg-transparent'>
           <CommandGroup className='space-y-2'>
             {languages.map(({ src, value }: { src: string; value: string }) => (
