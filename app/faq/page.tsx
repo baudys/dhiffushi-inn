@@ -14,6 +14,9 @@ import { useLanguage } from '@/store/use-language'
 export default function Page() {
   const { language } = useLanguage()
 
+  const totalItems = faq.length
+  const itemsPerColumn = Math.ceil(totalItems / 2)
+
   return (
     <main className='py-28'>
       <Container>
@@ -25,7 +28,7 @@ export default function Page() {
 
         <div className='grid lg:grid-cols-2 gap-4 lg:gap-20'>
           <Accordion type='multiple' className='space-y-4'>
-            {faq.slice(0, 5).map(item => (
+            {faq.slice(0, itemsPerColumn).map(item => (
               <AccordionItem key={item.value} value={item.value}>
                 <AccordionTrigger className='text-lg'>
                   {language === 'cz' && item.qCz}
@@ -41,7 +44,7 @@ export default function Page() {
             ))}
           </Accordion>
           <Accordion type='multiple' className='space-y-4'>
-            {faq.slice(5, 10).map(item => (
+            {faq.slice(itemsPerColumn).map(item => (
               <AccordionItem key={item.value} value={item.value}>
                 <AccordionTrigger className='text-lg'>
                   {language === 'cz' && item.qCz}
