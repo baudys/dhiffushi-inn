@@ -54,7 +54,7 @@ export const Intro = () => {
             1200 people. <br />
             Despite its small size, the island has decent amenities - a school,
             doctor, grocery and sundry stores, souvenir shops, cafés,
-            restaurants, football and children's playgrounds, and a mosque.
+            restaurants, football and children&apos;s playgrounds, and a mosque.
           </>
         )}
         {language === 'ru' && (
