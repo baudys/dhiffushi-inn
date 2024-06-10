@@ -4,15 +4,15 @@ import { AiFillPhone } from 'react-icons/ai'
 import { MdEmail } from 'react-icons/md'
 import { Container } from '../container'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/store/use-language'
 
 interface PersonProps {
-  role: string
   name: string
   tel: string
   email: string
 }
 
-export const Person = ({ role, name, tel, email }: PersonProps) => {
+export const Person = ({ name, tel, email }: PersonProps) => {
   return (
     <motion.div
       initial={{ scale: 0 }}
@@ -20,19 +20,22 @@ export const Person = ({ role, name, tel, email }: PersonProps) => {
       transition={{ delay: 0.2 }}
       className='flex-1 p-4 rounded-md ring-1 ring-zinc-400'
     >
-      <h4 className='text-xs text-zinc-500'>{role}</h4>
       <h3 className='text-lg font-semibold text-black uppercase'>{name}</h3>
       <p className='flex items-center gap-2 text-zinc-700'>
-        <AiFillPhone /> {tel}
+        <AiFillPhone />
+        <a href={`tel:${tel}`}>{tel}</a>
       </p>
       <p className='flex items-center gap-2 text-zinc-700'>
-        <MdEmail /> {email}
+        <MdEmail />
+        <a href={`mailto:${email}`}>{email}</a>
       </p>
     </motion.div>
   )
 }
 
 export const Contact = () => {
+  const { language } = useLanguage()
+
   return (
     <Container>
       <div className='grid gap-4 xl:gap-20 xl:grid-cols-[1fr_1.4fr]'>
@@ -47,24 +50,19 @@ export const Contact = () => {
           </motion.div>
 
           <div className='flex flex-col gap-4 mt-10 lg:mt-20'>
-            <Person
-              role='majitel'
-              name='John Doe'
-              tel='+482 583 682 583'
-              email='john.doe@email.com'
-            />
-            <Person
-              role='majitel'
-              name='John Doe'
-              tel='+482 583 682 583'
-              email='john.doe@email.com'
-            />
-            <Person
-              role='majitel'
-              name='John Doe'
-              tel='+482 583 682 583'
-              email='john.doe@email.com'
-            />
+            {language === 'cz' ? (
+              <Person
+                name='Lucie'
+                tel='+420 725 752 789'
+                email='dhiffushi.inn.cz@gmail.com'
+              />
+            ) : (
+              <Person
+                name='Arysh'
+                tel='+960 9985488'
+                email='dhiffushi.inn@gmail.com'
+              />
+            )}
           </div>
         </div>
         <motion.iframe
