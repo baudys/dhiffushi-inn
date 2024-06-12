@@ -9,7 +9,20 @@ const font = Quicksand({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Dhiffushi Inn',
-  description: '',
+  description:
+    'We are a Czech-Maldivian family running a guesthouse on the island of Dhiffushi.',
+  creator: 'Daniel Anthony Baudyš',
+  authors: [{ name: 'Daniel Anthony Baudyš', url: 'https://baudys.dev' }],
+  category: 'guesthouse',
+  keywords: [
+    'maldives',
+    'guest house',
+    'house',
+    'hotel',
+    'vacation',
+    'beach',
+    'ocean',
+  ],
 }
 
 export default function Layout({

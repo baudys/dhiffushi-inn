@@ -7,7 +7,6 @@ import { useLanguage } from '@/store/use-language'
 import { Timer } from 'lucide-react'
 import Link from 'next/link'
 import { Title } from './title'
-import { useState } from 'react'
 
 interface Props {
   data: any[]
