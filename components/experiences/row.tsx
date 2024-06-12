@@ -7,6 +7,7 @@ import { useLanguage } from '@/store/use-language'
 import { Timer } from 'lucide-react'
 import Link from 'next/link'
 import { Title } from './title'
+import { useState } from 'react'
 
 interface Props {
   data: any[]
@@ -18,12 +19,10 @@ interface Props {
 export const Row = ({ data, labelCz, labelEn, labelRu }: Props) => {
   const { language } = useLanguage()
 
-  console.log(data)
-
   return (
     <section>
       <Title labelCz={labelCz} labelEn={labelEn} labelRu={labelRu} />
-      <Carousel numOfSlides={3} loop={false} arrows>
+      <Carousel numOfSlides={1} loop={false} arrows>
         {data.map((item, i) => {
           return (
             <CarouselItem
