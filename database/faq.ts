@@ -74,11 +74,11 @@ export const faq = [
   {
     value: 'alkohol',
     qCz: 'Mohu si na ostrově koupit alkohol?',
-    aCz: 'Ne. Prodej alkoholu na Maledivách je zakázán.',
+    aCz: 'Ne. Prodej alkoholu na Maledivách je zakázán. Kousek od ostrova je ale loď, na které je možné alkohol pít.',
     qEn: 'Can I buy alcohol on the island?',
-    aEn: 'No, alcohol sale is prohibited in the Maldives.',
+    aEn: 'No. The sale of alcohol is prohibited in the Maldives. But there is a boat just off the island where you can drink alcohol.',
     qRu: 'Могу ли я купить алкоголь на острове?',
-    aRu: 'Нет, продажа алкоголя на Мальдивах запрещена.',
+    aRu: 'Нет. Продажа алкоголя на Мальдивах запрещена. Но недалеко от острова есть лодка, где можно выпить алкоголь.',
   },
   {
     value: 'obchod',
