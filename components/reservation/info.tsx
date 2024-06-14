@@ -279,7 +279,7 @@ export const Info = ({ room }: Props) => {
         <h4 className='text-lg font-medium'>
           {language === 'cz' && 'Jídla'}
           {language === 'en' && 'Dishes'}
-          {language === 'en' && 'Посуда'}
+          {language === 'ru' && 'Посуда'}
         </h4>
         <ul>
           <li>
