@@ -19,12 +19,18 @@ interface ReservationStore {
   setGuests: (adults: any) => any
   dining: string
   setDining: (dining: any) => void
+  diningEn: string
+  setDiningEn: (dining: any) => void
   price: number
   setPrice: (price: number) => void
   view: string
   setView: (view: string) => void
+  viewEn: string
+  setViewEn: (view: string) => void
   roomName: string
   setRoomName: (roomName: string) => void
+  roomNameEn: string
+  setRoomNameEn: (roomName: string) => void
 }
 
 export const useReservation = create<ReservationStore>(set => ({
@@ -48,8 +54,14 @@ export const useReservation = create<ReservationStore>(set => ({
   setPrice: price => set({ price }),
   dining: '',
   setDining: dining => set({ dining }),
+  diningEn: '',
+  setDiningEn: diningEn => set({ diningEn }),
   view: '',
   setView: view => set({ view }),
+  viewEn: '',
+  setViewEn: viewEn => set({ viewEn }),
   roomName: '',
   setRoomName: roomName => set({ roomName }),
+  roomNameEn: '',
+  setRoomNameEn: roomNameEn => set({ roomNameEn }),
 }))
