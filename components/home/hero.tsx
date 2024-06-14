@@ -3,6 +3,7 @@
 import { Container } from '../container'
 import { useLanguage } from '@/store/use-language'
 import { Button } from '../ui/button'
+import Link from 'next/link'
 
 const Hero = () => {
   const { language } = useLanguage()
@@ -28,9 +29,12 @@ const Hero = () => {
                 {language === 'en' && 'Discover the maldives with us'}
                 {language === 'ru' && 'Откройте для себя Мальдивы с нами'}
               </h1>
-              <Button className='bg-cyan-600 hover:bg-cyan-500 transition mt-8'>
-                Rezervovat penzion
-              </Button>
+
+              <Link href='/reservation'>
+                <Button className='bg-cyan-500 hover:bg-cyan-600 transition mt-8'>
+                  Rezervovat penzion
+                </Button>
+              </Link>
             </div>
           </Container>
         </div>
