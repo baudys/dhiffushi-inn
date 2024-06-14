@@ -31,11 +31,8 @@ export const Card = ({ room }: Props) => {
     setPrice,
     dining,
     setDining,
-    setDiningEn,
     setView,
-    setViewEn,
     setRoomName,
-    setRoomNameEn,
   } = useReservation()
 
   const [range, setRange] = useState<any>()
@@ -43,20 +40,18 @@ export const Card = ({ room }: Props) => {
 
   useEffect(() => {
     setRoomId(room._id)
-    setView(room.tagCz)
-    setViewEn(room.tagEn)
-    setRoomName(room.titleCz)
-    setRoomNameEn(room.titleEn)
+    setView(room.tagEn)
+    setRoomName(room.titleEn)
   }, [])
 
   useEffect(() => {
     const days = differenceInDays(range?.to, range?.from)
     setNumOfDays(days)
 
-    if (dining === 'Bez stravy') setPrice(days * room.priceNoFood)
-    if (dining === 'Snídaně') setPrice(days * room.priceBreakfast)
-    if (dining === 'Polopenze') setPrice(days * room.priceHalf)
-    if (dining === 'Plná Penze') setPrice(days * room.priceFull)
+    if (dining === 'No Food') setPrice(days * room.priceNoFood)
+    if (dining === 'Breakfast') setPrice(days * room.priceBreakfast)
+    if (dining === 'Half Board') setPrice(days * room.priceHalf)
+    if (dining === 'Full Board') setPrice(days * room.priceFull)
   }, [range, guests, dining])
 
   useEffect(() => {
@@ -125,23 +120,23 @@ export const Card = ({ room }: Props) => {
             </SelectTrigger>
             <SelectContent>
               {room.priceNoFood !== 'x' && (
-                <SelectItem value='Bez Stravy'>
+                <SelectItem value='No Food'>
                   {language === 'cz' && 'Bez Stravy'}
                   {language === 'en' && 'No Food'}
                   {language === 'ru' && 'Без еды'}
                 </SelectItem>
               )}
-              <SelectItem value='Snídaně'>
+              <SelectItem value='Breakfast'>
                 {language === 'cz' && 'Snídaně'}
                 {language === 'en' && 'Breakfast'}
                 {language === 'ru' && 'Завтрак'}
               </SelectItem>
-              <SelectItem value='Polopenze'>
+              <SelectItem value='Half Board'>
                 {language === 'cz' && 'Polopenze'}
                 {language === 'en' && 'Half Board'}
                 {language === 'ru' && 'Полупансион'}
               </SelectItem>
-              <SelectItem value='Plná Penze'>
+              <SelectItem value='Full Board'>
                 {language === 'cz' && 'Plná Penze'}
                 {language === 'en' && 'Full Board'}
                 {language === 'ru' && 'Полная пенсия'}

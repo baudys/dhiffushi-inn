@@ -25,19 +25,8 @@ import { useReservation } from '@/store/use-reservation'
 
 export const Contact = () => {
   const { language } = useLanguage()
-  const {
-    roomId,
-    guests,
-    endDate,
-    startDate,
-    price,
-    dining,
-    diningEn,
-    view,
-    viewEn,
-    roomName,
-    roomNameEn,
-  } = useReservation()
+  const { roomId, guests, endDate, startDate, price, dining, view, roomName } =
+    useReservation()
 
   const schema = z.object({
     name: z.string({
@@ -82,7 +71,6 @@ export const Contact = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = async (data: any) => {
     let reservationData
-    let reservationDataEn
 
     reservationData = {
       ...data,
@@ -96,17 +84,6 @@ export const Contact = () => {
     }
 
     addReservation(roomId, reservationData)
-
-    reservationDataEn = {
-      ...data,
-      guests,
-      diningEn,
-      viewEn,
-      roomNameEn,
-      startDate,
-      endDate,
-      price,
-    }
 
     try {
       const emailResponse = await emailjs.send(
@@ -122,7 +99,7 @@ export const Contact = () => {
         const emailResponseEn = await emailjs.send(
           process.env.NEXT_PUBLIC_SERVICE_ID_EN!,
           process.env.NEXT_PUBLIC_TEMPLATE_ID_RESERVATION_EN!,
-          reservationDataEn,
+          reservationData,
           process.env.NEXT_PUBLIC_PUBLIC_API_EN!
         )
 
