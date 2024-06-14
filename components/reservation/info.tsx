@@ -63,7 +63,10 @@ export const Info = ({ room }: Props) => {
               {room.priceNoFood !== 'x'
                 ? room.priceNoFood
                 : room.priceBreakfast}
-              <span className='text-zinc-600 text-sm font-light'> / noc</span>
+              <span className='text-zinc-600 text-sm font-light'>
+                {' '}
+                / noc za {room.guests} osoby
+              </span>
             </>
           )}
           {language === 'en' && (
@@ -72,7 +75,10 @@ export const Info = ({ room }: Props) => {
               {room.priceNoFood !== 'x'
                 ? room.priceNoFood
                 : room.priceBreakfast}
-              <span className='text-zinc-600 text-sm font-light'> / night</span>
+              <span className='text-zinc-600 text-sm font-light'>
+                {' '}
+                / night for {room.guests} persons
+              </span>
             </>
           )}
           {language === 'ru' && (
@@ -81,19 +87,14 @@ export const Info = ({ room }: Props) => {
               {room.priceNoFood !== 'x'
                 ? room.priceNoFood
                 : room.priceBreakfast}
-              <span className='text-zinc-600 text-sm font-light'> / ночь</span>
+              <span className='text-zinc-600 text-sm font-light'>
+                {' '}
+                / ночь для {room.guests} человек
+              </span>
             </>
           )}
         </p>
       </div>
-
-      {/* <Separator className='my-6' />
-
-      <p className='text-zinc-700'>
-        {language === 'cz' && room.overviewCz}
-        {language === 'en' && room.overviewEn}
-        {language === 'ru' && room.overviewRu}
-      </p> */}
 
       <Separator className='my-6' />
 

@@ -29,39 +29,39 @@ export const Item = ({ room }: Props) => {
         <div className='absolute bottom-3 right-3 z-10 bg-cyan-300/80 rounded-md px-1 py-0.5 border border-zinc-500/70 text-xs'>
           {language === 'cz' && room.tagCz}
           {language === 'en' && room.tagEn}
-          {language === 'en' && room.tagRu}
+          {language === 'ru' && room.tagRu}
         </div>
       </div>
       <h2 className='font-semibold mt-1'>
         {language === 'cz' && room.titleCz}
         {language === 'en' && room.titleEn}
-        {language === 'en' && room.titleRu} ({room.m2}m2)
+        {language === 'ru' && room.titleRu} ({room.m2}m2)
       </h2>
       <p className='text-zinc-500 text-sm'>
         {language === 'cz' && <>{room.guests} hosté</>}
         {language === 'en' && <>{room.guests} guests</>}
-        {language === 'en' && <>{room.guests} гости</>}
+        {language === 'ru' && <>{room.guests} гости</>}
       </p>
       <p className='text-zinc-800'>
         {language === 'cz' && (
           <>
             od $
-            {room.priceNoFood !== 'x' ? room.priceNoFood : room.priceBreakfast}/
-            noc
+            {room.priceNoFood !== 'x' ? room.priceNoFood : room.priceBreakfast}{' '}
+            / noc za {room.guests} osoby
           </>
         )}
         {language === 'en' && (
           <>
             starting at $
-            {room.priceNoFood !== 'x' ? room.priceNoFood : room.priceBreakfast}/
-            night
+            {room.priceNoFood !== 'x' ? room.priceNoFood : room.priceBreakfast}{' '}
+            / night for {room.guests} persons
           </>
         )}
-        {language === 'en' && (
+        {language === 'ru' && (
           <>
             от $
-            {room.priceNoFood !== 'x' ? room.priceNoFood : room.priceBreakfast}/
-            ночь
+            {room.priceNoFood !== 'x' ? room.priceNoFood : room.priceBreakfast}{' '}
+            / ночь для {room.guests} человек
           </>
         )}
       </p>
