@@ -1,3 +1,13 @@
+export const homepage = [
+  '/gallery/homepage/1.webp',
+  '/gallery/homepage/2.webp',
+  '/gallery/homepage/3.webp',
+  '/gallery/homepage/4.webp',
+  '/gallery/homepage/5.webp',
+  '/gallery/homepage/6.webp',
+  '/gallery/homepage/7.webp',
+]
+
 export const hotel = [
   '/gallery/hotel/1.webp',
   '/gallery/hotel/2.webp',
