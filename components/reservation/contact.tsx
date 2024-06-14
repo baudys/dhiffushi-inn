@@ -95,6 +95,15 @@ export const Contact = () => {
 
       console.log(emailResponse)
 
+      const emailResponseEn = await emailjs.send(
+        process.env.NEXT_PUBLIC_SERVICE_ID_EN!,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID_RESERVATION_EN!,
+        reservationData,
+        process.env.NEXT_PUBLIC_PUBLIC_API_EN!
+      )
+
+      console.log(emailResponseEn)
+
       toast.success(
         language === 'cz'
           ? 'Úspěšně odesláno.'
