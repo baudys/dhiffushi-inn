@@ -15,14 +15,6 @@ export const Detail = ({ experience }: Props) => {
   return (
     <Container className='space-y-20 lg:space-y-40'>
       <section>
-        <div className='relative aspect-video overflow-hidden'>
-          <img
-            src={urlForImage(experience.image)}
-            alt={experience.titleEn}
-            className='absolute inset-0'
-          />
-        </div>
-
         <div>
           <h1 className='text-2xl md:text-3xl lg:text-4xl mb-1 lg:mb-2 mt-4 font-semibold'>
             {language === 'cz' && experience.titleCz}
@@ -58,10 +50,16 @@ export const Detail = ({ experience }: Props) => {
             </p>
           </div>
         </div>
+
+        <img
+          src={urlForImage(experience.image)}
+          alt={experience.titleEn}
+          className='mt-10'
+        />
       </section>
 
       <section>
-        {experience.requirementsCz ||
+        {(experience.requirementsCz ||
           experience.requirementsEn ||
           experience.requirementsRu ||
           experience.bringCz ||
@@ -69,13 +67,13 @@ export const Detail = ({ experience }: Props) => {
           experience.bringRu ||
           experience.getCz ||
           experience.getEn ||
-          (experience.getRu && (
-            <h2 className='uppercase text-xl md:text-2xl  text-zinc-500 mb-4'>
-              {language === 'cz' && 'Co je nutné vědět'}
-              {language === 'en' && 'Things to know'}
-              {language === 'ru' && 'Что вам нужно знать'}
-            </h2>
-          ))}
+          experience.getRu) && (
+          <h2 className='uppercase text-xl md:text-2xl  text-zinc-500 mb-4'>
+            {language === 'cz' && 'Co je nutné vědět'}
+            {language === 'en' && 'Things to know'}
+            {language === 'ru' && 'Что вам нужно знать'}
+          </h2>
+        )}
 
         <div className='divide-y divide-zinc-500/50 space-y-5'>
           {experience.requirementsCz &&
