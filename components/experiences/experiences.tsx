@@ -8,6 +8,7 @@ interface Props {
   islands: any[]
   activities: any[]
   sports: any[]
+  fishing: any[]
 }
 
 export const Experiences = ({
@@ -15,6 +16,7 @@ export const Experiences = ({
   islands,
   activities,
   sports,
+  fishing,
 }: Props) => {
   return (
     <Container className='space-y-40'>
@@ -48,6 +50,14 @@ export const Experiences = ({
           labelCz='Vodní Sporty'
           labelEn='Water Sports'
           labelRu='Водные виды спорта'
+        />
+      )}
+      {fishing.length !== 0 && (
+        <Row
+          data={fishing}
+          labelCz='Rybaření'
+          labelEn='Fishing'
+          labelRu='Рыбалка'
         />
       )}
     </Container>
