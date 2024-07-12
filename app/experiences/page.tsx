@@ -16,6 +16,7 @@ export default async function Page() {
   )
   const sports = experiences.filter((item: any) => item.category === 'sports')
   const fishing = experiences.filter((item: any) => item.category === 'fishing')
+  const views = experiences.filter((item: any) => item.category === 'views')
 
   return (
     <main className='pt-32 pb-24'>
@@ -25,6 +26,7 @@ export default async function Page() {
         activities={activities}
         sports={sports}
         fishing={fishing}
+        views={views}
       />
     </main>
   )

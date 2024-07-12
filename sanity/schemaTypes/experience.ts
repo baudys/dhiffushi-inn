@@ -40,6 +40,7 @@ export default defineType({
           { title: 'Aktivity na Ostrově', value: 'activities' },
           { title: 'Vodní Sporty', value: 'sports' },
           { title: 'Rybaření', value: 'fishing' },
+          { title: 'Vyhlídky', value: 'views' },
         ],
       },
     }),
