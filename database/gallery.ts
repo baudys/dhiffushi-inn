@@ -6,6 +6,7 @@ export const homepage = [
   '/gallery/homepage/5.webp',
   '/gallery/homepage/6.webp',
   '/gallery/homepage/7.webp',
+  '/gallery/homepage/8.webp',
 ]
 
 export const hotel = [
