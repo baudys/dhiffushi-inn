@@ -32,7 +32,9 @@ const Hero = () => {
 
               <Link href='/reservation'>
                 <Button className='bg-cyan-500 hover:bg-cyan-600 transition mt-8'>
-                  Rezervovat penzion
+                  {language === 'cz' && 'Rezervovat penzion'}
+                  {language === 'en' && 'Book a guesthouse'}
+                  {language === 'ru' && 'Забронировать пансион'}
                 </Button>
               </Link>
             </div>
