@@ -30,7 +30,7 @@ export default function Page() {
           <Accordion type='multiple' className='space-y-4'>
             {faq.slice(0, itemsPerColumn).map(item => (
               <AccordionItem key={item.value} value={item.value}>
-                <AccordionTrigger className='text-lg'>
+                <AccordionTrigger className='text-lg text-left'>
                   {language === 'cz' && item.qCz}
                   {language === 'en' && item.qEn}
                   {language === 'ru' && item.qRu}
@@ -46,7 +46,7 @@ export default function Page() {
           <Accordion type='multiple' className='space-y-4'>
             {faq.slice(itemsPerColumn).map(item => (
               <AccordionItem key={item.value} value={item.value}>
-                <AccordionTrigger className='text-lg'>
+                <AccordionTrigger className='text-lg text-left'>
                   {language === 'cz' && item.qCz}
                   {language === 'en' && item.qEn}
                   {language === 'ru' && item.qRu}
