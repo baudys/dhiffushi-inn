@@ -52,9 +52,9 @@ export const Contact = () => {
           <div className='flex flex-col gap-4 mt-10 lg:mt-20'>
             {language === 'cz' ? (
               <Person
-                name='Lucie'
-                tel='+420 725 752 789'
-                email='dhiffushi.inn.cz@gmail.com'
+                name='Petr'
+                tel='+420 602 489 233'
+                email='petrmarak18@gmail.com'
               />
             ) : (
               <Person
