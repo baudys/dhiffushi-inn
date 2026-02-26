@@ -53,7 +53,7 @@ export const Contact = () => {
             {language === 'cz' ? (
               <Person
                 name='Petr'
-                tel='+420 602 489 233'
+                tel='+420 739 263 130'
                 email='petrmarak18@gmail.com'
               />
             ) : (
