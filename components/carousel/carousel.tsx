@@ -67,7 +67,7 @@ const Carousel: React.FC<CarouselProps> = ({
           ref={viewportRef}
           className={`cursor-grab w-full overflow-hidden ${className}`}
         >
-          <div className='select-none flex justify-start items-start'>
+          <div className='flex select-none items-center justify-start'>
             {children}
           </div>
         </div>
